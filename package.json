@@ -1,0 +1,42 @@
+{
+  "name": "dds-cli",
+  "version": "0.1.0",
+  "description": "Demo Design System - A CLI for rapidly setting up beautiful demo projects",
+  "main": "dist/index.js",
+  "bin": {
+    "dds": "dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "type-check": "tsc --noEmit",
+    "test": "node dist/index.js"
+  },
+  "keywords": [
+    "cli",
+    "design-system",
+    "tailwind",
+    "shadcn",
+    "components",
+    "demo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "execa": "^9.4.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^8.1.0",
+    "picocolors": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.8.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  }
+}
+

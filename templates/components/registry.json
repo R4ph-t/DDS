@@ -1,0 +1,92 @@
+{
+  "components": [
+    {
+      "name": "navigation",
+      "type": "blocks",
+      "description": "Clean navigation bar with logo and links",
+      "dependencies": [],
+      "files": ["blocks/navigation.tsx"],
+      "stories": ["blocks/navigation.stories.tsx"]
+    },
+    {
+      "name": "code-block",
+      "type": "ui",
+      "description": "Code block with Shiki syntax highlighting (read-only display)",
+      "dependencies": [],
+      "files": ["ui/code-block.tsx"],
+      "stories": ["ui/code-block.stories.tsx"]
+    },
+    {
+      "name": "code-editor",
+      "type": "ui",
+      "description": "Interactive code editor with CodeMirror (YAML, JavaScript, JSON, Python)",
+      "dependencies": [],
+      "files": ["ui/code-editor.tsx"],
+      "stories": ["ui/code-editor.stories.tsx"]
+    },
+    {
+      "name": "results-panel",
+      "type": "ui",
+      "description": "Panel for displaying validation results or output",
+      "dependencies": [],
+      "files": ["ui/results-panel.tsx"],
+      "stories": ["ui/results-panel.stories.tsx"]
+    },
+    {
+      "name": "stat-card",
+      "type": "ui",
+      "description": "Dashboard statistic card",
+      "dependencies": ["card"],
+      "files": ["ui/stat-card.tsx"],
+      "stories": ["ui/stat-card.stories.tsx"]
+    },
+    {
+      "name": "metric-card",
+      "type": "ui",
+      "description": "Collapsible metric card with breakdown (like Logfire demo)",
+      "dependencies": [],
+      "files": ["ui/metric-card.tsx"],
+      "stories": ["ui/metric-card.stories.tsx"]
+    },
+    {
+      "name": "progress-bar",
+      "type": "ui",
+      "description": "Progress bar with labels and percentages",
+      "dependencies": [],
+      "files": ["ui/progress-bar.tsx"],
+      "stories": ["ui/progress-bar.stories.tsx"]
+    },
+    {
+      "name": "toast",
+      "type": "ui",
+      "description": "Toast notification system with success/error/info states",
+      "dependencies": [],
+      "files": ["ui/toast.tsx", "hooks/use-toast.ts"],
+      "stories": ["ui/toast.stories.tsx"]
+    },
+    {
+      "name": "form-field",
+      "type": "ui",
+      "description": "Enhanced form field with validation",
+      "dependencies": ["input", "label"],
+      "files": ["ui/form-field.tsx"],
+      "stories": ["ui/form-field.stories.tsx"]
+    },
+    {
+      "name": "hero-minimal",
+      "type": "blocks",
+      "description": "Minimal hero section with title and CTA",
+      "dependencies": [],
+      "files": ["blocks/hero-minimal.tsx"],
+      "stories": ["blocks/hero-minimal.stories.tsx"]
+    },
+    {
+      "name": "editor-layout",
+      "type": "blocks",
+      "description": "Split layout for editor and results (like Blueprint Validator)",
+      "dependencies": [],
+      "files": ["blocks/editor-layout.tsx"],
+      "stories": ["blocks/editor-layout.stories.tsx"]
+    }
+  ]
+}
