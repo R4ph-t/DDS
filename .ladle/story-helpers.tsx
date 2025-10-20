@@ -1,5 +1,5 @@
 import * as React from "react"
-import { CodeBlock } from "../templates/components/ui/code-block"
+import { CodeBlock } from "../src/components/ui/code-block"
 
 interface PropDefinition {
   name: string
