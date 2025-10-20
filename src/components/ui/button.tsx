@@ -35,15 +35,15 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             "bg-destructive text-destructive-foreground hover:bg-destructive/80":
               variant === "destructive",
             "bg-teal-500 text-white hover:bg-teal-400": variant === "validate",
-            "border border-zinc-400 dark:border-zinc-500 bg-background hover:bg-accent hover:text-accent-foreground":
+            "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground":
               variant === "outline",
-            "border !border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground":
+            "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground":
               variant === "outline-primary",
-            "border !border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground":
+            "border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground":
               variant === "outline-secondary",
-            "border !border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white":
+            "border border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white":
               variant === "outline-validate",
-            "border !border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground":
+            "border border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground":
               variant === "outline-destructive",
             "bg-secondary text-secondary-foreground hover:bg-secondary/70": variant === "secondary",
             "hover:bg-accent hover:text-accent-foreground": variant === "ghost",

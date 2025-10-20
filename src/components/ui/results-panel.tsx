@@ -17,11 +17,11 @@ export interface ResultsPanelProps extends Omit<React.HTMLAttributes<HTMLDivElem
 }
 
 const statusStyles = {
-  success: "!border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
-  error: "!border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
+  success: "border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
+  error: "border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
   warning:
-    "!border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
-  info: "!border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
+    "border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
+  info: "border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
   idle: "border-border bg-muted text-muted-foreground",
 }
 

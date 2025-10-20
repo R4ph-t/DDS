@@ -15,9 +15,9 @@ export interface ToastProps {
 }
 
 const typeStyles = {
-  success: "!border-teal-500 bg-teal-950/90 text-teal-100",
-  error: "!border-red-500 bg-red-950/90 text-red-100",
-  info: "!border-blue-500 bg-blue-950/90 text-blue-100",
+  success: "border-teal-500 bg-teal-950/90 text-teal-100",
+  error: "border-red-500 bg-red-950/90 text-red-100",
+  info: "border-blue-500 bg-blue-950/90 text-blue-100",
 }
 
 const icons = {

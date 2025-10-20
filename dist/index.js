@@ -55,11 +55,11 @@ var Button = React20.forwardRef(
             "bg-primary text-primary-foreground hover:bg-primary/80": variant === "default",
             "bg-destructive text-destructive-foreground hover:bg-destructive/80": variant === "destructive",
             "bg-teal-500 text-white hover:bg-teal-400": variant === "validate",
-            "border border-zinc-400 dark:border-zinc-500 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
-            "border !border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground": variant === "outline-primary",
-            "border !border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground": variant === "outline-secondary",
-            "border !border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white": variant === "outline-validate",
-            "border !border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground": variant === "outline-destructive",
+            "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
+            "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground": variant === "outline-primary",
+            "border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground": variant === "outline-secondary",
+            "border border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white": variant === "outline-validate",
+            "border border-destructive text-destructive bg-transparent hover:bg-destructive hover:text-destructive-foreground": variant === "outline-destructive",
             "bg-secondary text-secondary-foreground hover:bg-secondary/70": variant === "secondary",
             "hover:bg-accent hover:text-accent-foreground": variant === "ghost"
           },
@@ -105,31 +105,31 @@ ButtonGroup.displayName = "ButtonGroup";
 var alertConfig = {
   info: {
     icon: IoInformationCircle,
-    containerClass: "!border-l-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
+    containerClass: "border-l-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
     iconClass: "text-blue-500",
     titleClass: "text-blue-900 dark:text-blue-100"
   },
   warning: {
     icon: IoWarning,
-    containerClass: "!border-l-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
+    containerClass: "border-l-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
     iconClass: "text-yellow-500",
     titleClass: "text-yellow-900 dark:text-yellow-100"
   },
   error: {
     icon: IoCloseCircle,
-    containerClass: "!border-l-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
+    containerClass: "border-l-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
     iconClass: "text-red-500",
     titleClass: "text-red-900 dark:text-red-100"
   },
   success: {
     icon: IoCheckmarkCircle,
-    containerClass: "!border-l-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
+    containerClass: "border-l-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
     iconClass: "text-teal-500",
     titleClass: "text-teal-900 dark:text-teal-100"
   },
   help: {
     icon: IoHelpCircle,
-    containerClass: "!border-l-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
+    containerClass: "border-l-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
     iconClass: "text-purple-500",
     titleClass: "text-purple-900 dark:text-purple-100"
   }
@@ -26916,9 +26916,9 @@ var Icon = React20.forwardRef(
 );
 Icon.displayName = "Icon";
 var typeStyles = {
-  success: "!border-teal-500 bg-teal-950/90 text-teal-100",
-  error: "!border-red-500 bg-red-950/90 text-red-100",
-  info: "!border-blue-500 bg-blue-950/90 text-blue-100"
+  success: "border-teal-500 bg-teal-950/90 text-teal-100",
+  error: "border-red-500 bg-red-950/90 text-red-100",
+  info: "border-blue-500 bg-blue-950/90 text-blue-100"
 };
 var icons = {
   success: IoCheckmarkCircle,
@@ -27090,10 +27090,10 @@ var MetricCard = React20.forwardRef(
 );
 MetricCard.displayName = "MetricCard";
 var statusStyles = {
-  success: "!border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
-  error: "!border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
-  warning: "!border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
-  info: "!border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
+  success: "border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
+  error: "border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
+  warning: "border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
+  info: "border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
   idle: "border-border bg-muted text-muted-foreground"
 };
 var statusIcons = {
