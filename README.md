@@ -167,6 +167,43 @@ import type { ButtonProps, AlertProps } from 'render-dds'
 
 ## Development
 
+### Creating a New Component
+
+Use the component generator to scaffold a new component with its story file:
+
+```bash
+# Create a UI component (Button, Alert, Card, etc.)
+npm run create:component ComponentName
+
+# Create a block component (Hero, Footer, Navigation, etc.)
+npm run create:component ComponentName blocks
+```
+
+**Examples:**
+
+```bash
+npm run create:component Card
+# Creates:
+# - src/components/ui/card.tsx
+# - stories/ui/card.stories.tsx
+
+npm run create:component Hero blocks
+# Creates:
+# - src/components/blocks/hero.tsx
+# - stories/blocks/hero.stories.tsx
+```
+
+**After creating a component:**
+
+1. Add your component logic to the `.tsx` file
+2. Update the story with examples
+3. Export the component from `src/index.ts`:
+   ```ts
+   export { Card } from "./components/ui/card"
+   export type { CardProps } from "./components/ui/card"
+   ```
+4. Run `npm run ladle` to preview
+
 ### Publishing a New Version
 
 Use the automated release scripts:

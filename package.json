@@ -26,6 +26,7 @@
     "dev": "tsup --watch",
     "ladle": "ladle serve",
     "ladle:build": "ladle build",
+    "create:component": "node scripts/create-component.js",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
