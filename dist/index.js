@@ -55,7 +55,7 @@ var Button = React20.forwardRef(
             "bg-primary text-primary-foreground hover:bg-primary/80": variant === "default",
             "bg-destructive text-destructive-foreground hover:bg-destructive/80": variant === "destructive",
             "bg-teal-500 text-white hover:bg-teal-400": variant === "validate",
-            "border border-input bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
+            "border border-zinc-400 dark:border-zinc-500 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
             "border !border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground": variant === "outline-primary",
             "border !border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground": variant === "outline-secondary",
             "border !border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white": variant === "outline-validate",
@@ -92,7 +92,7 @@ var ButtonGroup = React20.forwardRef(
         role: "group",
         className: cn(
           "inline-flex",
-          orientation === "horizontal" ? "flex-row [&>button]:rounded-none [&>button:first-child]:rounded-l [&>button:last-child]:rounded-r [&>button:not(:last-child)]:border-r-0" : "flex-col [&>button]:rounded-none [&>button:first-child]:rounded-t [&>button:last-child]:rounded-b [&>button:not(:last-child)]:border-b-0",
+          orientation === "horizontal" ? "flex-row [&>button]:rounded-none [&>button:not(:last-child)]:border-r-0" : "flex-col [&>button]:rounded-none [&>button:not(:last-child)]:border-b-0",
           className
         ),
         ...props,

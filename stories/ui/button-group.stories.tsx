@@ -40,10 +40,7 @@ export const Default: Story = () => {
 
 export const WithIcons: Story = () => {
   return (
-    <StoryWithCode
-      title="With Icons"
-      description="Button groups work great with icon buttons."
-    >
+    <StoryWithCode title="With Icons" description="Button groups work great with icon buttons.">
       <ButtonGroup>
         <Button variant="outline" size="sm">
           <IoPlaySharp />
@@ -64,10 +61,7 @@ export const WithIcons: Story = () => {
 
 export const Vertical: Story = () => {
   return (
-    <StoryWithCode
-      title="Vertical"
-      description="Stack buttons vertically instead of horizontally."
-    >
+    <StoryWithCode title="Vertical" description="Stack buttons vertically instead of horizontally.">
       <ButtonGroup orientation="vertical">
         <Button variant="outline">Top</Button>
         <Button variant="outline">Middle</Button>
@@ -94,10 +88,7 @@ export const MixedVariants: Story = () => {
 
 export const Sizes: Story = () => {
   return (
-    <StoryWithCode
-      title="Sizes"
-      description="Button groups work with all button sizes."
-    >
+    <StoryWithCode title="Sizes" description="Button groups work with all button sizes.">
       <div className="space-y-4">
         <ButtonGroup>
           <Button variant="outline" size="sm">
@@ -160,4 +151,3 @@ export const Toolbar: Story = () => {
     </StoryWithCode>
   )
 }
-
