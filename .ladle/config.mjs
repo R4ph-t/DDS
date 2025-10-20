@@ -1,6 +1,6 @@
 /** @type {import('@ladle/react').UserConfig} */
 export default {
-  stories: 'templates/components/**/*.stories.tsx',
+  stories: 'stories/**/*.stories.tsx',
   viteConfig: '.ladle/vite.config.mjs',
   appendToHead: `<style>
     .ladle-wrapper { flex-direction: row-reverse; }
