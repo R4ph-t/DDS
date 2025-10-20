@@ -30,9 +30,7 @@ const RenderFullLogo: React.FC<{ className?: string; height: number }> = ({
   height,
 }) => (
   <svg
-    width="2909"
-    height="1200"
-    viewBox="380 454 2140 360"
+    viewBox="390 400 2130 410"
     preserveAspectRatio="xMidYMid meet"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
