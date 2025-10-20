@@ -4,18 +4,20 @@ A React component library for building beautiful Render demos. Built with TypeSc
 
 ## Installation
 
-Install directly from GitHub:
+Install directly from GitHub using pnpm (recommended):
 
 ```bash
-npm install github:R4ph-t/DDS
+pnpm install github:R4ph-t/DDS
 ```
 
 Or with a specific version/tag:
 
 ```bash
-npm install github:R4ph-t/DDS#v0.1.0
-npm install github:R4ph-t/DDS#main
+pnpm install github:R4ph-t/DDS#v0.1.2
+pnpm install github:R4ph-t/DDS#main
 ```
+
+**Note:** pnpm is faster and more reliable than npm for GitHub packages. If you must use npm, expect longer install times.
 
 ## Usage
 
