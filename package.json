@@ -22,6 +22,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsup && node scripts/add-use-client.js",
     "dev": "tsup --watch",
     "ladle": "ladle serve",

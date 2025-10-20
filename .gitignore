@@ -1,5 +1,6 @@
 node_modules
-dist
+# dist - commented out to support GitHub installs
+# dist
 *.log
 .DS_Store
 .env
