@@ -10,6 +10,10 @@ export interface GridDecorationProps
    */
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center"
   /**
+   * Orientation of the staircase pattern
+   */
+  orientation?: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+  /**
    * Width in pixels or CSS value
    */
   width?: number | string
@@ -36,7 +40,11 @@ const positionStyles = {
 }
 
 // Generate a staircase pattern - squares step diagonally from corner
-const generateGridPattern = (density: number, isDark: boolean) => {
+const generateGridPattern = (
+  density: number,
+  isDark: boolean,
+  orientation: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+) => {
   const color = isDark ? "rgb(63, 63, 70)" : "rgb(228, 228, 231)" // zinc-800 : zinc-200 (subtle contrast)
   const squareSize = 90
   const rows = 6
@@ -47,9 +55,23 @@ const generateGridPattern = (density: number, isDark: boolean) => {
   const squares = []
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      // Create a diagonal staircase from top-left corner
-      // Distance from the top-left corner (diagonal distance)
-      const diagonalDistance = row + col
+      // Calculate diagonal distance based on orientation
+      let diagonalDistance: number
+
+      switch (orientation) {
+        case "top-left":
+          diagonalDistance = row + col
+          break
+        case "top-right":
+          diagonalDistance = row + (cols - 1 - col)
+          break
+        case "bottom-left":
+          diagonalDistance = rows - 1 - row + col
+          break
+        case "bottom-right":
+          diagonalDistance = rows - 1 - row + (cols - 1 - col)
+          break
+      }
 
       // density controls how far the staircase extends
       // Lower density = more squares (longer staircase)
@@ -74,11 +96,27 @@ const generateGridPattern = (density: number, isDark: boolean) => {
   return `url('data:image/svg+xml;utf8,${encodeURIComponent(svg)}')`
 }
 
+const getBackgroundPosition = (
+  orientation: "top-left" | "top-right" | "bottom-left" | "bottom-right"
+): string => {
+  switch (orientation) {
+    case "top-left":
+      return "top left"
+    case "top-right":
+      return "top right"
+    case "bottom-left":
+      return "bottom left"
+    case "bottom-right":
+      return "bottom right"
+  }
+}
+
 export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationProps>(
   (
     {
       className,
       position = "top-left",
+      orientation = "top-right",
       width = 450,
       height = 450,
       opacity = 0.5,
@@ -111,9 +149,11 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
     }, [])
 
     const backgroundImage = React.useMemo(
-      () => generateGridPattern(density, isDark),
-      [density, isDark]
+      () => generateGridPattern(density, isDark, orientation),
+      [density, isDark, orientation]
     )
+
+    const backgroundPosition = getBackgroundPosition(orientation)
 
     return (
       <div
@@ -129,7 +169,8 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
           opacity,
           backgroundImage,
           backgroundSize: "540px 540px",
-          backgroundRepeat: "repeat",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition,
           ...style,
         }}
         aria-hidden="true"

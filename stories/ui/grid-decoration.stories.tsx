@@ -13,6 +13,12 @@ const gridProps = [
     description: "Position of the grid decoration",
   },
   {
+    name: "orientation",
+    type: '"top-left" | "top-right" | "bottom-left" | "bottom-right"',
+    defaultValue: "top-right",
+    description: "Orientation of the staircase pattern",
+  },
+  {
     name: "width",
     type: "number | string",
     defaultValue: "450",
@@ -46,11 +52,11 @@ export const Default: Story = () => {
       props={gridProps}
     >
       <div className="relative h-[400px] bg-background border border-zinc-200 dark:border-zinc-800 rounded-sm overflow-hidden">
-        <GridDecoration position="top-left" />
+        <GridDecoration position="top-right" orientation="top-right" />
         <div className="relative z-10 p-8">
           <h2 className="text-2xl mb-4">Content with Grid Decoration</h2>
           <p className="text-muted-foreground mb-4">
-            The grid appears in the top-left corner with a diagonal staircase pattern.
+            The grid appears in the top-right corner with a diagonal staircase pattern.
           </p>
           <Button>Get Started</Button>
         </div>
@@ -68,31 +74,96 @@ export const Positions: Story = () => {
       <div className="space-y-8">
         <div className="grid grid-cols-2 gap-4">
           <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-            <GridDecoration position="top-left" width={300} height={300} />
+            <GridDecoration position="top-left" orientation="top-left" width={300} height={300} />
             <div className="relative z-10 p-6">
               <h3 className="font-semibold">Top Left</h3>
             </div>
           </div>
 
           <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-            <GridDecoration position="top-right" width={300} height={300} />
+            <GridDecoration position="top-right" orientation="top-right" width={300} height={300} />
             <div className="relative z-10 p-6 text-right">
               <h3 className="font-semibold">Top Right</h3>
             </div>
           </div>
 
           <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-            <GridDecoration position="bottom-left" width={300} height={300} />
+            <GridDecoration
+              position="bottom-left"
+              orientation="bottom-left"
+              width={300}
+              height={300}
+            />
             <div className="relative z-10 p-6 flex items-end">
               <h3 className="font-semibold">Bottom Left</h3>
             </div>
           </div>
 
           <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-            <GridDecoration position="bottom-right" width={300} height={300} />
+            <GridDecoration
+              position="bottom-right"
+              orientation="bottom-right"
+              width={300}
+              height={300}
+            />
             <div className="relative z-10 p-6 flex items-end justify-end">
               <h3 className="font-semibold">Bottom Right</h3>
             </div>
+          </div>
+        </div>
+      </div>
+    </StoryWithCode>
+  )
+}
+
+export const Orientations: Story = () => {
+  return (
+    <StoryWithCode
+      title="Grid Orientations"
+      description="Control which direction the staircase pattern steps from using the orientation prop."
+    >
+      <div className="grid grid-cols-2 gap-4">
+        <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+          <GridDecoration position="top-right" orientation="top-right" width={300} height={300} />
+          <div className="relative z-10 p-6 text-right">
+            <h3 className="font-semibold">Top Right</h3>
+            <p className="text-sm text-muted-foreground mt-2">Staircase from top-right corner</p>
+          </div>
+        </div>
+
+        <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+          <GridDecoration position="top-left" orientation="top-left" width={300} height={300} />
+          <div className="relative z-10 p-6">
+            <h3 className="font-semibold">Top Left</h3>
+            <p className="text-sm text-muted-foreground mt-2">Staircase from top-left corner</p>
+          </div>
+        </div>
+
+        <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+          <GridDecoration
+            position="bottom-right"
+            orientation="bottom-right"
+            width={300}
+            height={300}
+          />
+          <div className="relative z-10 p-6 flex flex-col items-end justify-end">
+            <h3 className="font-semibold">Bottom Right</h3>
+            <p className="text-sm text-muted-foreground mt-2 text-right">
+              Staircase from bottom-right corner
+            </p>
+          </div>
+        </div>
+
+        <div className="relative h-[250px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
+          <GridDecoration
+            position="bottom-left"
+            orientation="bottom-left"
+            width={300}
+            height={300}
+          />
+          <div className="relative z-10 p-6 flex flex-col justify-end">
+            <h3 className="font-semibold">Bottom Left</h3>
+            <p className="text-sm text-muted-foreground mt-2">Staircase from bottom-left corner</p>
           </div>
         </div>
       </div>
@@ -108,7 +179,7 @@ export const Sizes: Story = () => {
     >
       <div className="space-y-4">
         <div className="relative h-[200px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" width={200} height={200} />
+          <GridDecoration position="top-left" orientation="top-left" width={200} height={200} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Small (200x200)</h3>
             <p className="text-sm text-muted-foreground">Subtle corner accent</p>
@@ -116,7 +187,7 @@ export const Sizes: Story = () => {
         </div>
 
         <div className="relative h-[300px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" width={450} height={450} />
+          <GridDecoration position="top-left" orientation="top-left" width={450} height={450} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Medium (450x450)</h3>
             <p className="text-sm text-muted-foreground">Default size, good for most use cases</p>
@@ -124,7 +195,7 @@ export const Sizes: Story = () => {
         </div>
 
         <div className="relative h-[400px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" width={720} height={720} />
+          <GridDecoration position="top-left" orientation="top-left" width={720} height={720} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Large (720x720)</h3>
             <p className="text-sm text-muted-foreground">Covers more area for bigger sections</p>
@@ -143,7 +214,13 @@ export const Density: Story = () => {
     >
       <div className="space-y-4">
         <div className="relative h-[300px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" density={0.3} width={540} height={540} />
+          <GridDecoration
+            position="top-left"
+            orientation="top-left"
+            density={0.3}
+            width={540}
+            height={540}
+          />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Light (density: 0.3)</h3>
             <p className="text-sm text-muted-foreground">More squares visible, longer staircase</p>
@@ -151,7 +228,13 @@ export const Density: Story = () => {
         </div>
 
         <div className="relative h-[300px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" density={0.6} width={540} height={540} />
+          <GridDecoration
+            position="top-left"
+            orientation="top-left"
+            density={0.6}
+            width={540}
+            height={540}
+          />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Default (density: 0.6)</h3>
             <p className="text-sm text-muted-foreground">Balanced diagonal staircase</p>
@@ -159,7 +242,13 @@ export const Density: Story = () => {
         </div>
 
         <div className="relative h-[300px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" density={0.9} width={540} height={540} />
+          <GridDecoration
+            position="top-left"
+            orientation="top-left"
+            density={0.9}
+            width={540}
+            height={540}
+          />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Dense (density: 0.9)</h3>
             <p className="text-sm text-muted-foreground">Only corner squares, short staircase</p>
@@ -178,7 +267,7 @@ export const Opacity: Story = () => {
     >
       <div className="space-y-4">
         <div className="relative h-[200px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" opacity={0.2} />
+          <GridDecoration position="top-left" orientation="top-left" opacity={0.2} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Subtle (opacity: 0.2)</h3>
             <p className="text-sm text-muted-foreground">Very subtle, barely visible</p>
@@ -186,7 +275,7 @@ export const Opacity: Story = () => {
         </div>
 
         <div className="relative h-[200px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" opacity={0.5} />
+          <GridDecoration position="top-left" orientation="top-left" opacity={0.5} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Default (opacity: 0.5)</h3>
             <p className="text-sm text-muted-foreground">Balanced visibility</p>
@@ -194,7 +283,7 @@ export const Opacity: Story = () => {
         </div>
 
         <div className="relative h-[200px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
-          <GridDecoration position="top-left" opacity={0.8} />
+          <GridDecoration position="top-left" orientation="top-left" opacity={0.8} />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Strong (opacity: 0.8)</h3>
             <p className="text-sm text-muted-foreground">More prominent grid pattern</p>
@@ -212,7 +301,13 @@ export const HeroExample: Story = () => {
       description="Real-world example of grid decoration in a hero section."
     >
       <div className="relative h-[500px] bg-gradient-to-br from-purple-50 to-white dark:from-zinc-950 dark:to-zinc-900 overflow-hidden">
-        <GridDecoration position="top-right" width={600} height={600} opacity={0.4} />
+        <GridDecoration
+          position="top-right"
+          orientation="top-right"
+          width={600}
+          height={600}
+          opacity={0.4}
+        />
         <div className="relative z-10 container mx-auto px-8 py-16 flex flex-col justify-center h-full">
           <h1 className="text-5xl mb-6">Deploy Your Apps with Confidence</h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl">
