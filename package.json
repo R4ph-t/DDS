@@ -10,7 +10,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles": "./dist/styles/globals.css"
+    "./styles": "./dist/styles/globals.css",
+    "./tailwind": {
+      "types": "./dist/tailwind-preset.d.ts",
+      "import": "./dist/tailwind-preset.js"
+    }
   },
   "files": [
     "dist"
@@ -41,7 +45,8 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^4.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",

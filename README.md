@@ -21,17 +21,32 @@ Add the DDS styles to your project:
 
 ### 2. Configure Tailwind
 
-Update your `tailwind.config.js` to include DDS components:
+Use the DDS Tailwind preset (recommended):
 
 ```js
+import ddsPreset from 'render-dds/tailwind'
+
 /** @type {import('tailwindcss').Config} */
+export default {
+  presets: [ddsPreset],
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  // Your custom config here
+}
+```
+
+**Or manually** (if you prefer):
+
+```js
 export default {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-    // Include DDS components for Tailwind to scan
     './node_modules/render-dds/dist/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   // Rest of your config
 }
 ```

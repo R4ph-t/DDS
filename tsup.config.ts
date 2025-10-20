@@ -1,12 +1,12 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
-  entry: ["src/index.ts", "src/styles/globals.css"],
+  entry: ["src/index.ts", "src/tailwind-preset.ts", "src/styles/globals.css"],
   format: ["esm"],
   dts: true,
   sourcemap: true,
   clean: true,
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "tailwindcss"],
   treeshake: true,
   splitting: false,
   loader: {
