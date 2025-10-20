@@ -104,9 +104,9 @@ export const InNavigation: Story = () => (
     props={renderLogoProps}
   >
     <div className="border border-border">
-      <div className="flex item-center justify-between px-6 py-4 bg-background">
+      <div className="flex items-center justify-between px-6 py-4 bg-background">
         <RenderLogo variant="full" height={28} />
-        <div className="flex gap-4 text-sm">
+        <div className="flex items-center gap-4 text-sm">
           <a href="#" className="text-foreground hover:text-primary">
             Docs
           </a>
@@ -134,11 +134,11 @@ export const InFooter: Story = () => {
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex items-center gap-4">
             <RenderLogo variant="mark" height={24} />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground !mb-0">
               © {currentYear} Render. All rights reserved.
             </p>
           </div>
-          <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex items-center gap-6 text-sm text-muted-foreground">
             <a href="#" className="hover:text-foreground">
               Privacy
             </a>
