@@ -1,288 +1,144 @@
-# DDS - Demo Design System
+# Render DDS (Demo Design System)
 
-A CLI tool for rapidly setting up beautiful demo projects with pre-built components, Tailwind CSS, and shadcn/ui integration.
-
-## Features
-
-- 🎨 **Square, clean design** - No rounded corners, solid colors (matches Render style)
-- 🚀 **Built on shadcn/ui** - Extends shadcn with demo-specific components
-- 💻 **Code highlighting** - Syntax highlighting with Shiki
-- ✏️ **Code editing** - Interactive CodeMirror editor
-- 📦 **Component library** - Navigation, forms, code editors, metrics, and more
-- ⚡ **Fast setup** - Get started in minutes
-- 🔧 **Own the code** - Components copied to your project, fully customizable
+A React component library for building beautiful Render demos. Built with TypeScript, Tailwind CSS v4, and designed for rapid prototyping.
 
 ## Installation
 
 ```bash
-npm install -g dds-cli
+npm install render-dds
 ```
 
-Or use directly with npx:
+## Usage
 
-```bash
-npx dds-cli init
+### 1. Import Styles
+
+Add the DDS styles to your project:
+
+```css
+/* app/globals.css or similar */
+@import 'render-dds/styles';
 ```
 
-## Quick Start
+### 2. Configure Tailwind
 
-### 1. Initialize DDS in your Next.js project
+Update your `tailwind.config.js` to include DDS components:
 
-```bash
-# In your Next.js project directory
-npx dds-cli init
-```
-
-This will:
-- Install Tailwind CSS with square corners configuration
-- Set up shadcn/ui integration
-- Install Shiki for syntax highlighting
-- Install CodeMirror for code editing
-- Configure utilities and styles
-
-### 2. Add components
-
-```bash
-# Add specific components
-npx dds-cli add navigation code-block
-
-# Or select from a list
-npx dds-cli add
-```
-
-### 3. Use components in your app
-
-Components work directly in your Next.js pages - no preview tool needed!
-
-## Available Components
-
-### UI Components
-
-- **code-block** - Syntax-highlighted code blocks with Shiki (read-only display)
-- **code-editor** - Interactive code editor with CodeMirror (YAML, JavaScript, JSON, Python)
-- **results-panel** - Panel for displaying validation results or output
-- **stat-card** - Dashboard statistics cards
-- **metric-card** - Collapsible metric cards with breakdowns (inspired by Logfire demo)
-- **progress-bar** - Progress bars with labels and percentages
-- **toast** - Toast notification system with useToast hook
-- **form-field** - Enhanced form inputs with validation
-
-### Block Components
-
-- **navigation** - Clean navigation bar
-- **hero-minimal** - Minimal hero section
-- **editor-layout** - Split layout for editor and results (like [Blueprint Validator](https://blueprint-validator.onrender.com/))
-
-## Usage Examples
-
-### Code Block
-
-```tsx
-import { CodeBlock } from "@/components/ui/code-block"
-
-export default function Page() {
-  return (
-    <CodeBlock
-      code={`console.log("Hello, world!")`}
-      language="javascript"
-    />
-  )
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    // Include DDS components for Tailwind to scan
+    './node_modules/render-dds/dist/**/*.{js,ts,jsx,tsx}',
+  ],
+  // Rest of your config
 }
 ```
 
-### Navigation
+### 3. Import Components
 
 ```tsx
-import { Navigation } from "@/components/blocks/navigation"
+import { Button, Alert, Footer, RenderLogo } from 'render-dds'
 
-export default function Page() {
+export default function MyDemo() {
   return (
-    <Navigation
-      logo="MyApp"
-      links={[
-        { label: "Home", href: "/" },
-        { label: "Docs", href: "/docs" },
-      ]}
-      actions={
-        <button className="bg-primary px-4 py-2 text-primary-foreground">
-          Sign In
-        </button>
-      }
-    />
-  )
-}
-```
-
-### Stat Card
-
-```tsx
-import { StatCard } from "@/components/ui/stat-card"
-
-export default function Dashboard() {
-  return (
-    <div className="grid grid-cols-3 gap-4">
-      <StatCard
-        label="Total Users"
-        value="12,543"
-        change="+8.2%"
-        changeType="positive"
-      />
-      <StatCard
-        label="Revenue"
-        value="$54,239"
-        change="+12.5%"
-        changeType="positive"
-      />
-      <StatCard
-        label="Active Projects"
-        value="324"
-      />
+    <div>
+      <RenderLogo variant="full" height={32} />
+      <Alert variant="info">
+        Welcome to Render!
+      </Alert>
+      <Button variant="primary">
+        Deploy Now
+      </Button>
     </div>
   )
 }
 ```
 
-### Code Editor
+## Available Components
 
-```tsx
-"use client"
-import { CodeEditor } from "@/components/ui/code-editor"
-import { useState } from "react"
+### UI Components
+- **Button** - Primary, secondary, destructive, outline variants + action buttons
+- **Link** - Accessible links with external link detection
+- **Alert** - Info, warning, error, success, help variants
+- **Input** - Text input with label
+- **Label** - Form labels
+- **FormField** - Combined label + input + error message
+- **CodeBlock** - Syntax-highlighted code with Shiki
+- **CodeEditor** - Interactive code editor with CodeMirror
+- **Toast** - Notifications (success, error, info)
+- **Tabs** - Tab navigation
+- **Collapsible** - Expandable sections
+- **StatCard** - Display statistics
+- **ProgressBar** - Progress indicators with cost tracking
+- **MetricCard** - Collapsible metric cards
+- **ResultsPanel** - Validation results display
+- **RenderLogo** - Render branding (mark or full logo)
+- **Icon** - Ionicons 5 icons
 
-export default function EditorPage() {
-  const [code, setCode] = useState("")
-  
-  return (
-    <CodeEditor
-      value={code}
-      onChange={setCode}
-      language="yaml"
-      placeholder="Paste your YAML here..."
-      height="500px"
-    />
-  )
-}
-```
+### Block Components
+- **Footer** - Page footer with links and copyright
+- **Navigation** - Navigation bar
+- **HeroMinimal** - Minimal hero section
+- **EditorLayout** - Full-page editor layout
 
-### Editor Layout (Complete Tool)
+### Action Buttons
+Pre-configured buttons for common actions:
+`SaveButton`, `DeployButton`, `DeleteButton`, `EditButton`, `CreateButton`, `UploadButton`, `DownloadButton`, and more.
 
-Build a complete tool like the [Blueprint Validator](https://blueprint-validator.onrender.com/):
+## Design Principles
 
-```tsx
-"use client"
-import { EditorLayout } from "@/components/blocks/editor-layout"
-import { CodeEditor } from "@/components/ui/code-editor"
-import { ResultsPanel } from "@/components/ui/results-panel"
-import { useState } from "react"
-
-export default function ValidatorPage() {
-  const [code, setCode] = useState("")
-  const [results, setResults] = useState([])
-
-  const handleValidate = () => {
-    // Your validation logic
-    setResults([
-      {
-        type: "success",
-        message: "Valid!",
-        details: "Everything looks good"
-      }
-    ])
-  }
-
-  return (
-    <EditorLayout
-      title="My Validator"
-      description="Validate your code"
-      links={[
-        { label: "Documentation", href: "/docs" }
-      ]}
-      editor={
-        <CodeEditor
-          value={code}
-          onChange={setCode}
-          language="yaml"
-          height="500px"
-        />
-      }
-      results={
-        <ResultsPanel
-          title="Results"
-          results={results}
-          emptyMessage="Click validate to see results"
-        />
-      }
-      actions={
-        <>
-          <button
-            onClick={handleValidate}
-            className="bg-primary px-6 py-2 text-sm font-semibold text-primary-foreground"
-          >
-            Validate
-          </button>
-          <button
-            onClick={() => setCode("")}
-            className="border-2 border-border px-6 py-2 text-sm font-semibold"
-          >
-            Clear
-          </button>
-        </>
-      }
-    />
-  )
-}
-```
-
-## Design Philosophy
-
-DDS follows a clean, modern design aesthetic:
-
-- **Square corners** - No border-radius for a clean look
-- **Solid colors** - No gradients or complex patterns
-- **High contrast** - Clear hierarchy and readability
-- **Minimal animations** - Subtle transitions only
-
-## Using with shadcn/ui
-
-DDS components work seamlessly with shadcn components:
-
-```bash
-# Install shadcn components as needed
-npx shadcn@latest add button card input
-```
-
-Then use them together:
-
-```tsx
-import { Button } from "@/components/ui/button"
-import { Navigation } from "@/components/blocks/navigation"
-
-export default function Page() {
-  return (
-    <Navigation
-      logo="App"
-      actions={<Button>Sign In</Button>}
-    />
-  )
-}
-```
+- **Square corners** - No border-radius
+- **Solid colors** - No gradients
+- **Clean & minimal** - Focus on content
+- **Render's palette** - Purple/violet primary colors
+- **Dark mode support** - Built-in dark mode
 
 ## Development
 
-Build the CLI:
+### Running Ladle (Component Preview)
 
 ```bash
-npm install
+npm run ladle
+```
+
+Visit `http://localhost:61000` to browse all components.
+
+### Building
+
+```bash
 npm run build
 ```
 
-Test locally:
+### Type Checking
 
 ```bash
-npm run test
+npm run type-check
+```
+
+## Tree Shaking
+
+render-dds is fully tree-shakeable. Only import what you need:
+
+```tsx
+// ✅ Only Button code is included
+import { Button } from 'render-dds'
+
+// ✅ Multiple components
+import { Button, Alert, Footer } from 'render-dds'
+```
+
+Tailwind CSS will also only include the styles for components you actually use.
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```tsx
+import type { ButtonProps, AlertProps } from 'render-dds'
 ```
 
 ## License
 
 MIT
-

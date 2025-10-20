@@ -1,14 +1,16 @@
 import { defineConfig } from "tsup"
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts", "src/styles/globals.css"],
   format: ["esm"],
   dts: true,
-  splitting: false,
   sourcemap: true,
   clean: true,
-  shims: true,
-  banner: {
-    js: "#!/usr/bin/env node",
+  external: ["react", "react-dom"],
+  treeshake: true,
+  splitting: false,
+  loader: {
+    ".css": "copy",
   },
+  outDir: "dist",
 })

@@ -1,48 +1,54 @@
 {
-  "name": "dds-cli",
+  "name": "render-dds",
   "version": "0.1.0",
-  "description": "Demo Design System - A CLI for rapidly setting up beautiful demo projects",
-  "main": "dist/index.js",
-  "bin": {
-    "dds": "dist/index.js"
+  "description": "Render Demo Design System - A React component library for building beautiful demos",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles": "./dist/styles/globals.css"
   },
   "files": [
-    "dist",
-    "templates"
+    "dist"
   ],
+  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "tsup && npm run copy-templates",
-    "copy-templates": "cp -r src/templates dist/ && cp -r templates dist/",
+    "build": "tsup",
     "dev": "tsup --watch",
     "ladle": "ladle serve",
     "ladle:build": "ladle build",
     "type-check": "tsc --noEmit",
-    "test": "node dist/index.js",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "keywords": [
-    "cli",
+    "react",
+    "components",
     "design-system",
     "tailwind",
-    "shadcn",
-    "components",
+    "typescript",
+    "ui",
     "demo"
   ],
-  "author": "",
+  "author": "Render",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
   "dependencies": {
-    "@clack/prompts": "^0.7.0",
-    "chalk": "^5.3.0",
-    "commander": "^12.1.0",
-    "execa": "^9.4.0",
-    "fs-extra": "^11.2.0",
-    "ora": "^8.1.0",
-    "picocolors": "^1.1.0",
-    "react-icons": "^5.5.0"
+    "clsx": "^2.1.1",
+    "react-icons": "^5.5.0",
+    "shiki": "^1.22.2",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@codemirror/lang-javascript": "^6.2.2",
@@ -52,7 +58,6 @@
     "@ladle/react": "^5.1.0",
     "@tailwindcss/postcss": "^4.1.13",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/fs-extra": "^11.0.4",
     "@types/node": "^22.8.1",
     "@types/react": "^18.3.12",
     "@typescript-eslint/eslint-plugin": "^8.46.1",
@@ -60,20 +65,15 @@
     "@uiw/react-codemirror": "^4.23.5",
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
-    "clsx": "^2.1.1",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
-    "lucide-react": "^0.454.0",
     "prettier": "^3.6.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "shiki": "^1.22.2",
-    "tailwind-merge": "^2.5.4",
     "tailwindcss": "^4.1.13",
-    "tailwindcss-animate": "^1.0.7",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3",
     "vite": "^7.1.9"

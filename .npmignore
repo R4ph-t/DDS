@@ -1,9 +1,35 @@
+# Source files
 src/
-node_modules/
-.DS_Store
-*.log
-.env
-.vscode
-.idea
-tsconfig.tsbuildinfo
 
+# Dev files
+.ladle/
+stories/
+tsconfig.json
+tsup.config.ts
+tailwind.config.js
+
+# Config files
+.eslintrc.json
+.eslintignore
+.prettierrc
+.prettierignore
+.cursorignore
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.DS_Store
