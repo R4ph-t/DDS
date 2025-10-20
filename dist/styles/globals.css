@@ -485,6 +485,9 @@
   .flex-col {
     flex-direction: column;
   }
+  .flex-row {
+    flex-direction: row;
+  }
   .flex-wrap {
     flex-wrap: wrap;
   }
@@ -798,9 +801,6 @@
   }
   .bg-zinc-100 {
     background-color: var(--color-zinc-100);
-  }
-  .bg-zinc-900 {
-    background-color: var(--color-zinc-900);
   }
   .fill-current {
     fill: currentcolor;
@@ -1646,6 +1646,47 @@
           color: var(--color-zinc-300);
         }
       }
+    }
+  }
+  .\[\&\>button\]\:rounded-none {
+    &>button {
+      border-radius: 0;
+    }
+  }
+  .\[\&\>button\:first-child\]\:rounded-t {
+    &>button:first-child {
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+    }
+  }
+  .\[\&\>button\:first-child\]\:rounded-l {
+    &>button:first-child {
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+  }
+  .\[\&\>button\:last-child\]\:rounded-r {
+    &>button:last-child {
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
+  }
+  .\[\&\>button\:last-child\]\:rounded-b {
+    &>button:last-child {
+      border-bottom-right-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+  }
+  .\[\&\>button\:not\(\:last-child\)\]\:border-r-0 {
+    &>button:not(:last-child) {
+      border-right-style: var(--tw-border-style);
+      border-right-width: 0px;
+    }
+  }
+  .\[\&\>button\:not\(\:last-child\)\]\:border-b-0 {
+    &>button:not(:last-child) {
+      border-bottom-style: var(--tw-border-style);
+      border-bottom-width: 0px;
     }
   }
 }

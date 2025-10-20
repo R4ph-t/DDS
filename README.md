@@ -110,6 +110,7 @@ export default function BlogPost() {
 
 ### UI Components
 - **Button** - Primary, secondary, destructive, outline variants + action buttons
+- **ButtonGroup** - Group related buttons together with connected borders
 - **Link** - Accessible links with external link detection
 - **Alert** - Info, warning, error, success, help variants
 - **Input** - Text input with label

@@ -10,6 +10,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 declare const Button: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 
+interface ButtonGroupProps extends React.HTMLAttributes<HTMLDivElement> {
+    orientation?: "horizontal" | "vertical";
+}
+declare const ButtonGroup: React.ForwardRefExoticComponent<ButtonGroupProps & React.RefAttributes<HTMLDivElement>>;
+
 interface AlertProps extends React.HTMLAttributes<HTMLDivElement> {
     variant?: "info" | "warning" | "error" | "success" | "help";
     title?: string;
@@ -237,4 +242,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn };

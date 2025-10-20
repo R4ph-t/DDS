@@ -4,6 +4,9 @@
 export { Button } from "./components/ui/button"
 export type { ButtonProps } from "./components/ui/button"
 
+export { ButtonGroup } from "./components/ui/button-group"
+export type { ButtonGroupProps } from "./components/ui/button-group"
+
 export { Alert } from "./components/ui/alert"
 export type { AlertProps } from "./components/ui/alert"
 

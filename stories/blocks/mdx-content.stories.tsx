@@ -32,7 +32,9 @@ export const Default: Story = () => {
         <ul>
           <li>Styled headings with proper hierarchy</li>
           <li>Beautiful links with hover effects</li>
-          <li>Code formatting with inline <code>code blocks</code></li>
+          <li>
+            Code formatting with inline <code>code blocks</code>
+          </li>
           <li>Ordered and unordered lists</li>
         </ul>
         <h3>Code Example</h3>
@@ -51,7 +53,22 @@ export const Default: Story = () => {
 
 export const SimpleContent: Story = () => {
   return (
-    <StoryWithCode>
+    <StoryWithCode
+      title="Simple Content"
+      description="Basic usage with plain HTML content."
+      props={[
+        {
+          name: "children",
+          type: "React.ReactNode",
+          description: "MDX or HTML content to render",
+        },
+        {
+          name: "className",
+          type: "string",
+          description: "Additional CSS classes",
+        },
+      ]}
+    >
       <MDXContent>
         <h2>Getting Started</h2>
         <p>
@@ -70,30 +87,24 @@ export const SimpleContent: Story = () => {
   )
 }
 
-export const DarkMode: Story = () => {
-  return (
-    <StoryWithCode>
-      <div className="bg-zinc-900 p-8 rounded">
-        <MDXContent>
-          <h2>Dark Mode Support</h2>
-          <p>The MDX Content component automatically adapts to dark mode.</p>
-          <ul>
-            <li>Dark background colors</li>
-            <li>Light text colors</li>
-            <li>Adjusted contrast</li>
-          </ul>
-          <p>
-            Use inline <code>code</code> or code blocks seamlessly.
-          </p>
-        </MDXContent>
-      </div>
-    </StoryWithCode>
-  )
-}
-
 export const WithCustomStyling: Story = () => {
   return (
-    <StoryWithCode>
+    <StoryWithCode
+      title="Custom Styling"
+      description="Add custom Tailwind prose classes to adjust sizing and layout."
+      props={[
+        {
+          name: "children",
+          type: "React.ReactNode",
+          description: "MDX or HTML content to render",
+        },
+        {
+          name: "className",
+          type: "string",
+          description: "Additional CSS classes (e.g., prose-lg, max-w-2xl)",
+        },
+      ]}
+    >
       <MDXContent className="prose-lg max-w-2xl">
         <h2>Custom Styling</h2>
         <p>
@@ -104,4 +115,3 @@ export const WithCustomStyling: Story = () => {
     </StoryWithCode>
   )
 }
-
