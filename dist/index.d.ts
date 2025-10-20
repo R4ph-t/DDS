@@ -174,6 +174,30 @@ interface RenderLogoProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 declare const RenderLogo: React.ForwardRefExoticComponent<RenderLogoProps & React.RefAttributes<HTMLDivElement>>;
 
+interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "children"> {
+    /**
+     * Position of the grid decoration
+     */
+    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
+    /**
+     * Width in pixels or CSS value
+     */
+    width?: number | string;
+    /**
+     * Height in pixels or CSS value
+     */
+    height?: number | string;
+    /**
+     * Opacity of the grid (0-1)
+     */
+    opacity?: number;
+    /**
+     * Density of squares (0-1, where 1 is all squares present)
+     */
+    density?: number;
+}
+declare const GridDecoration: React.ForwardRefExoticComponent<GridDecorationProps & React.RefAttributes<HTMLDivElement>>;
+
 declare const SaveButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 declare const SaveDraftButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 declare const SaveAndDeployButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
@@ -242,4 +266,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn };

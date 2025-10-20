@@ -79,7 +79,7 @@ export const MixedVariants: Story = () => {
     >
       <ButtonGroup>
         <Button variant="outline">Cancel</Button>
-        <Button variant="primary">Save</Button>
+        <Button variant="default">Save</Button>
         <Button variant="secondary">Save & Continue</Button>
       </ButtonGroup>
     </StoryWithCode>

@@ -53,6 +53,9 @@ export type { ResultsPanelProps, ResultStatus } from "./components/ui/results-pa
 export { RenderLogo } from "./components/ui/render-logo"
 export type { RenderLogoProps } from "./components/ui/render-logo"
 
+export { GridDecoration } from "./components/ui/grid-decoration"
+export type { GridDecorationProps } from "./components/ui/grid-decoration"
+
 // Action Buttons
 export {
   SaveButton,

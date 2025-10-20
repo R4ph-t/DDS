@@ -1,6 +1,6 @@
 "use client";
 import { __commonJS, __toESM, __export, __reExport } from './chunk-CFDED2GB.js';
-import * as React20 from 'react';
+import * as React21 from 'react';
 import { forwardRef, useRef, useImperativeHandle, useCallback, useState, useLayoutEffect, useEffect } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -43,7 +43,7 @@ var require_objectWithoutPropertiesLoose = __commonJS({
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
-var Button = React20.forwardRef(
+var Button = React21.forwardRef(
   ({ className, variant = "default", size = "default", iconLeft, iconRight, children, ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "button",
@@ -83,7 +83,7 @@ var Button = React20.forwardRef(
   }
 );
 Button.displayName = "Button";
-var ButtonGroup = React20.forwardRef(
+var ButtonGroup = React21.forwardRef(
   ({ className, orientation = "horizontal", children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -105,36 +105,36 @@ ButtonGroup.displayName = "ButtonGroup";
 var alertConfig = {
   info: {
     icon: IoInformationCircle,
-    containerClass: "border-l-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
+    containerClass: "border-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
     iconClass: "text-blue-500",
     titleClass: "text-blue-900 dark:text-blue-100"
   },
   warning: {
     icon: IoWarning,
-    containerClass: "border-l-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
+    containerClass: "border-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
     iconClass: "text-yellow-500",
     titleClass: "text-yellow-900 dark:text-yellow-100"
   },
   error: {
     icon: IoCloseCircle,
-    containerClass: "border-l-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
+    containerClass: "border-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
     iconClass: "text-red-500",
     titleClass: "text-red-900 dark:text-red-100"
   },
   success: {
     icon: IoCheckmarkCircle,
-    containerClass: "border-l-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
+    containerClass: "border-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
     iconClass: "text-teal-500",
     titleClass: "text-teal-900 dark:text-teal-100"
   },
   help: {
     icon: IoHelpCircle,
-    containerClass: "border-l-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
+    containerClass: "border-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
     iconClass: "text-purple-500",
     titleClass: "text-purple-900 dark:text-purple-100"
   }
 };
-var Alert = React20.forwardRef(
+var Alert = React21.forwardRef(
   ({ className, variant = "info", title, icon, showIcon = true, children, ...props }, ref) => {
     const config2 = alertConfig[variant];
     const IconComponent = config2.icon;
@@ -143,7 +143,11 @@ var Alert = React20.forwardRef(
       {
         ref,
         role: "alert",
-        className: cn("relative w-full border-l-4 p-4", config2.containerClass, className),
+        className: cn(
+          "relative w-full border-l-4 border-solid p-4",
+          config2.containerClass,
+          className
+        ),
         ...props,
         children: /* @__PURE__ */ jsxs("div", { className: "flex gap-3", children: [
           showIcon && /* @__PURE__ */ jsx("div", { className: "flex-shrink-0", children: icon || /* @__PURE__ */ jsx(IconComponent, { className: cn("h-5 w-5", config2.iconClass) }) }),
@@ -157,7 +161,7 @@ var Alert = React20.forwardRef(
   }
 );
 Alert.displayName = "Alert";
-var Input = React20.forwardRef(
+var Input = React21.forwardRef(
   ({ className, type, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "input",
@@ -178,7 +182,7 @@ var Input = React20.forwardRef(
   }
 );
 Input.displayName = "Input";
-var Label = React20.forwardRef(({ className, ...props }, ref) => {
+var Label = React21.forwardRef(({ className, ...props }, ref) => {
   return /* @__PURE__ */ jsx(
     "label",
     {
@@ -192,7 +196,7 @@ var Label = React20.forwardRef(({ className, ...props }, ref) => {
   );
 });
 Label.displayName = "Label";
-var Link = React20.forwardRef(
+var Link = React21.forwardRef(
   ({
     className,
     variant = "default",
@@ -235,7 +239,7 @@ var Link = React20.forwardRef(
   }
 );
 Link.displayName = "Link";
-var FormField = React20.forwardRef(
+var FormField = React21.forwardRef(
   ({ className, label, error, helperText, id: id2, ...props }, ref) => {
     const inputId = id2 || label?.toLowerCase().replace(/\s+/g, "-");
     return /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
@@ -255,7 +259,7 @@ var FormField = React20.forwardRef(
   }
 );
 FormField.displayName = "FormField";
-var CodeBlock = React20.forwardRef(
+var CodeBlock = React21.forwardRef(
   ({
     className,
     code,
@@ -264,10 +268,10 @@ var CodeBlock = React20.forwardRef(
     highlightLines = [],
     ...props
   }, ref) => {
-    const [html, setHtml] = React20.useState("");
-    const [isDark, setIsDark] = React20.useState(false);
-    const containerRef = React20.useRef(null);
-    React20.useEffect(() => {
+    const [html, setHtml] = React21.useState("");
+    const [isDark, setIsDark] = React21.useState(false);
+    const containerRef = React21.useRef(null);
+    React21.useEffect(() => {
       const detectDarkMode = () => {
         if (containerRef.current) {
           const element = containerRef.current;
@@ -285,7 +289,7 @@ var CodeBlock = React20.forwardRef(
       });
       return () => observer.disconnect();
     }, []);
-    React20.useEffect(() => {
+    React21.useEffect(() => {
       const generateHtml = async () => {
         const result = await codeToHtml(code, {
           lang: language2,
@@ -295,7 +299,7 @@ var CodeBlock = React20.forwardRef(
       };
       generateHtml();
     }, [code, language2, isDark]);
-    const mergedRef = React20.useCallback(
+    const mergedRef = React21.useCallback(
       (node) => {
         containerRef.current = node;
         if (typeof ref === "function") {
@@ -26738,7 +26742,7 @@ var languageExtensions = {
   json: [json()],
   python: [python()]
 };
-var CodeEditor = React20.forwardRef(
+var CodeEditor = React21.forwardRef(
   ({
     className,
     value,
@@ -26769,19 +26773,19 @@ var CodeEditor = React20.forwardRef(
   }
 );
 CodeEditor.displayName = "CodeEditor";
-var TabsContext = React20.createContext(void 0);
+var TabsContext = React21.createContext(void 0);
 var useTabsContext = () => {
-  const context = React20.useContext(TabsContext);
+  const context = React21.useContext(TabsContext);
   if (!context) {
     throw new Error("Tabs components must be used within a Tabs component");
   }
   return context;
 };
-var Tabs = React20.forwardRef(
+var Tabs = React21.forwardRef(
   ({ className, defaultValue = "", value: controlledValue, onValueChange, children, ...props }, ref) => {
-    const [uncontrolledValue, setUncontrolledValue] = React20.useState(defaultValue);
+    const [uncontrolledValue, setUncontrolledValue] = React21.useState(defaultValue);
     const value = controlledValue !== void 0 ? controlledValue : uncontrolledValue;
-    const handleValueChange = React20.useCallback(
+    const handleValueChange = React21.useCallback(
       (newValue) => {
         if (controlledValue === void 0) {
           setUncontrolledValue(newValue);
@@ -26794,7 +26798,7 @@ var Tabs = React20.forwardRef(
   }
 );
 Tabs.displayName = "Tabs";
-var TabsList = React20.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+var TabsList = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   "div",
   {
     ref,
@@ -26807,7 +26811,7 @@ var TabsList = React20.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = "TabsList";
-var TabsTrigger = React20.forwardRef(
+var TabsTrigger = React21.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue, onValueChange } = useTabsContext();
     const isSelected = value === selectedValue;
@@ -26833,7 +26837,7 @@ var TabsTrigger = React20.forwardRef(
   }
 );
 TabsTrigger.displayName = "TabsTrigger";
-var TabsContent = React20.forwardRef(
+var TabsContent = React21.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue } = useTabsContext();
     if (value !== selectedValue) {
@@ -26843,7 +26847,7 @@ var TabsContent = React20.forwardRef(
   }
 );
 TabsContent.displayName = "TabsContent";
-var Collapsible = React20.forwardRef(
+var Collapsible = React21.forwardRef(
   ({
     className,
     title,
@@ -26854,7 +26858,7 @@ var Collapsible = React20.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [uncontrolledOpen, setUncontrolledOpen] = React20.useState(defaultOpen);
+    const [uncontrolledOpen, setUncontrolledOpen] = React21.useState(defaultOpen);
     const isOpen = controlledOpen !== void 0 ? controlledOpen : uncontrolledOpen;
     const handleToggle = () => {
       const newOpen = !isOpen;
@@ -26901,7 +26905,7 @@ __export(icon_exports, {
   Icon: () => Icon
 });
 __reExport(icon_exports, io5_star);
-var Icon = React20.forwardRef(
+var Icon = React21.forwardRef(
   ({ as: Component, className, size = 20, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       Component,
@@ -26926,10 +26930,10 @@ var icons = {
   info: IoInformationCircle
 };
 function Toast({ message, type, duration = 3e3, onClose, index = 0 }) {
-  const [isVisible, setIsVisible] = React20.useState(true);
+  const [isVisible, setIsVisible] = React21.useState(true);
   const Icon2 = icons[type];
   const topPosition = 1 + index * 4;
-  React20.useEffect(() => {
+  React21.useEffect(() => {
     if (duration === Infinity) return;
     const timer = setTimeout(() => {
       setIsVisible(false);
@@ -26976,7 +26980,7 @@ function ToastContainer({ toasts, removeToast }) {
     toast.id
   )) });
 }
-var StatCard = React20.forwardRef(
+var StatCard = React21.forwardRef(
   ({ className, label, value, change, changeType = "neutral", icon, ...props }, ref) => {
     const changeColors = {
       positive: "text-green-600 dark:text-green-400",
@@ -27013,7 +27017,7 @@ var colorStyles = {
   warning: "bg-yellow-600",
   error: "bg-red-600"
 };
-var ProgressBar = React20.forwardRef(
+var ProgressBar = React21.forwardRef(
   ({
     className,
     value,
@@ -27044,7 +27048,7 @@ var ProgressBar = React20.forwardRef(
   }
 );
 ProgressBar.displayName = "ProgressBar";
-var MetricCard = React20.forwardRef(
+var MetricCard = React21.forwardRef(
   ({
     className,
     title,
@@ -27055,7 +27059,7 @@ var MetricCard = React20.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [isOpen, setIsOpen] = React20.useState(defaultOpen);
+    const [isOpen, setIsOpen] = React21.useState(defaultOpen);
     return /* @__PURE__ */ jsx("div", { ref, className: cn("border-2 border-border bg-background", className), ...props, children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-4", children: title }),
       /* @__PURE__ */ jsxs("div", { className: "text-center py-4", children: [
@@ -27103,7 +27107,7 @@ var statusIcons = {
   info: "\u2139",
   idle: ""
 };
-var ResultsPanel = React20.forwardRef(
+var ResultsPanel = React21.forwardRef(
   ({
     className,
     title = "Results",
@@ -27217,7 +27221,7 @@ var RenderFullLogo = ({
     ]
   }
 );
-var RenderLogo = React20.forwardRef(
+var RenderLogo = React21.forwardRef(
   ({ className, variant = "full", height = 32, ...props }, ref) => {
     const LogoComponent = variant === "mark" ? RenderMark : RenderFullLogo;
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("inline-flex items-center", className), ...props, children: [
@@ -27227,15 +27231,90 @@ var RenderLogo = React20.forwardRef(
   }
 );
 RenderLogo.displayName = "RenderLogo";
-var SaveButton = React20.forwardRef(
+var positionStyles = {
+  "top-left": "top-0 left-0",
+  "top-right": "top-0 right-0",
+  "bottom-left": "bottom-0 left-0",
+  "bottom-right": "bottom-0 right-0",
+  center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+};
+var generateGridPattern = (density, isDark) => {
+  const color = isDark ? "rgb(113, 113, 122)" : "rgb(212, 212, 216)";
+  const squareSize = 90;
+  const rows = 6;
+  const cols = 6;
+  const patternSize = squareSize * cols;
+  const squares = [];
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      const distanceFromEdge = Math.min(row, col, rows - 1 - row, cols - 1 - col);
+      const threshold = Math.floor((1 - density) * (rows / 2));
+      const shouldShow = distanceFromEdge < rows / 2 - threshold;
+      if (shouldShow) {
+        squares.push(
+          `<rect x="${col * squareSize}" y="${row * squareSize}" width="${squareSize}" height="${squareSize}" fill="none" stroke="${color}" stroke-width="1"/>`
+        );
+      }
+    }
+  }
+  const svg2 = `
+    <svg width="${patternSize}" height="${patternSize}" xmlns="http://www.w3.org/2000/svg">
+      ${squares.join("")}
+    </svg>
+  `;
+  return `url('data:image/svg+xml;utf8,${encodeURIComponent(svg2)}')`;
+};
+var GridDecoration = React21.forwardRef(
+  ({ className, position = "top-left", width = 450, height = 450, opacity = 0.5, density = 0.6, style, ...props }, ref) => {
+    const widthValue = typeof width === "number" ? `${width}px` : width;
+    const heightValue = typeof height === "number" ? `${height}px` : height;
+    const [isDark, setIsDark] = React21.useState(false);
+    React21.useEffect(() => {
+      const checkDarkMode = () => {
+        setIsDark(document.documentElement.classList.contains("dark"));
+      };
+      checkDarkMode();
+      const observer = new MutationObserver(checkDarkMode);
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ["class"]
+      });
+      return () => observer.disconnect();
+    }, []);
+    const backgroundImage = React21.useMemo(
+      () => generateGridPattern(density, isDark),
+      [density, isDark]
+    );
+    return /* @__PURE__ */ jsx(
+      "div",
+      {
+        ref,
+        className: cn("absolute pointer-events-none select-none overflow-hidden", positionStyles[position], className),
+        style: {
+          width: widthValue,
+          height: heightValue,
+          opacity,
+          backgroundImage,
+          backgroundSize: "540px 540px",
+          backgroundRepeat: "repeat",
+          ...style
+        },
+        "aria-hidden": "true",
+        ...props
+      }
+    );
+  }
+);
+GridDecoration.displayName = "GridDecoration";
+var SaveButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Save" })
 );
 SaveButton.displayName = "SaveButton";
-var SaveDraftButton = React20.forwardRef(
+var SaveDraftButton = React21.forwardRef(
   ({ variant = "outline-primary", iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save Draft" })
 );
 SaveDraftButton.displayName = "SaveDraftButton";
-var SaveAndDeployButton = React20.forwardRef(
+var SaveAndDeployButton = React21.forwardRef(
   ({
     variant = "validate",
     iconLeft = /* @__PURE__ */ jsx(IoCheckmarkCircle, { className: "h-4 w-4" }),
@@ -27244,31 +27323,31 @@ var SaveAndDeployButton = React20.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save & Deploy" })
 );
 SaveAndDeployButton.displayName = "SaveAndDeployButton";
-var EditButton = React20.forwardRef(
+var EditButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoPencil, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Edit" })
 );
 EditButton.displayName = "EditButton";
-var DuplicateButton = React20.forwardRef(
+var DuplicateButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoCopy, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Duplicate" })
 );
 DuplicateButton.displayName = "DuplicateButton";
-var DeleteButton = React20.forwardRef(
+var DeleteButton = React21.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoTrash, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Delete" })
 );
 DeleteButton.displayName = "DeleteButton";
-var CreateButton = React20.forwardRef(
+var CreateButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Create" })
 );
 CreateButton.displayName = "CreateButton";
-var AddButton = React20.forwardRef(
+var AddButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Add" })
 );
 AddButton.displayName = "AddButton";
-var UploadButton = React20.forwardRef(
+var UploadButton = React21.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoCloudUpload, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Upload" })
 );
 UploadButton.displayName = "UploadButton";
-var DownloadButton = React20.forwardRef(
+var DownloadButton = React21.forwardRef(
   ({
     variant = "outline-primary",
     iconLeft = /* @__PURE__ */ jsx(IoDownload, { className: "h-4 w-4" }),
@@ -27277,35 +27356,35 @@ var DownloadButton = React20.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Download" })
 );
 DownloadButton.displayName = "DownloadButton";
-var DeployButton = React20.forwardRef(
+var DeployButton = React21.forwardRef(
   ({ variant = "validate", iconLeft = /* @__PURE__ */ jsx(IoRocket, { className: "h-5 w-5" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Deploy" })
 );
 DeployButton.displayName = "DeployButton";
-var RestartButton = React20.forwardRef(
+var RestartButton = React21.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoRefresh, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Restart" })
 );
 RestartButton.displayName = "RestartButton";
-var PauseButton = React20.forwardRef(
+var PauseButton = React21.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoPause, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Pause" })
 );
 PauseButton.displayName = "PauseButton";
-var StopButton = React20.forwardRef(
+var StopButton = React21.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoClose, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Stop" })
 );
 StopButton.displayName = "StopButton";
-var ContinueButton = React20.forwardRef(
+var ContinueButton = React21.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Continue" })
 );
 ContinueButton.displayName = "ContinueButton";
-var BackButton = React20.forwardRef(
+var BackButton = React21.forwardRef(
   ({ variant = "outline", iconLeft = /* @__PURE__ */ jsx(IoArrowBack, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Back" })
 );
 BackButton.displayName = "BackButton";
-var NextButton = React20.forwardRef(
+var NextButton = React21.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Next" })
 );
 NextButton.displayName = "NextButton";
-var Footer = React20.forwardRef(
+var Footer = React21.forwardRef(
   ({ className, copyright, links, ...props }, ref) => {
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const defaultCopyright = `\xA9 ${currentYear} Render. All rights reserved.`;
@@ -27332,7 +27411,7 @@ var Footer = React20.forwardRef(
   }
 );
 Footer.displayName = "Footer";
-var Navigation = React20.forwardRef(
+var Navigation = React21.forwardRef(
   ({ className, logo, links = [], actions, ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "nav",
@@ -27362,7 +27441,7 @@ var Navigation = React20.forwardRef(
   }
 );
 Navigation.displayName = "Navigation";
-var HeroMinimal = React20.forwardRef(
+var HeroMinimal = React21.forwardRef(
   ({ className, title, subtitle, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "section",
@@ -27380,7 +27459,7 @@ var HeroMinimal = React20.forwardRef(
   }
 );
 HeroMinimal.displayName = "HeroMinimal";
-var EditorLayout = React20.forwardRef(
+var EditorLayout = React21.forwardRef(
   ({ className, title, description, editor, results, actions, links, ...props }, ref) => {
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("flex min-h-screen flex-col", className), ...props, children: [
       (title || description || links) && /* @__PURE__ */ jsx("header", { className: "border-b-2 border-border bg-background px-6 py-8", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-7xl", children: [
@@ -27399,7 +27478,7 @@ var EditorLayout = React20.forwardRef(
   }
 );
 EditorLayout.displayName = "EditorLayout";
-var MDXContent = React20.forwardRef(
+var MDXContent = React21.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -27439,6 +27518,6 @@ var MDXContent = React20.forwardRef(
 );
 MDXContent.displayName = "MDXContent";
 
-export { AddButton, Alert, BackButton, Button, ButtonGroup, CodeBlock, CodeEditor, Collapsible, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, Footer, FormField, HeroMinimal, Icon, Input, Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, UploadButton, cn };
+export { AddButton, Alert, BackButton, Button, ButtonGroup, CodeBlock, CodeEditor, Collapsible, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, UploadButton, cn };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

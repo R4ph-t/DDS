@@ -30,7 +30,60 @@ Add the DDS styles to your project:
 @import 'render-dds/styles';
 ```
 
-### 2. Configure Tailwind
+### 2. Include Fonts
+
+The design system uses **Inter** (body text) and **Roboto Light** (headers) as free alternatives to Render's brand fonts.
+
+**For Next.js projects** (recommended):
+
+```tsx
+// app/layout.tsx
+import { Inter, Roboto } from 'next/font/google'
+
+const inter = Inter({ 
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const roboto = Roboto({ 
+  weight: '300',
+  subsets: ['latin'],
+  variable: '--font-roboto',
+})
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={`${inter.variable} ${roboto.variable}`}>
+      <body>{children}</body>
+    </html>
+  )
+}
+```
+
+Then update your CSS:
+
+```css
+/* app/globals.css */
+@import 'render-dds/styles';
+
+body {
+  font-family: var(--font-inter), 'Inter', -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-roboto), 'Roboto', -apple-system, sans-serif;
+}
+```
+
+**For other projects**, add to your HTML:
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300&display=swap" rel="stylesheet">
+```
+
+### 3. Configure Tailwind
 
 Use the DDS Tailwind preset (recommended):
 
@@ -62,7 +115,7 @@ export default {
 }
 ```
 
-### 3. Import Components
+### 4. Import Components
 
 ```tsx
 import { Button, Alert, Footer, RenderLogo } from 'render-dds'
@@ -74,7 +127,7 @@ export default function MyDemo() {
       <Alert variant="info">
         Welcome to Render!
       </Alert>
-      <Button variant="primary">
+      <Button variant="default">
         Deploy Now
       </Button>
     </div>
@@ -82,7 +135,7 @@ export default function MyDemo() {
 }
 ```
 
-### 4. Using MDX Content (Optional)
+### 5. Using MDX Content (Optional)
 
 For rich text content, use the `MDXContent` component:
 
@@ -126,6 +179,7 @@ export default function BlogPost() {
 - **MetricCard** - Collapsible metric cards
 - **ResultsPanel** - Validation results display
 - **RenderLogo** - Render branding (mark or full logo)
+- **GridDecoration** - Decorative 90x90px grid background pattern
 - **Icon** - Ionicons 5 icons
 
 ### Block Components

@@ -21,34 +21,34 @@ const alertConfig = {
   info: {
     icon: IoInformationCircle,
     containerClass:
-      "border-l-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
+      "border-blue-500 bg-blue-50 dark:bg-blue-950/30 text-blue-900 dark:text-blue-100",
     iconClass: "text-blue-500",
     titleClass: "text-blue-900 dark:text-blue-100",
   },
   warning: {
     icon: IoWarning,
     containerClass:
-      "border-l-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
+      "border-yellow-500 bg-yellow-50 dark:bg-yellow-950/30 text-yellow-900 dark:text-yellow-100",
     iconClass: "text-yellow-500",
     titleClass: "text-yellow-900 dark:text-yellow-100",
   },
   error: {
     icon: IoCloseCircle,
-    containerClass: "border-l-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
+    containerClass: "border-red-500 bg-red-50 dark:bg-red-950/30 text-red-900 dark:text-red-100",
     iconClass: "text-red-500",
     titleClass: "text-red-900 dark:text-red-100",
   },
   success: {
     icon: IoCheckmarkCircle,
     containerClass:
-      "border-l-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
+      "border-teal-500 bg-teal-50 dark:bg-teal-950/30 text-teal-900 dark:text-teal-100",
     iconClass: "text-teal-500",
     titleClass: "text-teal-900 dark:text-teal-100",
   },
   help: {
     icon: IoHelpCircle,
     containerClass:
-      "border-l-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
+      "border-purple-500 bg-purple-50 dark:bg-purple-950/30 text-purple-900 dark:text-purple-100",
     iconClass: "text-purple-500",
     titleClass: "text-purple-900 dark:text-purple-100",
   },
@@ -63,7 +63,11 @@ const Alert = React.forwardRef<HTMLDivElement, AlertProps>(
       <div
         ref={ref}
         role="alert"
-        className={cn("relative w-full border-l-4 p-4", config.containerClass, className)}
+        className={cn(
+          "relative w-full border-l-4 border-solid p-4",
+          config.containerClass,
+          className
+        )}
         {...props}
       >
         <div className="flex gap-3">

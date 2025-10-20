@@ -21,15 +21,15 @@ const StoryWithCode = createStoryWithCode(import.meta.url)
 const buttonProps = [
   {
     name: "variant",
-    type: "string",
-    defaultValue: "primary",
-    description: "Visual style variant",
+    type: '"default" | "secondary" | "validate" | "destructive" | "ghost" | "outline" | "outline-primary" | "outline-secondary" | "outline-validate" | "outline-destructive"',
+    defaultValue: "default",
+    description: "Visual style variant (default = primary purple)",
   },
   {
     name: "size",
-    type: "string",
+    type: '"sm" | "default" | "lg" | "icon"',
     defaultValue: "default",
-    description: "Button size: sm, default, lg, icon",
+    description: "Button size",
   },
   {
     name: "disabled",
