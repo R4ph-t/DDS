@@ -1,11 +1,14 @@
 /** @type {import('@ladle/react').UserConfig} */
 export default {
-  stories: 'components/**/*.stories.{js,jsx,ts,tsx}',
+  stories: 'templates/components/**/*.stories.tsx',
   viteConfig: '.ladle/vite.config.mjs',
+  appendToHead: `<style>
+    .ladle-wrapper { flex-direction: row-reverse; }
+  </style>`,
   addons: {
     theme: {
       enabled: true,
-      defaultState: 'light',
+      defaultState: 'dark',
     },
     mode: {
       enabled: true,

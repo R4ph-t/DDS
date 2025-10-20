@@ -12,27 +12,16 @@ const HeroMinimal = React.forwardRef<HTMLElement, HeroMinimalProps>(
     return (
       <section
         ref={ref}
-        className={cn(
-          "border-b-2 border-border bg-background py-20 px-6 text-center",
-          className
-        )}
+        className={cn("border-b-2 border-border bg-background py-20 px-6 text-center", className)}
         {...props}
       >
         <div className="mx-auto max-w-4xl">
-          {title && (
-            <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl">
-              {title}
-            </h1>
-          )}
+          {title && <h1 className="mb-6 text-5xl font-bold tracking-tight sm:text-6xl">{title}</h1>}
           {subtitle && (
-            <p className="mx-auto mb-10 max-w-2xl text-xl text-muted-foreground">
-              {subtitle}
-            </p>
+            <p className="mx-auto mb-10 max-w-2xl text-xl text-muted-foreground">{subtitle}</p>
           )}
           {children && (
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {children}
-            </div>
+            <div className="flex flex-wrap items-center justify-center gap-4">{children}</div>
           )}
         </div>
       </section>
@@ -43,4 +32,3 @@ const HeroMinimal = React.forwardRef<HTMLElement, HeroMinimalProps>(
 HeroMinimal.displayName = "HeroMinimal"
 
 export { HeroMinimal }
-

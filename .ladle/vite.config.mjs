@@ -6,8 +6,13 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
+      '@/components': path.resolve(process.cwd(), './templates/components'),
+      '@/lib': path.resolve(process.cwd(), './lib'),
       '@': path.resolve(process.cwd(), './'),
     },
+  },
+  css: {
+    postcss: './postcss.config.mjs',
   },
 })
 

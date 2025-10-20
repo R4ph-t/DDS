@@ -11,19 +11,7 @@ export interface EditorLayoutProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 const EditorLayout = React.forwardRef<HTMLDivElement, EditorLayoutProps>(
-  (
-    {
-      className,
-      title,
-      description,
-      editor,
-      results,
-      actions,
-      links,
-      ...props
-    },
-    ref
-  ) => {
+  ({ className, title, description, editor, results, actions, links, ...props }, ref) => {
     return (
       <div ref={ref} className={cn("flex min-h-screen flex-col", className)} {...props}>
         {/* Header */}
@@ -31,17 +19,11 @@ const EditorLayout = React.forwardRef<HTMLDivElement, EditorLayoutProps>(
           <header className="border-b-2 border-border bg-background px-6 py-8">
             <div className="mx-auto max-w-7xl">
               {title && <h1 className="text-4xl font-bold mb-3">{title}</h1>}
-              {description && (
-                <p className="text-lg text-muted-foreground mb-4">{description}</p>
-              )}
+              {description && <p className="text-lg text-muted-foreground mb-4">{description}</p>}
               {links && links.length > 0 && (
                 <div className="flex gap-4">
                   {links.map((link, i) => (
-                    <a
-                      key={i}
-                      href={link.href}
-                      className="text-sm text-primary hover:underline"
-                    >
+                    <a key={i} href={link.href} className="text-sm text-primary hover:underline">
                       {link.label}
                     </a>
                   ))}
@@ -58,17 +40,11 @@ const EditorLayout = React.forwardRef<HTMLDivElement, EditorLayoutProps>(
               {/* Editor Section */}
               <div className="space-y-4">
                 {editor}
-                {actions && (
-                  <div className="flex gap-3">
-                    {actions}
-                  </div>
-                )}
+                {actions && <div className="flex gap-3">{actions}</div>}
               </div>
 
               {/* Results Section */}
-              <div className="h-[600px]">
-                {results}
-              </div>
+              <div className="h-[600px]">{results}</div>
             </div>
           </div>
         </main>
@@ -80,4 +56,3 @@ const EditorLayout = React.forwardRef<HTMLDivElement, EditorLayoutProps>(
 EditorLayout.displayName = "EditorLayout"
 
 export { EditorLayout }
-

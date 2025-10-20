@@ -1,6 +1,38 @@
 {
   "components": [
     {
+      "name": "button",
+      "type": "ui",
+      "description": "Button component with multiple variants and sizes",
+      "dependencies": [],
+      "files": ["ui/button.tsx"],
+      "stories": ["ui/button.stories.tsx"]
+    },
+    {
+      "name": "button-actions",
+      "type": "ui",
+      "description": "Pre-configured action buttons (Save, Deploy, Delete, etc.) with icons",
+      "dependencies": ["button"],
+      "files": ["ui/button-actions.tsx"],
+      "stories": ["ui/button-actions.stories.tsx"]
+    },
+    {
+      "name": "input",
+      "type": "ui",
+      "description": "Text input component",
+      "dependencies": [],
+      "files": ["ui/input.tsx"],
+      "stories": []
+    },
+    {
+      "name": "label",
+      "type": "ui",
+      "description": "Form label component",
+      "dependencies": [],
+      "files": ["ui/label.tsx"],
+      "stories": []
+    },
+    {
       "name": "navigation",
       "type": "blocks",
       "description": "Clean navigation bar with logo and links",
@@ -71,6 +103,38 @@
       "dependencies": ["input", "label"],
       "files": ["ui/form-field.tsx"],
       "stories": ["ui/form-field.stories.tsx"]
+    },
+    {
+      "name": "alert",
+      "type": "ui",
+      "description": "Alert/callout component with variants (info, warning, error, success, help)",
+      "dependencies": [],
+      "files": ["ui/alert.tsx"],
+      "stories": ["ui/alert.stories.tsx"]
+    },
+    {
+      "name": "tabs",
+      "type": "ui",
+      "description": "Tabs component for switching between content panels",
+      "dependencies": [],
+      "files": ["ui/tabs.tsx"],
+      "stories": ["ui/tabs.stories.tsx"]
+    },
+    {
+      "name": "collapsible",
+      "type": "ui",
+      "description": "Collapsible/expandable component for sections and FAQs",
+      "dependencies": [],
+      "files": ["ui/collapsible.tsx"],
+      "stories": ["ui/collapsible.stories.tsx"]
+    },
+    {
+      "name": "icon",
+      "type": "ui",
+      "description": "Icon utilities and react-icons integration",
+      "dependencies": [],
+      "files": ["ui/icon.tsx"],
+      "stories": ["ui/icon.stories.tsx"]
     },
     {
       "name": "hero-minimal",

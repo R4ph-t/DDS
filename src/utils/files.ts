@@ -1,16 +1,19 @@
-import fs from 'fs-extra'
-import path from 'path'
-import { fileURLToPath } from 'url'
+import fs from "fs-extra"
+import path from "path"
+import { fileURLToPath } from "url"
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export const getTemplateDir = () => {
-  return path.join(__dirname, '..', 'templates')
+  // When running from dist/index.js, __dirname will be /path/to/DDS/dist
+  // Templates are in dist/templates
+  return path.join(__dirname, "templates")
 }
 
 export const getComponentsDir = () => {
-  return path.join(__dirname, '..', '..', 'templates', 'components')
+  // Components are in dist/templates/components
+  return path.join(__dirname, "templates", "components")
 }
 
 export async function fileExists(filePath: string): Promise<boolean> {
@@ -22,28 +25,24 @@ export async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
-export async function copyTemplate(
-  templateName: string,
-  targetPath: string
-): Promise<void> {
+export async function copyTemplate(templateName: string, targetPath: string): Promise<void> {
   const templateDir = getTemplateDir()
   const templatePath = path.join(templateDir, templateName)
-  
+
   if (!(await fileExists(templatePath))) {
     throw new Error(`Template ${templateName} not found`)
   }
-  
+
   await fs.copy(templatePath, targetPath)
 }
 
 export async function readTemplate(templateName: string): Promise<string> {
   const templateDir = getTemplateDir()
   const templatePath = path.join(templateDir, templateName)
-  
+
   if (!(await fileExists(templatePath))) {
     throw new Error(`Template ${templateName} not found`)
   }
-  
-  return fs.readFile(templatePath, 'utf-8')
-}
 
+  return fs.readFile(templatePath, "utf-8")
+}

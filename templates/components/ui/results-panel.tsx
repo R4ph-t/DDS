@@ -15,10 +15,11 @@ export interface ResultsPanelProps extends React.HTMLAttributes<HTMLDivElement> 
 }
 
 const statusStyles = {
-  success: "border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
-  error: "border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
-  warning: "border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
-  info: "border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
+  success: "!border-green-600 bg-green-50 text-green-900 dark:bg-green-950 dark:text-green-100",
+  error: "!border-red-600 bg-red-50 text-red-900 dark:bg-red-950 dark:text-red-100",
+  warning:
+    "!border-yellow-600 bg-yellow-50 text-yellow-900 dark:bg-yellow-950 dark:text-yellow-100",
+  info: "!border-blue-600 bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100",
   idle: "border-border bg-muted text-muted-foreground",
 }
 
@@ -59,13 +60,7 @@ const ResultsPanel = React.forwardRef<HTMLDivElement, ResultsPanelProps>(
           ) : (
             <div className="space-y-3">
               {results.map((result, i) => (
-                <div
-                  key={i}
-                  className={cn(
-                    "border-2 p-3",
-                    statusStyles[result.type]
-                  )}
-                >
+                <div key={i} className={cn("border p-3", statusStyles[result.type])}>
                   <div className="flex items-start gap-2">
                     <span className="font-bold">{statusIcons[result.type]}</span>
                     <div className="flex-1">
@@ -88,4 +83,3 @@ const ResultsPanel = React.forwardRef<HTMLDivElement, ResultsPanelProps>(
 ResultsPanel.displayName = "ResultsPanel"
 
 export { ResultsPanel }
-

@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback } from "react"
 
-export type ToastType = 'success' | 'error' | 'info'
+export type ToastType = "success" | "error" | "info"
 
 interface Toast {
   id: string
@@ -11,7 +11,7 @@ interface Toast {
 export function useToast() {
   const [toasts, setToasts] = useState<Toast[]>([])
 
-  const addToast = useCallback((message: string, type: ToastType = 'info') => {
+  const addToast = useCallback((message: string, type: ToastType = "info") => {
     const id = Date.now().toString() + Math.random().toString(36)
     setToasts((prev) => [...prev, { id, message, type }])
   }, [])
@@ -20,9 +20,9 @@ export function useToast() {
     setToasts((prev) => prev.filter((toast) => toast.id !== id))
   }, [])
 
-  const success = useCallback((message: string) => addToast(message, 'success'), [addToast])
-  const error = useCallback((message: string) => addToast(message, 'error'), [addToast])
-  const info = useCallback((message: string) => addToast(message, 'info'), [addToast])
+  const success = useCallback((message: string) => addToast(message, "success"), [addToast])
+  const error = useCallback((message: string) => addToast(message, "error"), [addToast])
+  const info = useCallback((message: string) => addToast(message, "info"), [addToast])
 
   return {
     toasts,
@@ -33,4 +33,3 @@ export function useToast() {
     info,
   }
 }
-

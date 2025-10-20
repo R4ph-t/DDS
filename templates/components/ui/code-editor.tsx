@@ -65,4 +65,3 @@ const CodeEditor = React.forwardRef<HTMLDivElement, CodeEditorProps>(
 CodeEditor.displayName = "CodeEditor"
 
 export { CodeEditor }
-

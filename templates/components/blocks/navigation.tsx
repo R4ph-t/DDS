@@ -42,4 +42,3 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
 Navigation.displayName = "Navigation"
 
 export { Navigation }
-

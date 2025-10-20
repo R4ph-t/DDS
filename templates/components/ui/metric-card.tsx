@@ -29,19 +29,13 @@ const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
     const [isOpen, setIsOpen] = React.useState(defaultOpen)
 
     return (
-      <div
-        ref={ref}
-        className={cn("border-2 border-border bg-background", className)}
-        {...props}
-      >
+      <div ref={ref} className={cn("border-2 border-border bg-background", className)} {...props}>
         <div className="p-6">
           <h3 className="text-lg font-semibold mb-4">{title}</h3>
 
           <div className="text-center py-4">
             <div className="text-3xl font-bold mb-2">{value}</div>
-            {subtitle && (
-              <p className="text-xs text-muted-foreground">{subtitle}</p>
-            )}
+            {subtitle && <p className="text-xs text-muted-foreground">{subtitle}</p>}
           </div>
 
           {collapsible && children && (
@@ -52,18 +46,11 @@ const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
               >
                 <span>{isOpen ? "Hide" : "Show"} detailed breakdown</span>
                 <ChevronDown
-                  className={cn(
-                    "w-4 h-4 transition-transform",
-                    isOpen && "rotate-180"
-                  )}
+                  className={cn("w-4 h-4 transition-transform", isOpen && "rotate-180")}
                 />
               </button>
 
-              {isOpen && (
-                <div className="mt-4 pt-4 border-t-2 border-border">
-                  {children}
-                </div>
-              )}
+              {isOpen && <div className="mt-4 pt-4 border-t-2 border-border">{children}</div>}
             </>
           )}
 
@@ -79,4 +66,3 @@ const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
 MetricCard.displayName = "MetricCard"
 
 export { MetricCard }
-

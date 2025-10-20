@@ -1,9 +1,9 @@
-import * as p from '@clack/prompts'
-import fs from 'fs-extra'
-import path from 'path'
-import { logger } from '../utils/logger.js'
-import { fileExists, getComponentsDir } from '../utils/files.js'
-import ora from 'ora'
+import * as p from "@clack/prompts"
+import fs from "fs-extra"
+import path from "path"
+import { logger } from "../utils/logger.js"
+import { fileExists, getComponentsDir } from "../utils/files.js"
+import ora from "ora"
 
 interface ComponentRegistry {
   components: Component[]
@@ -11,7 +11,7 @@ interface ComponentRegistry {
 
 interface Component {
   name: string
-  type: 'ui' | 'blocks'
+  type: "ui" | "blocks"
   description: string
   dependencies: string[]
   files: string[]
@@ -19,17 +19,17 @@ interface Component {
 }
 
 async function loadRegistry(): Promise<ComponentRegistry> {
-  const registryPath = path.join(getComponentsDir(), 'registry.json')
+  const registryPath = path.join(getComponentsDir(), "registry.json")
   return fs.readJson(registryPath)
 }
 
 export async function add(components: string[]) {
-  console.log('')
-  p.intro('📦 Add DDS Components')
+  console.log("")
+  p.intro("📦 Add DDS Components")
 
   // Check if DDS is initialized
-  if (!(await fileExists('components.json'))) {
-    p.cancel('DDS not initialized. Run `dds init` first.')
+  if (!(await fileExists("components.json"))) {
+    p.cancel("DDS not initialized. Run `dds init` first.")
     process.exit(1)
   }
 
@@ -45,20 +45,20 @@ export async function add(components: string[]) {
     }))
 
     const selection = await p.multiselect({
-      message: 'Select components to add',
+      message: "Select components to add",
       options: choices,
       required: true,
     })
 
     if (p.isCancel(selection)) {
-      p.cancel('Operation cancelled.')
+      p.cancel("Operation cancelled.")
       process.exit(0)
     }
 
     selectedComponents = selection as string[]
   }
 
-  const spinner = ora('Adding components...').start()
+  const spinner = ora("Adding components...").start()
 
   try {
     for (const componentName of selectedComponents) {
@@ -75,7 +75,7 @@ export async function add(components: string[]) {
       const componentsDir = getComponentsDir()
       for (const file of component.files) {
         const sourcePath = path.join(componentsDir, file)
-        const targetPath = path.join(process.cwd(), 'components', file)
+        const targetPath = path.join(process.cwd(), "components", file)
 
         await fs.ensureDir(path.dirname(targetPath))
         await fs.copy(sourcePath, targetPath)
@@ -85,7 +85,7 @@ export async function add(components: string[]) {
       for (const storyFile of component.stories) {
         const sourcePath = path.join(componentsDir, storyFile)
         if (await fileExists(sourcePath)) {
-          const targetPath = path.join(process.cwd(), 'components', storyFile)
+          const targetPath = path.join(process.cwd(), "components", storyFile)
           await fs.ensureDir(path.dirname(targetPath))
           await fs.copy(sourcePath, targetPath)
         }
@@ -96,18 +96,17 @@ export async function add(components: string[]) {
       // Show dependency warnings
       if (component.dependencies.length > 0) {
         logger.info(
-          `  Dependencies: ${component.dependencies.join(', ')} (install with shadcn if needed)`
+          `  Dependencies: ${component.dependencies.join(", ")} (install with shadcn if needed)`
         )
       }
     }
 
-    p.outro('✨ Components added successfully!')
+    p.outro("✨ Components added successfully!")
   } catch (error) {
-    spinner.fail('Failed to add components')
+    spinner.fail("Failed to add components")
     if (error instanceof Error) {
       logger.error(error.message)
     }
     process.exit(1)
   }
 }
-

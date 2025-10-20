@@ -4,12 +4,13 @@ A CLI tool for rapidly setting up beautiful demo projects with pre-built compone
 
 ## Features
 
-- 🎨 **Square, clean design** - No rounded corners, solid colors
+- 🎨 **Square, clean design** - No rounded corners, solid colors (matches Render style)
 - 🚀 **Built on shadcn/ui** - Extends shadcn with demo-specific components
 - 💻 **Code highlighting** - Syntax highlighting with Shiki
-- 📦 **Component library** - Navigation, forms, stats, and more
-- 👀 **Ladle integration** - Preview components in isolation
+- ✏️ **Code editing** - Interactive CodeMirror editor
+- 📦 **Component library** - Navigation, forms, code editors, metrics, and more
 - ⚡ **Fast setup** - Get started in minutes
+- 🔧 **Own the code** - Components copied to your project, fully customizable
 
 ## Installation
 
@@ -33,10 +34,11 @@ npx dds-cli init
 ```
 
 This will:
-- Install Tailwind CSS and dependencies
-- Set up shadcn/ui
-- Configure square corners and clean styling
-- Optionally install Ladle for component preview
+- Install Tailwind CSS with square corners configuration
+- Set up shadcn/ui integration
+- Install Shiki for syntax highlighting
+- Install CodeMirror for code editing
+- Configure utilities and styles
 
 ### 2. Add components
 
@@ -48,11 +50,9 @@ npx dds-cli add navigation code-block
 npx dds-cli add
 ```
 
-### 3. Preview components (if Ladle installed)
+### 3. Use components in your app
 
-```bash
-npm run ladle
-```
+Components work directly in your Next.js pages - no preview tool needed!
 
 ## Available Components
 
