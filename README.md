@@ -4,8 +4,17 @@ A React component library for building beautiful Render demos. Built with TypeSc
 
 ## Installation
 
+Install directly from GitHub:
+
 ```bash
-npm install render-dds
+npm install github:R4ph-t/DDS
+```
+
+Or with a specific version/tag:
+
+```bash
+npm install github:R4ph-t/DDS#v0.1.0
+npm install github:R4ph-t/DDS#main
 ```
 
 ## Usage

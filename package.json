@@ -43,6 +43,10 @@
   ],
   "author": "Render",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R4ph-t/DDS.git"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
