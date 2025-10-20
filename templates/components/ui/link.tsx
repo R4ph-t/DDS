@@ -24,9 +24,10 @@ const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(
   ) => {
     const variantStyles = {
       default:
-        "text-primary hover:text-primary/80 visited:text-purple-600 dark:visited:text-purple-400",
-      muted: "text-muted-foreground hover:text-foreground visited:text-muted-foreground/80",
-      subtle: "text-foreground hover:text-primary visited:text-purple-600 dark:visited:text-purple-400",
+        "text-primary hover:text-primary/80 visited:text-purple-900 dark:visited:text-purple-300",
+      muted: "text-muted-foreground hover:text-foreground visited:text-muted-foreground/60",
+      subtle:
+        "text-foreground hover:text-primary visited:text-purple-900 dark:visited:text-purple-300",
     }
 
     const underlineStyles = {
