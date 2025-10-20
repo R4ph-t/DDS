@@ -8,9 +8,14 @@ export default defineConfig({
   clean: true,
   external: ["react", "react-dom", "tailwindcss"],
   treeshake: true,
-  splitting: false,
+  splitting: true,
   loader: {
     ".css": "copy",
   },
   outDir: "dist",
+  esbuildOptions(options) {
+    options.banner = {
+      js: '"use client";',
+    }
+  },
 })
