@@ -3,8 +3,7 @@ import { cn } from "../../lib/utils"
 
 export type ResultStatus = "success" | "error" | "warning" | "info" | "idle"
 
-export interface ResultsPanelProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "results"> {
+export interface ResultsPanelProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "results"> {
   title?: string
   status?: ResultStatus
   results?: Array<{

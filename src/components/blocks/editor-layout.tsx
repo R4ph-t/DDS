@@ -1,8 +1,7 @@
 import * as React from "react"
 import { cn } from "../../lib/utils"
 
-export interface EditorLayoutProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "results"> {
+export interface EditorLayoutProps extends Omit<React.HTMLAttributes<HTMLDivElement>, "results"> {
   title?: string
   description?: string
   editor?: React.ReactNode
