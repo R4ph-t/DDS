@@ -165,6 +165,47 @@ Full TypeScript support with exported types:
 import type { ButtonProps, AlertProps } from 'render-dds'
 ```
 
+## Development
+
+### Publishing a New Version
+
+Use the automated release scripts:
+
+```bash
+# For bug fixes (0.1.2 → 0.1.3)
+npm run release:patch
+
+# For new features (0.1.2 → 0.2.0)
+npm run release:minor
+
+# For breaking changes (0.1.2 → 1.0.0)
+npm run release:major
+```
+
+Each command will:
+1. Build the package
+2. Bump the version in `package.json`
+3. Create a git commit with the version
+4. Create a git tag (e.g., `v0.1.3`)
+5. Push to GitHub with tags
+
+### Manual Development Workflow
+
+If you prefer manual control:
+
+```bash
+# Make your changes
+npm run build
+
+# Commit changes
+git add -A
+git commit -m "Your changes"
+
+# Create version tag
+git tag v0.1.x
+git push && git push --tags
+```
+
 ## License
 
 MIT

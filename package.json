@@ -30,7 +30,10 @@
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "release:patch": "npm run build && npm version patch && git push && git push --tags",
+    "release:minor": "npm run build && npm version minor && git push && git push --tags",
+    "release:major": "npm run build && npm version major && git push && git push --tags"
   },
   "keywords": [
     "react",
