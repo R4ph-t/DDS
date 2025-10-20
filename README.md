@@ -82,6 +82,30 @@ export default function MyDemo() {
 }
 ```
 
+### 4. Using MDX Content (Optional)
+
+For rich text content, use the `MDXContent` component:
+
+```tsx
+import { MDXContent } from 'render-dds'
+
+export default function BlogPost() {
+  return (
+    <MDXContent>
+      <h1>My Blog Post</h1>
+      <p>This content is beautifully styled with <code>@tailwindcss/typography</code>.</p>
+      <ul>
+        <li>Automatic heading styles</li>
+        <li>Beautiful links and code blocks</li>
+        <li>Dark mode support</li>
+      </ul>
+    </MDXContent>
+  )
+}
+```
+
+**Note:** The `@tailwindcss/typography` plugin is included in the preset.
+
 ## Available Components
 
 ### UI Components
@@ -108,6 +132,7 @@ export default function MyDemo() {
 - **Navigation** - Navigation bar
 - **HeroMinimal** - Minimal hero section
 - **EditorLayout** - Full-page editor layout
+- **MDXContent** - Rich text container with typography styles
 
 ### Action Buttons
 Pre-configured buttons for common actions:

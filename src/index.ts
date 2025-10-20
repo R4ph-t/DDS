@@ -84,5 +84,8 @@ export type { HeroMinimalProps } from "./components/blocks/hero-minimal"
 export { EditorLayout } from "./components/blocks/editor-layout"
 export type { EditorLayoutProps } from "./components/blocks/editor-layout"
 
+export { MDXContent } from "./components/blocks/mdx-content"
+export type { MDXContentProps } from "./components/blocks/mdx-content"
+
 // Utils
 export { cn } from "./lib/utils"
