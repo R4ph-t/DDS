@@ -27238,8 +27238,8 @@ var positionStyles = {
   "bottom-right": "bottom-0 right-0",
   center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 };
-var generateGridPattern = (density, isDark) => {
-  const color = isDark ? "rgb(113, 113, 122)" : "rgb(212, 212, 216)";
+var generateGridPattern = (density, isDark, orientation) => {
+  const color = isDark ? "rgb(63, 63, 70)" : "rgb(228, 228, 231)";
   const squareSize = 90;
   const rows = 6;
   const cols = 6;
@@ -27247,9 +27247,23 @@ var generateGridPattern = (density, isDark) => {
   const squares = [];
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      const distanceFromEdge = Math.min(row, col, rows - 1 - row, cols - 1 - col);
-      const threshold = Math.floor((1 - density) * (rows / 2));
-      const shouldShow = distanceFromEdge < rows / 2 - threshold;
+      let diagonalDistance;
+      switch (orientation) {
+        case "top-left":
+          diagonalDistance = row + col;
+          break;
+        case "top-right":
+          diagonalDistance = row + (cols - 1 - col);
+          break;
+        case "bottom-left":
+          diagonalDistance = rows - 1 - row + col;
+          break;
+        case "bottom-right":
+          diagonalDistance = rows - 1 - row + (cols - 1 - col);
+          break;
+      }
+      const maxDistance = Math.floor((1 - density) * (rows + cols - 2));
+      const shouldShow = diagonalDistance <= maxDistance;
       if (shouldShow) {
         squares.push(
           `<rect x="${col * squareSize}" y="${row * squareSize}" width="${squareSize}" height="${squareSize}" fill="none" stroke="${color}" stroke-width="1"/>`
@@ -27264,8 +27278,30 @@ var generateGridPattern = (density, isDark) => {
   `;
   return `url('data:image/svg+xml;utf8,${encodeURIComponent(svg2)}')`;
 };
+var getBackgroundPosition = (orientation) => {
+  switch (orientation) {
+    case "top-left":
+      return "top left";
+    case "top-right":
+      return "top right";
+    case "bottom-left":
+      return "bottom left";
+    case "bottom-right":
+      return "bottom right";
+  }
+};
 var GridDecoration = React21.forwardRef(
-  ({ className, position = "top-left", width = 450, height = 450, opacity = 0.5, density = 0.6, style, ...props }, ref) => {
+  ({
+    className,
+    position = "top-left",
+    orientation = "top-right",
+    width = 450,
+    height = 450,
+    opacity = 0.5,
+    density = 0.6,
+    style,
+    ...props
+  }, ref) => {
     const widthValue = typeof width === "number" ? `${width}px` : width;
     const heightValue = typeof height === "number" ? `${height}px` : height;
     const [isDark, setIsDark] = React21.useState(false);
@@ -27282,21 +27318,27 @@ var GridDecoration = React21.forwardRef(
       return () => observer.disconnect();
     }, []);
     const backgroundImage = React21.useMemo(
-      () => generateGridPattern(density, isDark),
-      [density, isDark]
+      () => generateGridPattern(density, isDark, orientation),
+      [density, isDark, orientation]
     );
+    const backgroundPosition = getBackgroundPosition(orientation);
     return /* @__PURE__ */ jsx(
       "div",
       {
         ref,
-        className: cn("absolute pointer-events-none select-none overflow-hidden", positionStyles[position], className),
+        className: cn(
+          "absolute pointer-events-none select-none overflow-hidden",
+          positionStyles[position],
+          className
+        ),
         style: {
           width: widthValue,
           height: heightValue,
           opacity,
           backgroundImage,
           backgroundSize: "540px 540px",
-          backgroundRepeat: "repeat",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition,
           ...style
         },
         "aria-hidden": "true",

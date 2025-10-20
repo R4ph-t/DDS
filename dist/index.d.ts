@@ -180,6 +180,10 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
      */
     position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
     /**
+     * Orientation of the staircase pattern
+     */
+    orientation?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+    /**
      * Width in pixels or CSS value
      */
     width?: number | string;
