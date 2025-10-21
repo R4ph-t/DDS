@@ -307,7 +307,7 @@ import { ThemeProvider, ThemeScript } from "render-dds"
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <ThemeScript />
       </head>
@@ -322,7 +322,7 @@ export default function RootLayout({ children }) {
 ```
 
 **Important:** 
-- Add `bg-background text-foreground` to your `<html>` element to use the DDS theme colors
+- Background and text colors are applied automatically from the DDS theme
 - Add `<ThemeScript />` in the `<head>` to prevent flash of unstyled content (FOUC)
 - The script MUST be in `<head>` to run before React hydrates
 
