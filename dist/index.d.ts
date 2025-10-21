@@ -370,11 +370,22 @@ declare const BackButton: React.ForwardRefExoticComponent<ButtonProps & React.Re
 declare const NextButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 
 interface FooterProps extends React.HTMLAttributes<HTMLElement> {
+    /**
+     * Custom copyright text
+     */
     copyright?: string;
+    /**
+     * Array of footer links
+     */
     links?: Array<{
         label: string;
         href: string;
     }>;
+    /**
+     * Make the footer sticky at the bottom of the viewport
+     * @default false
+     */
+    sticky?: boolean;
 }
 declare const Footer: React.ForwardRefExoticComponent<FooterProps & React.RefAttributes<HTMLElement>>;
 
@@ -391,6 +402,11 @@ interface NavigationLink {
      * Optional icon to display before the label
      */
     icon?: React.ReactNode;
+    /**
+     * Whether this link is active (current page)
+     * @default false
+     */
+    active?: boolean;
 }
 interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
     /**
@@ -410,6 +426,16 @@ interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
      * @default "left"
      */
     linksPosition?: "left" | "center" | "right";
+    /**
+     * Make the navigation sticky at the top of the viewport
+     * @default false
+     */
+    sticky?: boolean;
+    /**
+     * Current pathname to automatically determine active links (e.g., from usePathname())
+     * When provided, links are automatically marked as active if their href matches this path
+     */
+    currentPath?: string;
 }
 declare const Navigation: React.ForwardRefExoticComponent<NavigationProps & React.RefAttributes<HTMLElement>>;
 

@@ -27927,14 +27927,18 @@ var NextButton = React27.forwardRef(
 );
 NextButton.displayName = "NextButton";
 var Footer = React27.forwardRef(
-  ({ className, copyright, links, ...props }, ref) => {
+  ({ className, copyright, links, sticky = false, ...props }, ref) => {
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const defaultCopyright = `\xA9 ${currentYear} Render. All rights reserved.`;
     return /* @__PURE__ */ jsx(
       "footer",
       {
         ref,
-        className: cn("border-t border-border bg-background px-6 py-8", className),
+        className: cn(
+          "border-t border-border bg-background px-6 py-8",
+          sticky && "sticky bottom-0 z-50",
+          className
+        ),
         ...props,
         children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-7xl", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center justify-between gap-4 md:flex-row", children: [
           /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: copyright || defaultCopyright }),
@@ -27954,7 +27958,16 @@ var Footer = React27.forwardRef(
 );
 Footer.displayName = "Footer";
 var Navigation = React27.forwardRef(
-  ({ className, logo, links = [], actions, linksPosition = "left", ...props }, ref) => {
+  ({
+    className,
+    logo,
+    links = [],
+    actions,
+    linksPosition = "left",
+    sticky = false,
+    currentPath,
+    ...props
+  }, ref) => {
     return /* @__PURE__ */ jsxs(
       "nav",
       {
@@ -27962,6 +27975,7 @@ var Navigation = React27.forwardRef(
         className: cn(
           "flex items-center border-b border-border bg-background px-6 py-4",
           linksPosition === "center" && "relative min-h-[60px]",
+          sticky && "sticky top-0 z-50",
           className
         ),
         ...props,
@@ -27975,17 +27989,24 @@ var Navigation = React27.forwardRef(
                 "absolute left-1/2 -translate-x-1/2": linksPosition === "center",
                 "ml-auto": linksPosition === "right"
               }),
-              children: links.map((link, i) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs(
-                "a",
-                {
-                  href: link.href,
-                  className: "flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors",
-                  children: [
-                    link.icon && /* @__PURE__ */ jsx("span", { className: "inline-flex", children: link.icon }),
-                    link.label
-                  ]
-                }
-              ) }, i))
+              children: links.map((link, i) => {
+                const isActive = link.active !== void 0 ? link.active : currentPath === link.href;
+                return /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs(
+                  "a",
+                  {
+                    href: link.href,
+                    className: cn(
+                      "flex items-center gap-2 text-sm font-medium transition-colors",
+                      isActive ? "text-primary" : "text-foreground hover:text-primary"
+                    ),
+                    "aria-current": isActive ? "page" : void 0,
+                    children: [
+                      link.icon && /* @__PURE__ */ jsx("span", { className: "inline-flex", children: link.icon }),
+                      link.label
+                    ]
+                  }
+                ) }, i);
+              })
             }
           ),
           actions && /* @__PURE__ */ jsx(
