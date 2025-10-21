@@ -294,7 +294,7 @@ DDS components support dark mode out of the box with Tailwind's class-based dark
 @import "tailwindcss";
 @import "render-dds/styles";
 
-@variant dark (&:where(.dark, .dark *));
+@variant dark (.dark &);
 
 /* rest of your styles */
 ```

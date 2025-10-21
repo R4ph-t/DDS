@@ -1287,37 +1287,37 @@
     }
   }
   .dark\:block {
-    &:where(.dark, .dark *) {
+    .dark & {
       display: block;
     }
   }
   .dark\:hidden {
-    &:where(.dark, .dark *) {
+    .dark & {
       display: none;
     }
   }
   .dark\:border-zinc-600 {
-    &:where(.dark, .dark *) {
+    .dark & {
       border-color: var(--color-zinc-600);
     }
   }
   .dark\:border-zinc-700 {
-    &:where(.dark, .dark *) {
+    .dark & {
       border-color: var(--color-zinc-700);
     }
   }
   .dark\:border-zinc-800 {
-    &:where(.dark, .dark *) {
+    .dark & {
       border-color: var(--color-zinc-800);
     }
   }
   .dark\:bg-blue-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-blue-950);
     }
   }
   .dark\:bg-blue-950\/30 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: color-mix(in srgb, oklch(28.2% 0.091 267.935) 30%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-blue-950) 30%, transparent);
@@ -1325,12 +1325,12 @@
     }
   }
   .dark\:bg-green-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-green-950);
     }
   }
   .dark\:bg-purple-950\/30 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: color-mix(in srgb, oklch(29.1% 0.149 302.717) 30%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-purple-950) 30%, transparent);
@@ -1338,12 +1338,12 @@
     }
   }
   .dark\:bg-red-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-red-950);
     }
   }
   .dark\:bg-red-950\/30 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: color-mix(in srgb, oklch(25.8% 0.092 26.042) 30%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-red-950) 30%, transparent);
@@ -1351,7 +1351,7 @@
     }
   }
   .dark\:bg-teal-950\/30 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: color-mix(in srgb, oklch(27.7% 0.046 192.524) 30%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-teal-950) 30%, transparent);
@@ -1359,12 +1359,12 @@
     }
   }
   .dark\:bg-yellow-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-yellow-950);
     }
   }
   .dark\:bg-yellow-950\/30 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: color-mix(in srgb, oklch(28.6% 0.066 53.813) 30%, transparent);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-yellow-950) 30%, transparent);
@@ -1372,121 +1372,121 @@
     }
   }
   .dark\:bg-zinc-800 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-zinc-800);
     }
   }
   .dark\:bg-zinc-900 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-zinc-900);
     }
   }
   .dark\:bg-zinc-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       background-color: var(--color-zinc-950);
     }
   }
   .dark\:from-zinc-950 {
-    &:where(.dark, .dark *) {
+    .dark & {
       --tw-gradient-from: var(--color-zinc-950);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
   .dark\:to-zinc-900 {
-    &:where(.dark, .dark *) {
+    .dark & {
       --tw-gradient-to: var(--color-zinc-900);
       --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
     }
   }
   .dark\:text-blue-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-blue-100);
     }
   }
   .dark\:text-green-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-green-100);
     }
   }
   .dark\:text-green-400 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-green-400);
     }
   }
   .dark\:text-purple-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-purple-100);
     }
   }
   .dark\:text-purple-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-purple-300);
     }
   }
   .dark\:text-purple-400 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-purple-400);
     }
   }
   .dark\:text-red-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-red-100);
     }
   }
   .dark\:text-red-400 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-red-400);
     }
   }
   .dark\:text-teal-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-teal-100);
     }
   }
   .dark\:text-teal-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-teal-300);
     }
   }
   .dark\:text-teal-400 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-teal-400);
     }
   }
   .dark\:text-white {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-white);
     }
   }
   .dark\:text-yellow-100 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-yellow-100);
     }
   }
   .dark\:text-zinc-200 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-zinc-200);
     }
   }
   .dark\:text-zinc-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-zinc-300);
     }
   }
   .dark\:text-zinc-400 {
-    &:where(.dark, .dark *) {
+    .dark & {
       color: var(--color-zinc-400);
     }
   }
   .dark\:visited\:text-purple-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       &:visited {
         color: var(--color-purple-300);
       }
     }
   }
   .dark\:hover\:text-purple-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       &:hover {
         @media (hover: hover) {
           color: var(--color-purple-300);
@@ -1495,7 +1495,7 @@
     }
   }
   .dark\:hover\:text-teal-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       &:hover {
         @media (hover: hover) {
           color: var(--color-teal-300);
@@ -1504,7 +1504,7 @@
     }
   }
   .dark\:hover\:text-zinc-300 {
-    &:where(.dark, .dark *) {
+    .dark & {
       &:hover {
         @media (hover: hover) {
           color: var(--color-zinc-300);

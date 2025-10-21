@@ -60,7 +60,7 @@ export const Default: Story = () => (
             Add this to your globals.css for dark mode to work:
             <br />
             <code className="text-xs bg-muted px-1 py-0.5 mt-1 inline-block">
-              @variant dark (&:where(.dark, .dark *));
+              @variant dark (.dark &);
             </code>
           </p>
         </Alert>

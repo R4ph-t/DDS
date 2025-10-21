@@ -165,7 +165,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 // Add to globals.css (Tailwind v4):
-// @variant dark (&:where(.dark, .dark *));
+// @variant dark (.dark &);
 
 // Wrap your app with ThemeProvider
 <ThemeProvider>
