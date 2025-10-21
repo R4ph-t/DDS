@@ -53,7 +53,15 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
             ))}
           </ul>
         )}
-        {actions && <div className="flex items-center gap-4 ml-auto">{actions}</div>}
+        {actions && (
+          <div
+            className={cn("flex items-center gap-4", {
+              "ml-auto": linksPosition !== "right",
+            })}
+          >
+            {actions}
+          </div>
+        )}
       </nav>
     )
   }
