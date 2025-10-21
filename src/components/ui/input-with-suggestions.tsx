@@ -16,7 +16,7 @@ export interface Suggestion {
 }
 
 export interface InputWithSuggestionsProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange"> {
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "onChange" | "onSelect"> {
   /**
    * Array of suggestion items
    */
