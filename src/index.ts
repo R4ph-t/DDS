@@ -56,6 +56,16 @@ export type { RenderLogoProps } from "./components/ui/render-logo"
 export { GridDecoration } from "./components/ui/grid-decoration"
 export type { GridDecorationProps } from "./components/ui/grid-decoration"
 
+export { ThemeToggle } from "./components/ui/theme-toggle"
+export type { ThemeToggleProps } from "./components/ui/theme-toggle"
+
+// Providers
+export { ThemeProvider } from "./components/providers/theme-provider"
+export type { ThemeProviderProps, Theme } from "./components/providers/theme-provider"
+
+// Hooks
+export { useTheme } from "./components/hooks/use-theme"
+
 // Action Buttons
 export {
   SaveButton,

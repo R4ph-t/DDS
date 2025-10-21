@@ -26,7 +26,7 @@ export interface GridDecorationProps
    */
   opacity?: number
   /**
-   * Density of squares (0-1, where 1 is all squares present)
+   * Density of squares (0-1, where higher values show more squares)
    */
   density?: number
 }
@@ -74,9 +74,9 @@ const generateGridPattern = (
       }
 
       // density controls how far the staircase extends
-      // Lower density = more squares (longer staircase)
-      // Higher density = fewer squares (shorter staircase)
-      const maxDistance = Math.floor((1 - density) * (rows + cols - 2))
+      // Higher density = more squares (longer staircase)
+      // Lower density = fewer squares (shorter staircase)
+      const maxDistance = Math.floor(density * (rows + cols - 2))
       const shouldShow = diagonalDistance <= maxDistance
 
       if (shouldShow) {

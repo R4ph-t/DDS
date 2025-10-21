@@ -1,6 +1,6 @@
 "use client";
 import { __commonJS, __toESM, __export, __reExport } from './chunk-CFDED2GB.js';
-import * as React21 from 'react';
+import * as React23 from 'react';
 import { forwardRef, useRef, useImperativeHandle, useCallback, useState, useLayoutEffect, useEffect } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -8,6 +8,7 @@ import { jsxs, jsx, Fragment } from 'react/jsx-runtime';
 import * as io5_star from 'react-icons/io5';
 import { IoHelpCircle, IoCheckmarkCircle, IoCloseCircle, IoWarning, IoInformationCircle, IoOpenOutline, IoChevronDown, IoSave, IoPencil, IoCopy, IoTrash, IoAdd, IoCloudUpload, IoDownload, IoRocket, IoRefresh, IoPause, IoClose, IoArrowForward, IoArrowBack } from 'react-icons/io5';
 import { codeToHtml } from 'shiki';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 // node_modules/@babel/runtime/helpers/extends.js
 var require_extends = __commonJS({
@@ -43,7 +44,7 @@ var require_objectWithoutPropertiesLoose = __commonJS({
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
-var Button = React21.forwardRef(
+var Button = React23.forwardRef(
   ({ className, variant = "default", size = "default", iconLeft, iconRight, children, ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "button",
@@ -83,7 +84,7 @@ var Button = React21.forwardRef(
   }
 );
 Button.displayName = "Button";
-var ButtonGroup = React21.forwardRef(
+var ButtonGroup = React23.forwardRef(
   ({ className, orientation = "horizontal", children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -134,7 +135,7 @@ var alertConfig = {
     titleClass: "text-purple-900 dark:text-purple-100"
   }
 };
-var Alert = React21.forwardRef(
+var Alert = React23.forwardRef(
   ({ className, variant = "info", title, icon, showIcon = true, children, ...props }, ref) => {
     const config2 = alertConfig[variant];
     const IconComponent = config2.icon;
@@ -161,7 +162,7 @@ var Alert = React21.forwardRef(
   }
 );
 Alert.displayName = "Alert";
-var Input = React21.forwardRef(
+var Input = React23.forwardRef(
   ({ className, type, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "input",
@@ -182,7 +183,7 @@ var Input = React21.forwardRef(
   }
 );
 Input.displayName = "Input";
-var Label = React21.forwardRef(({ className, ...props }, ref) => {
+var Label = React23.forwardRef(({ className, ...props }, ref) => {
   return /* @__PURE__ */ jsx(
     "label",
     {
@@ -196,7 +197,7 @@ var Label = React21.forwardRef(({ className, ...props }, ref) => {
   );
 });
 Label.displayName = "Label";
-var Link = React21.forwardRef(
+var Link = React23.forwardRef(
   ({
     className,
     variant = "default",
@@ -239,7 +240,7 @@ var Link = React21.forwardRef(
   }
 );
 Link.displayName = "Link";
-var FormField = React21.forwardRef(
+var FormField = React23.forwardRef(
   ({ className, label, error, helperText, id: id2, ...props }, ref) => {
     const inputId = id2 || label?.toLowerCase().replace(/\s+/g, "-");
     return /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
@@ -259,7 +260,7 @@ var FormField = React21.forwardRef(
   }
 );
 FormField.displayName = "FormField";
-var CodeBlock = React21.forwardRef(
+var CodeBlock = React23.forwardRef(
   ({
     className,
     code,
@@ -268,10 +269,10 @@ var CodeBlock = React21.forwardRef(
     highlightLines = [],
     ...props
   }, ref) => {
-    const [html, setHtml] = React21.useState("");
-    const [isDark, setIsDark] = React21.useState(false);
-    const containerRef = React21.useRef(null);
-    React21.useEffect(() => {
+    const [html, setHtml] = React23.useState("");
+    const [isDark, setIsDark] = React23.useState(false);
+    const containerRef = React23.useRef(null);
+    React23.useEffect(() => {
       const detectDarkMode = () => {
         if (containerRef.current) {
           const element = containerRef.current;
@@ -289,7 +290,7 @@ var CodeBlock = React21.forwardRef(
       });
       return () => observer.disconnect();
     }, []);
-    React21.useEffect(() => {
+    React23.useEffect(() => {
       const generateHtml = async () => {
         const result = await codeToHtml(code, {
           lang: language2,
@@ -299,7 +300,7 @@ var CodeBlock = React21.forwardRef(
       };
       generateHtml();
     }, [code, language2, isDark]);
-    const mergedRef = React21.useCallback(
+    const mergedRef = React23.useCallback(
       (node) => {
         containerRef.current = node;
         if (typeof ref === "function") {
@@ -26742,7 +26743,7 @@ var languageExtensions = {
   json: [json()],
   python: [python()]
 };
-var CodeEditor = React21.forwardRef(
+var CodeEditor = React23.forwardRef(
   ({
     className,
     value,
@@ -26773,19 +26774,19 @@ var CodeEditor = React21.forwardRef(
   }
 );
 CodeEditor.displayName = "CodeEditor";
-var TabsContext = React21.createContext(void 0);
+var TabsContext = React23.createContext(void 0);
 var useTabsContext = () => {
-  const context = React21.useContext(TabsContext);
+  const context = React23.useContext(TabsContext);
   if (!context) {
     throw new Error("Tabs components must be used within a Tabs component");
   }
   return context;
 };
-var Tabs = React21.forwardRef(
+var Tabs = React23.forwardRef(
   ({ className, defaultValue = "", value: controlledValue, onValueChange, children, ...props }, ref) => {
-    const [uncontrolledValue, setUncontrolledValue] = React21.useState(defaultValue);
+    const [uncontrolledValue, setUncontrolledValue] = React23.useState(defaultValue);
     const value = controlledValue !== void 0 ? controlledValue : uncontrolledValue;
-    const handleValueChange = React21.useCallback(
+    const handleValueChange = React23.useCallback(
       (newValue) => {
         if (controlledValue === void 0) {
           setUncontrolledValue(newValue);
@@ -26798,7 +26799,7 @@ var Tabs = React21.forwardRef(
   }
 );
 Tabs.displayName = "Tabs";
-var TabsList = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+var TabsList = React23.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   "div",
   {
     ref,
@@ -26811,7 +26812,7 @@ var TabsList = React21.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = "TabsList";
-var TabsTrigger = React21.forwardRef(
+var TabsTrigger = React23.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue, onValueChange } = useTabsContext();
     const isSelected = value === selectedValue;
@@ -26837,7 +26838,7 @@ var TabsTrigger = React21.forwardRef(
   }
 );
 TabsTrigger.displayName = "TabsTrigger";
-var TabsContent = React21.forwardRef(
+var TabsContent = React23.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue } = useTabsContext();
     if (value !== selectedValue) {
@@ -26847,7 +26848,7 @@ var TabsContent = React21.forwardRef(
   }
 );
 TabsContent.displayName = "TabsContent";
-var Collapsible = React21.forwardRef(
+var Collapsible = React23.forwardRef(
   ({
     className,
     title,
@@ -26858,7 +26859,7 @@ var Collapsible = React21.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [uncontrolledOpen, setUncontrolledOpen] = React21.useState(defaultOpen);
+    const [uncontrolledOpen, setUncontrolledOpen] = React23.useState(defaultOpen);
     const isOpen = controlledOpen !== void 0 ? controlledOpen : uncontrolledOpen;
     const handleToggle = () => {
       const newOpen = !isOpen;
@@ -26905,7 +26906,7 @@ __export(icon_exports, {
   Icon: () => Icon
 });
 __reExport(icon_exports, io5_star);
-var Icon = React21.forwardRef(
+var Icon = React23.forwardRef(
   ({ as: Component, className, size = 20, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       Component,
@@ -26930,10 +26931,10 @@ var icons = {
   info: IoInformationCircle
 };
 function Toast({ message, type, duration = 3e3, onClose, index = 0 }) {
-  const [isVisible, setIsVisible] = React21.useState(true);
+  const [isVisible, setIsVisible] = React23.useState(true);
   const Icon2 = icons[type];
   const topPosition = 1 + index * 4;
-  React21.useEffect(() => {
+  React23.useEffect(() => {
     if (duration === Infinity) return;
     const timer = setTimeout(() => {
       setIsVisible(false);
@@ -26980,7 +26981,7 @@ function ToastContainer({ toasts, removeToast }) {
     toast.id
   )) });
 }
-var StatCard = React21.forwardRef(
+var StatCard = React23.forwardRef(
   ({ className, label, value, change, changeType = "neutral", icon, ...props }, ref) => {
     const changeColors = {
       positive: "text-green-600 dark:text-green-400",
@@ -27017,7 +27018,7 @@ var colorStyles = {
   warning: "bg-yellow-600",
   error: "bg-red-600"
 };
-var ProgressBar = React21.forwardRef(
+var ProgressBar = React23.forwardRef(
   ({
     className,
     value,
@@ -27048,7 +27049,7 @@ var ProgressBar = React21.forwardRef(
   }
 );
 ProgressBar.displayName = "ProgressBar";
-var MetricCard = React21.forwardRef(
+var MetricCard = React23.forwardRef(
   ({
     className,
     title,
@@ -27059,7 +27060,7 @@ var MetricCard = React21.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [isOpen, setIsOpen] = React21.useState(defaultOpen);
+    const [isOpen, setIsOpen] = React23.useState(defaultOpen);
     return /* @__PURE__ */ jsx("div", { ref, className: cn("border-2 border-border bg-background", className), ...props, children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-4", children: title }),
       /* @__PURE__ */ jsxs("div", { className: "text-center py-4", children: [
@@ -27107,7 +27108,7 @@ var statusIcons = {
   info: "\u2139",
   idle: ""
 };
-var ResultsPanel = React21.forwardRef(
+var ResultsPanel = React23.forwardRef(
   ({
     className,
     title = "Results",
@@ -27221,7 +27222,7 @@ var RenderFullLogo = ({
     ]
   }
 );
-var RenderLogo = React21.forwardRef(
+var RenderLogo = React23.forwardRef(
   ({ className, variant = "full", height = 32, ...props }, ref) => {
     const LogoComponent = variant === "mark" ? RenderMark : RenderFullLogo;
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("inline-flex items-center", className), ...props, children: [
@@ -27262,7 +27263,7 @@ var generateGridPattern = (density, isDark, orientation) => {
           diagonalDistance = rows - 1 - row + (cols - 1 - col);
           break;
       }
-      const maxDistance = Math.floor((1 - density) * (rows + cols - 2));
+      const maxDistance = Math.floor(density * (rows + cols - 2));
       const shouldShow = diagonalDistance <= maxDistance;
       if (shouldShow) {
         squares.push(
@@ -27290,7 +27291,7 @@ var getBackgroundPosition = (orientation) => {
       return "bottom right";
   }
 };
-var GridDecoration = React21.forwardRef(
+var GridDecoration = React23.forwardRef(
   ({
     className,
     position = "top-left",
@@ -27304,8 +27305,8 @@ var GridDecoration = React21.forwardRef(
   }, ref) => {
     const widthValue = typeof width === "number" ? `${width}px` : width;
     const heightValue = typeof height === "number" ? `${height}px` : height;
-    const [isDark, setIsDark] = React21.useState(false);
-    React21.useEffect(() => {
+    const [isDark, setIsDark] = React23.useState(false);
+    React23.useEffect(() => {
       const checkDarkMode = () => {
         setIsDark(document.documentElement.classList.contains("dark"));
       };
@@ -27317,7 +27318,7 @@ var GridDecoration = React21.forwardRef(
       });
       return () => observer.disconnect();
     }, []);
-    const backgroundImage = React21.useMemo(
+    const backgroundImage = React23.useMemo(
       () => generateGridPattern(density, isDark, orientation),
       [density, isDark, orientation]
     );
@@ -27348,15 +27349,171 @@ var GridDecoration = React21.forwardRef(
   }
 );
 GridDecoration.displayName = "GridDecoration";
-var SaveButton = React21.forwardRef(
+var ThemeContext = React23.createContext(void 0);
+function ThemeProvider({
+  children,
+  defaultTheme: defaultTheme2 = "light",
+  storageKey = "theme",
+  enableSystem = true
+}) {
+  const [theme2, setThemeState] = React23.useState(() => {
+    if (typeof window === "undefined") return defaultTheme2;
+    const stored = localStorage.getItem(storageKey);
+    if (stored === "light" || stored === "dark") return stored;
+    if (enableSystem && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      return "dark";
+    }
+    return defaultTheme2;
+  });
+  React23.useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("light", "dark");
+    root.classList.add(theme2);
+    localStorage.setItem(storageKey, theme2);
+  }, [theme2, storageKey]);
+  React23.useEffect(() => {
+    if (!enableSystem) return;
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e) => {
+      if (localStorage.getItem(storageKey)) return;
+      setThemeState(e.matches ? "dark" : "light");
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, [enableSystem, storageKey]);
+  const setTheme = React23.useCallback((newTheme) => {
+    setThemeState(newTheme);
+  }, []);
+  const toggleTheme = React23.useCallback(() => {
+    setThemeState((prev) => prev === "light" ? "dark" : "light");
+  }, []);
+  const value = React23.useMemo(
+    () => ({
+      theme: theme2,
+      setTheme,
+      toggleTheme
+    }),
+    [theme2, setTheme, toggleTheme]
+  );
+  return /* @__PURE__ */ jsx(ThemeContext.Provider, { value, children });
+}
+function useThemeContext() {
+  const context = React23.useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useThemeContext must be used within a ThemeProvider");
+  }
+  return context;
+}
+
+// src/components/hooks/use-theme.ts
+function useTheme() {
+  return useThemeContext();
+}
+var ThemeToggle = React23.forwardRef(
+  ({ className, size = "default", variant = "outline", showLabel = false }, ref) => {
+    const { theme: theme2, setTheme } = useTheme();
+    const [mounted, setMounted] = React23.useState(false);
+    React23.useEffect(() => {
+      setMounted(true);
+    }, []);
+    if (!mounted) {
+      return /* @__PURE__ */ jsx(
+        "button",
+        {
+          ref,
+          disabled: true,
+          className: cn(
+            "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+            {
+              "border border-zinc-300 dark:border-zinc-600 bg-background": variant === "outline",
+              "": variant === "ghost",
+              "bg-primary text-primary-foreground": variant === "solid"
+            },
+            {
+              "h-8 px-2 text-xs": size === "sm",
+              "h-10 px-3 text-sm": size === "default",
+              "h-12 px-4 text-base": size === "lg"
+            },
+            className
+          ),
+          children: /* @__PURE__ */ jsx(
+            "div",
+            {
+              className: cn({
+                "h-3 w-3": size === "sm",
+                "h-4 w-4": size === "default",
+                "h-5 w-5": size === "lg"
+              })
+            }
+          )
+        }
+      );
+    }
+    const toggleTheme = () => {
+      setTheme(theme2 === "light" ? "dark" : "light");
+    };
+    return /* @__PURE__ */ jsx(
+      "button",
+      {
+        ref,
+        onClick: toggleTheme,
+        className: cn(
+          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          {
+            // Variant styles
+            "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
+            "hover:bg-accent hover:text-accent-foreground": variant === "ghost",
+            "bg-primary text-primary-foreground hover:bg-primary/80": variant === "solid"
+          },
+          {
+            // Size styles
+            "h-8 px-2 text-xs": size === "sm",
+            "h-10 px-3 text-sm": size === "default",
+            "h-12 px-4 text-base": size === "lg"
+          },
+          className
+        ),
+        "aria-label": `Switch to ${theme2 === "light" ? "dark" : "light"} mode`,
+        title: `Switch to ${theme2 === "light" ? "dark" : "light"} mode`,
+        children: theme2 === "light" ? /* @__PURE__ */ jsxs(Fragment, { children: [
+          /* @__PURE__ */ jsx(
+            FiMoon,
+            {
+              className: cn({
+                "h-3 w-3": size === "sm",
+                "h-4 w-4": size === "default",
+                "h-5 w-5": size === "lg"
+              })
+            }
+          ),
+          showLabel && /* @__PURE__ */ jsx("span", { children: "Dark" })
+        ] }) : /* @__PURE__ */ jsxs(Fragment, { children: [
+          /* @__PURE__ */ jsx(
+            FiSun,
+            {
+              className: cn({
+                "h-3 w-3": size === "sm",
+                "h-4 w-4": size === "default",
+                "h-5 w-5": size === "lg"
+              })
+            }
+          ),
+          showLabel && /* @__PURE__ */ jsx("span", { children: "Light" })
+        ] })
+      }
+    );
+  }
+);
+ThemeToggle.displayName = "ThemeToggle";
+var SaveButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Save" })
 );
 SaveButton.displayName = "SaveButton";
-var SaveDraftButton = React21.forwardRef(
+var SaveDraftButton = React23.forwardRef(
   ({ variant = "outline-primary", iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save Draft" })
 );
 SaveDraftButton.displayName = "SaveDraftButton";
-var SaveAndDeployButton = React21.forwardRef(
+var SaveAndDeployButton = React23.forwardRef(
   ({
     variant = "validate",
     iconLeft = /* @__PURE__ */ jsx(IoCheckmarkCircle, { className: "h-4 w-4" }),
@@ -27365,31 +27522,31 @@ var SaveAndDeployButton = React21.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save & Deploy" })
 );
 SaveAndDeployButton.displayName = "SaveAndDeployButton";
-var EditButton = React21.forwardRef(
+var EditButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoPencil, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Edit" })
 );
 EditButton.displayName = "EditButton";
-var DuplicateButton = React21.forwardRef(
+var DuplicateButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoCopy, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Duplicate" })
 );
 DuplicateButton.displayName = "DuplicateButton";
-var DeleteButton = React21.forwardRef(
+var DeleteButton = React23.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoTrash, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Delete" })
 );
 DeleteButton.displayName = "DeleteButton";
-var CreateButton = React21.forwardRef(
+var CreateButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Create" })
 );
 CreateButton.displayName = "CreateButton";
-var AddButton = React21.forwardRef(
+var AddButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Add" })
 );
 AddButton.displayName = "AddButton";
-var UploadButton = React21.forwardRef(
+var UploadButton = React23.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoCloudUpload, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Upload" })
 );
 UploadButton.displayName = "UploadButton";
-var DownloadButton = React21.forwardRef(
+var DownloadButton = React23.forwardRef(
   ({
     variant = "outline-primary",
     iconLeft = /* @__PURE__ */ jsx(IoDownload, { className: "h-4 w-4" }),
@@ -27398,35 +27555,35 @@ var DownloadButton = React21.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Download" })
 );
 DownloadButton.displayName = "DownloadButton";
-var DeployButton = React21.forwardRef(
+var DeployButton = React23.forwardRef(
   ({ variant = "validate", iconLeft = /* @__PURE__ */ jsx(IoRocket, { className: "h-5 w-5" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Deploy" })
 );
 DeployButton.displayName = "DeployButton";
-var RestartButton = React21.forwardRef(
+var RestartButton = React23.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoRefresh, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Restart" })
 );
 RestartButton.displayName = "RestartButton";
-var PauseButton = React21.forwardRef(
+var PauseButton = React23.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoPause, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Pause" })
 );
 PauseButton.displayName = "PauseButton";
-var StopButton = React21.forwardRef(
+var StopButton = React23.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoClose, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Stop" })
 );
 StopButton.displayName = "StopButton";
-var ContinueButton = React21.forwardRef(
+var ContinueButton = React23.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Continue" })
 );
 ContinueButton.displayName = "ContinueButton";
-var BackButton = React21.forwardRef(
+var BackButton = React23.forwardRef(
   ({ variant = "outline", iconLeft = /* @__PURE__ */ jsx(IoArrowBack, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Back" })
 );
 BackButton.displayName = "BackButton";
-var NextButton = React21.forwardRef(
+var NextButton = React23.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Next" })
 );
 NextButton.displayName = "NextButton";
-var Footer = React21.forwardRef(
+var Footer = React23.forwardRef(
   ({ className, copyright, links, ...props }, ref) => {
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const defaultCopyright = `\xA9 ${currentYear} Render. All rights reserved.`;
@@ -27453,7 +27610,7 @@ var Footer = React21.forwardRef(
   }
 );
 Footer.displayName = "Footer";
-var Navigation = React21.forwardRef(
+var Navigation = React23.forwardRef(
   ({ className, logo, links = [], actions, ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "nav",
@@ -27483,7 +27640,7 @@ var Navigation = React21.forwardRef(
   }
 );
 Navigation.displayName = "Navigation";
-var HeroMinimal = React21.forwardRef(
+var HeroMinimal = React23.forwardRef(
   ({ className, title, subtitle, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "section",
@@ -27501,7 +27658,7 @@ var HeroMinimal = React21.forwardRef(
   }
 );
 HeroMinimal.displayName = "HeroMinimal";
-var EditorLayout = React21.forwardRef(
+var EditorLayout = React23.forwardRef(
   ({ className, title, description, editor, results, actions, links, ...props }, ref) => {
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("flex min-h-screen flex-col", className), ...props, children: [
       (title || description || links) && /* @__PURE__ */ jsx("header", { className: "border-b-2 border-border bg-background px-6 py-8", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-7xl", children: [
@@ -27520,7 +27677,7 @@ var EditorLayout = React21.forwardRef(
   }
 );
 EditorLayout.displayName = "EditorLayout";
-var MDXContent = React21.forwardRef(
+var MDXContent = React23.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -27560,6 +27717,6 @@ var MDXContent = React21.forwardRef(
 );
 MDXContent.displayName = "MDXContent";
 
-export { AddButton, Alert, BackButton, Button, ButtonGroup, CodeBlock, CodeEditor, Collapsible, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, UploadButton, cn };
+export { AddButton, Alert, BackButton, Button, ButtonGroup, CodeBlock, CodeEditor, Collapsible, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, ThemeProvider, ThemeToggle, Toast, ToastContainer, UploadButton, cn, useTheme };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

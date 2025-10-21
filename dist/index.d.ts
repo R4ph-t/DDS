@@ -196,11 +196,65 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
      */
     opacity?: number;
     /**
-     * Density of squares (0-1, where 1 is all squares present)
+     * Density of squares (0-1, where higher values show more squares)
      */
     density?: number;
 }
 declare const GridDecoration: React.ForwardRefExoticComponent<GridDecorationProps & React.RefAttributes<HTMLDivElement>>;
+
+interface ThemeToggleProps {
+    /**
+     * Custom className for the toggle button
+     */
+    className?: string;
+    /**
+     * Size variant of the toggle button
+     * @default "default"
+     */
+    size?: "sm" | "default" | "lg";
+    /**
+     * Style variant of the toggle button
+     * @default "outline"
+     */
+    variant?: "outline" | "ghost" | "solid";
+    /**
+     * Show labels next to icons
+     * @default false
+     */
+    showLabel?: boolean;
+}
+declare const ThemeToggle: React.ForwardRefExoticComponent<ThemeToggleProps & React.RefAttributes<HTMLButtonElement>>;
+
+type Theme = "light" | "dark";
+interface ThemeContextValue {
+    theme: Theme;
+    setTheme: (theme: Theme) => void;
+    toggleTheme: () => void;
+}
+interface ThemeProviderProps {
+    /**
+     * The children to render
+     */
+    children: React.ReactNode;
+    /**
+     * Default theme to use
+     * @default "light"
+     */
+    defaultTheme?: Theme;
+    /**
+     * Storage key for localStorage
+     * @default "theme"
+     */
+    storageKey?: string;
+    /**
+     * Enable system preference detection
+     * @default true
+     */
+    enableSystem?: boolean;
+}
+declare function ThemeProvider({ children, defaultTheme, storageKey, enableSystem, }: ThemeProviderProps): react_jsx_runtime.JSX.Element;
+
+declare function useTheme(): ThemeContextValue;
 
 declare const SaveButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
 declare const SaveDraftButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
@@ -270,4 +324,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };

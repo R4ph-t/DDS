@@ -283,10 +283,62 @@ colors: {
 
 ### Dark Mode
 
-DDS components support dark mode out of the box. Toggle with:
+DDS components support dark mode out of the box with Tailwind's class-based dark mode.
+
+#### Setup
+
+Wrap your app with the `ThemeProvider`:
 
 ```tsx
-<html className="dark">
+// app/layout.tsx or pages/_app.tsx
+import { ThemeProvider } from "render-dds"
+
+export default function RootLayout({ children }) {
+  return (
+    <html suppressHydrationWarning>
+      <body>
+        <ThemeProvider defaultTheme="light" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+#### Using the Theme Toggle
+
+```tsx
+import { ThemeToggle } from "render-dds"
+
+export default function Navigation() {
+  return (
+    <nav>
+      {/* Your navigation content */}
+      <ThemeToggle variant="outline" />
+    </nav>
+  )
+}
+```
+
+#### Programmatic Theme Control
+
+```tsx
+"use client"
+import { useTheme } from "render-dds"
+
+export default function Settings() {
+  const { theme, setTheme, toggleTheme } = useTheme()
+
+  return (
+    <div>
+      <p>Current theme: {theme}</p>
+      <button onClick={() => setTheme("dark")}>Dark</button>
+      <button onClick={() => setTheme("light")}>Light</button>
+      <button onClick={toggleTheme}>Toggle</button>
+    </div>
+  )
+}
 ```
 
 ## Real-World Examples

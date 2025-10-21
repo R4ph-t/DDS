@@ -40,7 +40,8 @@ const gridProps = [
     name: "density",
     type: "number",
     defaultValue: "0.6",
-    description: "Density of squares - controls staircase depth (0-1, where 1 shows more squares)",
+    description:
+      "Density of squares - controls staircase depth (0-1, where higher values show more squares)",
   },
 ]
 
@@ -210,7 +211,7 @@ export const Density: Story = () => {
   return (
     <StoryWithCode
       title="Staircase Density"
-      description="Control how far the diagonal staircase extends from the corner - lower density shows more squares."
+      description="Control how far the diagonal staircase extends from the corner - higher density shows more squares."
     >
       <div className="space-y-4">
         <div className="relative h-[300px] bg-background border border-zinc-200 dark:border-zinc-800 overflow-hidden">
@@ -223,7 +224,7 @@ export const Density: Story = () => {
           />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Light (density: 0.3)</h3>
-            <p className="text-sm text-muted-foreground">More squares visible, longer staircase</p>
+            <p className="text-sm text-muted-foreground">Fewer squares visible, short staircase</p>
           </div>
         </div>
 
@@ -251,7 +252,7 @@ export const Density: Story = () => {
           />
           <div className="relative z-10 p-6">
             <h3 className="font-semibold mb-2">Dense (density: 0.9)</h3>
-            <p className="text-sm text-muted-foreground">Only corner squares, short staircase</p>
+            <p className="text-sm text-muted-foreground">More squares visible, long staircase</p>
           </div>
         </div>
       </div>

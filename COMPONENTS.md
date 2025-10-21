@@ -155,6 +155,25 @@ import { FormField } from "@/components/ui/form-field"
 />
 ```
 
+### theme-toggle
+
+**Purpose**: Toggle between light and dark modes  
+**Features**: Works with Tailwind dark mode, localStorage persistence, system preference detection
+
+```tsx
+import { ThemeProvider } from "@/components/providers/theme-provider"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+
+// Wrap your app with ThemeProvider
+<ThemeProvider>
+  <ThemeToggle variant="outline" size="default" />
+</ThemeProvider>
+
+// Use the hook to access theme state
+import { useTheme } from "@/components/hooks/use-theme"
+const { theme, setTheme, toggleTheme } = useTheme()
+```
+
 ## Block Components
 
 ### navigation

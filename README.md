@@ -115,15 +115,40 @@ export default {
 }
 ```
 
-### 4. Import Components
+### 4. Set Up Theme Provider (Optional)
+
+For dark mode support, wrap your app with `ThemeProvider`:
 
 ```tsx
-import { Button, Alert, Footer, RenderLogo } from 'render-dds'
+// app/layout.tsx (Next.js App Router)
+import { ThemeProvider } from 'render-dds'
+import 'render-dds/styles'
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <ThemeProvider defaultTheme="light" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+
+### 5. Import Components
+
+```tsx
+import { Button, Alert, Footer, RenderLogo, ThemeToggle } from 'render-dds'
 
 export default function MyDemo() {
   return (
     <div>
-      <RenderLogo variant="full" height={32} />
+      <nav className="flex justify-between p-4">
+        <RenderLogo variant="full" height={32} />
+        <ThemeToggle />
+      </nav>
       <Alert variant="info">
         Welcome to Render!
       </Alert>
@@ -135,7 +160,7 @@ export default function MyDemo() {
 }
 ```
 
-### 5. Using MDX Content (Optional)
+### 6. Using MDX Content (Optional)
 
 For rich text content, use the `MDXContent` component:
 
@@ -180,6 +205,7 @@ export default function BlogPost() {
 - **ResultsPanel** - Validation results display
 - **RenderLogo** - Render branding (mark or full logo)
 - **GridDecoration** - Decorative 90x90px grid background pattern
+- **ThemeToggle** - Dark/light mode toggle button
 - **Icon** - Ionicons 5 icons
 
 ### Block Components
@@ -188,6 +214,9 @@ export default function BlogPost() {
 - **HeroMinimal** - Minimal hero section
 - **EditorLayout** - Full-page editor layout
 - **MDXContent** - Rich text container with typography styles
+
+### Providers
+- **ThemeProvider** - Context provider for dark/light mode management
 
 ### Action Buttons
 Pre-configured buttons for common actions:
