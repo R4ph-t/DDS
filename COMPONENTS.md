@@ -216,23 +216,52 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 
 ### navigation
 
-**Purpose**: Clean navigation bar  
-**Features**: Logo, links, action buttons
+**Purpose**: Flexible navigation bar with positioning control  
+**Features**: Logo, links with icons, action buttons, three positioning modes
 
 ```tsx
 import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { FiHome, FiBook } from "react-icons/fi"
 
+// Links on the left (default)
+<Navigation
+  logo="MyApp"
+  links={[
+    { label: "Home", href: "/", icon: <FiHome /> },
+    { label: "Docs", href: "/docs", icon: <FiBook /> }
+  ]}
+  actions={<ThemeToggle />}
+/>
+
+// Links centered
 <Navigation
   logo="MyApp"
   links={[
     { label: "Home", href: "/" },
     { label: "Docs", href: "/docs" }
   ]}
-  actions={
-    <button className="bg-primary px-4 py-2">Sign In</button>
-  }
+  linksPosition="center"
+  actions={<ThemeToggle />}
+/>
+
+// Links on the right
+<Navigation
+  logo="MyApp"
+  links={[
+    { label: "Home", href: "/" },
+    { label: "Docs", href: "/docs" }
+  ]}
+  linksPosition="right"
+  actions={<ThemeToggle />}
 />
 ```
+
+**Props**:
+- `logo` - Logo or brand element (left side)
+- `links` - Array of `{ label, href, icon? }` objects
+- `linksPosition` - `"left"` (default) | `"center"` | `"right"`
+- `actions` - Action buttons or elements (right side)
 
 ### hero-minimal
 

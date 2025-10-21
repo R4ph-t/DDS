@@ -4,14 +4,32 @@ import * as React from "react"
 import { cn } from "../../lib/utils"
 
 export interface NavigationLink {
+  /**
+   * Text label for the link
+   */
   label: string
+  /**
+   * URL or path for the link
+   */
   href: string
+  /**
+   * Optional icon to display before the label
+   */
   icon?: React.ReactNode
 }
 
 export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
+  /**
+   * Logo or brand element displayed on the left
+   */
   logo?: React.ReactNode
+  /**
+   * Array of navigation links
+   */
   links?: NavigationLink[]
+  /**
+   * Action buttons or elements displayed on the right (e.g., theme toggle, login button)
+   */
   actions?: React.ReactNode
   /**
    * Position of the links in the navigation
