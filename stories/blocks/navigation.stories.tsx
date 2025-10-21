@@ -34,8 +34,21 @@ const navigationProps = [
 export const Default: Story = () => (
   <StoryWithCode
     title="Navigation - Default"
-    description="Basic navigation with logo, links (with optional icons), and theme toggle action."
+    description="Basic navigation with logo, links (some with optional icons), and theme toggle action. Links positioned left by default."
     props={navigationProps}
+    code={`import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { FiHome, FiBook } from "react-icons/fi"
+
+<Navigation
+  logo="My App"
+  links={[
+    { label: "Home", href: "/", icon: <FiHome /> },
+    { label: "About", href: "/about" },
+    { label: "Docs", href: "/docs", icon: <FiBook /> },
+  ]}
+  actions={<ThemeToggle variant="ghost" />}
+/>`}
   >
     <Navigation
       logo="My App"
@@ -44,25 +57,6 @@ export const Default: Story = () => (
         { label: "About", href: "/about" },
         { label: "Docs", href: "/docs", icon: <FiBook /> },
       ]}
-      actions={<ThemeToggle variant="ghost" />}
-    />
-  </StoryWithCode>
-)
-
-export const LinksLeft: Story = () => (
-  <StoryWithCode
-    title="Navigation - Links Left"
-    description="Links positioned on the left next to the logo (default behavior)."
-    props={navigationProps}
-  >
-    <Navigation
-      logo="My App"
-      links={[
-        { label: "Home", href: "/" },
-        { label: "About", href: "/about" },
-        { label: "Docs", href: "/docs" },
-      ]}
-      linksPosition="left"
       actions={<ThemeToggle variant="ghost" />}
     />
   </StoryWithCode>
@@ -111,6 +105,26 @@ export const WithMultipleActions: Story = () => (
     title="Navigation - Multiple Actions"
     description="Navigation with multiple action buttons (Sign In, Sign Up, Theme Toggle)."
     props={navigationProps}
+    code={`import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { Button } from "@/components/ui/button"
+
+<Navigation
+  logo="My App"
+  links={[
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Docs", href: "/docs" },
+  ]}
+  linksPosition="right"
+  actions={
+    <>
+      <Button variant="ghost" size="sm">Sign In</Button>
+      <Button variant="default" size="sm">Sign Up</Button>
+      <ThemeToggle variant="ghost" size="sm" />
+    </>
+  }
+/>`}
   >
     <Navigation
       logo="My App"
@@ -167,6 +181,20 @@ export const WithIcons: Story = () => (
     title="Navigation - With Icons"
     description="All navigation links with icons for better visual clarity."
     props={navigationProps}
+    code={`import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { FiHome, FiInfo, FiBook, FiSettings } from "react-icons/fi"
+
+<Navigation
+  logo="My App"
+  links={[
+    { label: "Home", href: "/", icon: <FiHome /> },
+    { label: "About", href: "/about", icon: <FiInfo /> },
+    { label: "Docs", href: "/docs", icon: <FiBook /> },
+    { label: "Settings", href: "/settings", icon: <FiSettings /> },
+  ]}
+  actions={<ThemeToggle variant="ghost" />}
+/>`}
   >
     <Navigation
       logo="My App"
