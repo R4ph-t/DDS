@@ -321,13 +321,20 @@ interface FooterProps extends React.HTMLAttributes<HTMLElement> {
 }
 declare const Footer: React.ForwardRefExoticComponent<FooterProps & React.RefAttributes<HTMLElement>>;
 
+interface NavigationLink {
+    label: string;
+    href: string;
+    icon?: React.ReactNode;
+}
 interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
     logo?: React.ReactNode;
-    links?: {
-        label: string;
-        href: string;
-    }[];
+    links?: NavigationLink[];
     actions?: React.ReactNode;
+    /**
+     * Position of the links in the navigation
+     * @default "left"
+     */
+    linksPosition?: "left" | "center" | "right";
 }
 declare const Navigation: React.ForwardRefExoticComponent<NavigationProps & React.RefAttributes<HTMLElement>>;
 
@@ -362,4 +369,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationLink, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };

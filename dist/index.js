@@ -27714,29 +27714,49 @@ var Footer = React25.forwardRef(
 );
 Footer.displayName = "Footer";
 var Navigation = React25.forwardRef(
-  ({ className, logo, links = [], actions, ...props }, ref) => {
+  ({ className, logo, links = [], actions, linksPosition = "left", ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "nav",
       {
         ref,
         className: cn(
-          "flex items-center justify-between border-b border-border bg-background px-6 py-4",
+          "flex items-center border-b border-border bg-background px-6 py-4",
+          linksPosition === "center" && "relative min-h-[60px]",
           className
         ),
         ...props,
         children: [
-          /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-8", children: [
-            logo && /* @__PURE__ */ jsx("div", { className: "font-bold text-xl", children: logo }),
-            /* @__PURE__ */ jsx("ul", { className: "flex items-center gap-6", children: links.map((link, i) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(
-              "a",
-              {
-                href: link.href,
-                className: "text-sm font-medium text-foreground hover:text-primary transition-colors",
-                children: link.label
-              }
-            ) }, i)) })
-          ] }),
-          actions && /* @__PURE__ */ jsx("div", { className: "flex items-center gap-4", children: actions })
+          logo && /* @__PURE__ */ jsx("div", { className: "text-xl", children: logo }),
+          links.length > 0 && /* @__PURE__ */ jsx(
+            "ul",
+            {
+              className: cn("flex items-center gap-6", {
+                "ml-8": linksPosition === "left" && logo,
+                "absolute left-1/2 -translate-x-1/2": linksPosition === "center",
+                "ml-auto": linksPosition === "right"
+              }),
+              children: links.map((link, i) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsxs(
+                "a",
+                {
+                  href: link.href,
+                  className: "flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors",
+                  children: [
+                    link.icon && /* @__PURE__ */ jsx("span", { className: "inline-flex", children: link.icon }),
+                    link.label
+                  ]
+                }
+              ) }, i))
+            }
+          ),
+          actions && /* @__PURE__ */ jsx(
+            "div",
+            {
+              className: cn("flex items-center gap-4", {
+                "ml-auto": linksPosition !== "right"
+              }),
+              children: actions
+            }
+          )
         ]
       }
     );
