@@ -89,8 +89,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
           >
             {links.map((link, i) => {
               // Determine if link is active: explicit active prop takes precedence, otherwise use currentPath
-              const isActive =
-                link.active !== undefined ? link.active : currentPath === link.href
+              const isActive = link.active !== undefined ? link.active : currentPath === link.href
 
               return (
                 <li key={i}>
