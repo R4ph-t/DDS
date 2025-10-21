@@ -27,7 +27,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         ref={ref}
         className={cn(
           "flex items-center border-b border-border bg-background px-6 py-4",
-          linksPosition === "center" && "relative",
+          linksPosition === "center" && "relative min-h-[60px]",
           className
         )}
         {...props}
