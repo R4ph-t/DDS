@@ -263,9 +263,10 @@ import { FiHome, FiBook } from "react-icons/fi"
 - `linksPosition` - `"left"` (default) | `"center"` | `"right"`
 - `actions` - Action buttons or elements (right side)
 - `sticky` - Make navigation sticky at top (default: `false`)
+- `currentPath` - Current pathname for automatic active link detection
 
 **Active State**:
-Mark the current page by setting `active: true` on the matching link:
+Pass the current pathname to automatically highlight the active page:
 
 ```tsx
 import { usePathname } from "next/navigation"
@@ -273,12 +274,15 @@ import { usePathname } from "next/navigation"
 const pathname = usePathname()
 
 <Navigation
+  currentPath={pathname}
   links={[
-    { label: "Home", href: "/", active: pathname === "/" },
-    { label: "About", href: "/about", active: pathname === "/about" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
   ]}
 />
 ```
+
+Links are automatically marked as active when their `href` matches `currentPath`. You can manually override with `active: true` if needed.
 
 ### hero-minimal
 

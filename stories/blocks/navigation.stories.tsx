@@ -213,8 +213,21 @@ import { FiHome, FiInfo, FiBook, FiSettings } from "react-icons/fi"
 export const WithActiveState: Story = () => (
   <StoryWithCode
     title="Navigation - With Active State"
-    description="Show which page is currently active by setting the active prop on the matching link."
-    props={[...navigationProps, { name: "active", type: "boolean", defaultValue: "false", description: "Mark a link as active (current page)" }]}
+    description="Automatically highlights the current page by passing currentPath. Links are marked active when their href matches."
+    props={[
+      ...navigationProps,
+      {
+        name: "currentPath",
+        type: "string",
+        description: "Current pathname to automatically determine active links",
+      },
+      {
+        name: "active",
+        type: "boolean",
+        defaultValue: "false",
+        description: "Manually override active state for a specific link",
+      },
+    ]}
     code={`import { Navigation } from "@/components/blocks/navigation"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 import { usePathname } from "next/navigation"
@@ -225,10 +238,11 @@ export function MyNav() {
   return (
     <Navigation
       logo="My App"
+      currentPath={pathname}  // Automatically determines active link
       links={[
-        { label: "Home", href: "/", active: pathname === "/" },
-        { label: "About", href: "/about", active: pathname === "/about" },
-        { label: "Docs", href: "/docs", active: pathname === "/docs" },
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
       ]}
       actions={<ThemeToggle variant="ghost" />}
     />
@@ -237,16 +251,17 @@ export function MyNav() {
   >
     <Navigation
       logo="My App"
+      currentPath="/about"
       links={[
         { label: "Home", href: "/", icon: <FiHome /> },
-        { label: "About", href: "/about", active: true },
+        { label: "About", href: "/about" },
         { label: "Docs", href: "/docs", icon: <FiBook /> },
         { label: "Settings", href: "/settings", icon: <FiSettings /> },
       ]}
       actions={<ThemeToggle variant="ghost" />}
     />
     <p className="mt-4 text-sm text-muted-foreground">
-      "About" is marked as active (highlighted in primary color)
+      "About" is automatically marked as active because currentPath="/about"
     </p>
   </StoryWithCode>
 )

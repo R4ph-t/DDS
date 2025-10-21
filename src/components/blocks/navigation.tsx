@@ -46,11 +46,25 @@ export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
    * @default false
    */
   sticky?: boolean
+  /**
+   * Current pathname to automatically determine active links (e.g., from usePathname())
+   * When provided, links are automatically marked as active if their href matches this path
+   */
+  currentPath?: string
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
   (
-    { className, logo, links = [], actions, linksPosition = "left", sticky = false, ...props },
+    {
+      className,
+      logo,
+      links = [],
+      actions,
+      linksPosition = "left",
+      sticky = false,
+      currentPath,
+      ...props
+    },
     ref
   ) => {
     return (
@@ -73,23 +87,27 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
               "ml-auto": linksPosition === "right",
             })}
           >
-            {links.map((link, i) => (
-              <li key={i}>
-                <a
-                  href={link.href}
-                  className={cn(
-                    "flex items-center gap-2 text-sm font-medium transition-colors",
-                    link.active
-                      ? "text-primary"
-                      : "text-foreground hover:text-primary"
-                  )}
-                  aria-current={link.active ? "page" : undefined}
-                >
-                  {link.icon && <span className="inline-flex">{link.icon}</span>}
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {links.map((link, i) => {
+              // Determine if link is active: explicit active prop takes precedence, otherwise use currentPath
+              const isActive =
+                link.active !== undefined ? link.active : currentPath === link.href
+
+              return (
+                <li key={i}>
+                  <a
+                    href={link.href}
+                    className={cn(
+                      "flex items-center gap-2 text-sm font-medium transition-colors",
+                      isActive ? "text-primary" : "text-foreground hover:text-primary"
+                    )}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {link.icon && <span className="inline-flex">{link.icon}</span>}
+                    {link.label}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         )}
         {actions && (
