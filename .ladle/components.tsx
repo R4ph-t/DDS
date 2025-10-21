@@ -1,5 +1,6 @@
 import type { GlobalProvider } from '@ladle/react'
 import { useEffect } from 'react'
+import { ThemeProvider } from '../src/components/providers/theme-provider'
 import './styles.css'
 
 export const Provider: GlobalProvider = ({ children, globalState }) => {
@@ -13,9 +14,11 @@ export const Provider: GlobalProvider = ({ children, globalState }) => {
   }, [globalState.theme])
 
   return (
-    <div className="min-h-screen bg-background text-foreground p-8">
-      {children}
-    </div>
+    <ThemeProvider defaultTheme={globalState.theme === 'dark' ? 'dark' : 'light'}>
+      <div className="min-h-screen bg-background text-foreground p-8">
+        {children}
+      </div>
+    </ThemeProvider>
   )
 }
 
