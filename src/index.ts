@@ -98,7 +98,7 @@ export { Footer } from "./components/blocks/footer"
 export type { FooterProps } from "./components/blocks/footer"
 
 export { Navigation } from "./components/blocks/navigation"
-export type { NavigationProps } from "./components/blocks/navigation"
+export type { NavigationProps, NavigationLink } from "./components/blocks/navigation"
 
 export { HeroMinimal } from "./components/blocks/hero-minimal"
 export type { HeroMinimalProps } from "./components/blocks/hero-minimal"
