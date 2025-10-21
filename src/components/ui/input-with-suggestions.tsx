@@ -173,4 +173,3 @@ const InputWithSuggestions = React.forwardRef<HTMLInputElement, InputWithSuggest
 InputWithSuggestions.displayName = "InputWithSuggestions"
 
 export { InputWithSuggestions }
-

@@ -1,5 +1,8 @@
 import type { Story } from "@ladle/react"
-import { InputWithSuggestions, type Suggestion } from "../../src/components/ui/input-with-suggestions"
+import {
+  InputWithSuggestions,
+  type Suggestion,
+} from "../../src/components/ui/input-with-suggestions"
 import { createStoryWithCode } from "../../.ladle/story-helpers"
 import { useState } from "react"
 
@@ -195,6 +198,37 @@ export const LimitedHeight: Story = () => {
   )
 }
 
+export const FreeTextAllowed: Story = () => {
+  const [value, setValue] = useState("")
+
+  return (
+    <StoryWithCode
+      title="Input With Suggestions - Free Text Allowed"
+      description="You can type anything you want - suggestions are optional. Free text is fully supported."
+      props={inputSuggestionsProps}
+    >
+      <div className="w-full max-w-md space-y-2">
+        <label className="text-sm font-medium">Country or Region</label>
+        <InputWithSuggestions
+          placeholder="Type any country or region..."
+          suggestions={countrySuggestions}
+          value={value}
+          onChange={setValue}
+        />
+        {value && (
+          <p className="text-sm text-muted-foreground">
+            You entered: <strong>{value}</strong>
+            {!countrySuggestions.find((s) => s.value === value) && " (custom value)"}
+          </p>
+        )}
+        <p className="text-xs text-muted-foreground">
+          Try typing "Antarctica" or any custom value - it works!
+        </p>
+      </div>
+    </StoryWithCode>
+  )
+}
+
 export const Disabled: Story = () => (
   <StoryWithCode
     title="Input With Suggestions - Disabled"
@@ -211,4 +245,3 @@ export const Disabled: Story = () => (
     </div>
   </StoryWithCode>
 )
-

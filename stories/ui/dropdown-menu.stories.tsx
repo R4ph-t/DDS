@@ -27,7 +27,8 @@ const dropdownProps = [
     name: "modal",
     type: "boolean",
     defaultValue: "true",
-    description: "Whether the dropdown is modal (set to false to allow interaction with other elements)",
+    description:
+      "Whether the dropdown is modal (set to false to allow interaction with other elements)",
   },
 ]
 
@@ -217,4 +218,3 @@ export const WithSubMenu: Story = () => (
     </DropdownMenu>
   </StoryWithCode>
 )
-
