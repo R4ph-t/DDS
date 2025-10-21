@@ -40,7 +40,8 @@ export const Default: Story = () => (
     <Container>
       <h3 className="text-xl font-semibold mb-2">Default Container</h3>
       <p className="text-muted-foreground">
-        This is a basic container with default styling. It has a card background and standard padding.
+        This is a basic container with default styling. It has a card background and standard
+        padding.
       </p>
     </Container>
   </StoryWithCode>
@@ -70,7 +71,9 @@ export const AllVariants: Story = () => (
 
       <Container variant="ghost">
         <h3 className="text-lg font-semibold mb-2">Ghost</h3>
-        <p className="text-sm text-muted-foreground">Transparent container, inherits parent background</p>
+        <p className="text-sm text-muted-foreground">
+          Transparent container, inherits parent background
+        </p>
       </Container>
     </div>
   </StoryWithCode>
@@ -143,8 +146,8 @@ export const Centered: Story = () => (
       <Container variant="bordered" centered>
         <h3 className="text-xl font-semibold mb-2">Centered Container</h3>
         <p className="text-muted-foreground">
-          This container is centered horizontally with a max-width constraint. Perfect for main content
-          areas.
+          This container is centered horizontally with a max-width constraint. Perfect for main
+          content areas.
         </p>
       </Container>
     </div>
@@ -159,7 +162,9 @@ export const FullWidth: Story = () => (
   >
     <Container variant="bordered" fullWidth>
       <h3 className="text-xl font-semibold mb-2">Full Width Container</h3>
-      <p className="text-muted-foreground">This container spans the full width of its parent element.</p>
+      <p className="text-muted-foreground">
+        This container spans the full width of its parent element.
+      </p>
     </Container>
   </StoryWithCode>
 )
@@ -183,4 +188,3 @@ export const NestedContainers: Story = () => (
     </Container>
   </StoryWithCode>
 )
-

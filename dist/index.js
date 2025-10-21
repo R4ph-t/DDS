@@ -27580,7 +27580,15 @@ var CardHeader = React25.forwardRef(
 CardHeader.displayName = "CardHeader";
 var CardTitle = React25.forwardRef(
   ({ className, children, ...props }, ref) => {
-    return /* @__PURE__ */ jsx("h3", { ref, className: cn("text-2xl font-semibold leading-none tracking-tight", className), ...props, children });
+    return /* @__PURE__ */ jsx(
+      "h3",
+      {
+        ref,
+        className: cn("text-2xl font-semibold leading-none tracking-tight", className),
+        ...props,
+        children
+      }
+    );
   }
 );
 CardTitle.displayName = "CardTitle";

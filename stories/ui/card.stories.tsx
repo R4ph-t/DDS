@@ -142,8 +142,8 @@ export const WithoutHeader: Story = () => (
     <Card variant="outlined" className="w-[350px]">
       <CardContent className="pt-6">
         <p className="text-sm">
-          Cards are flexible - you don't need to use all sections. This card has only content, no header
-          or footer.
+          Cards are flexible - you don't need to use all sections. This card has only content, no
+          header or footer.
         </p>
       </CardContent>
     </Card>
@@ -230,4 +230,3 @@ export const FormCard: Story = () => (
     </Card>
   </StoryWithCode>
 )
-
