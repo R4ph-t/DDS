@@ -1,2 +1,6 @@
-/* Import main styles to avoid duplication */
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+/* Import DDS styles (without the @import directives which are handled above) */
 @import "../src/styles/globals.css";
