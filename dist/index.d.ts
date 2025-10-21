@@ -225,6 +225,44 @@ interface ThemeToggleProps {
 }
 declare const ThemeToggle: React.ForwardRefExoticComponent<ThemeToggleProps & React.RefAttributes<HTMLButtonElement>>;
 
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+    /**
+     * Visual variant of the container
+     * @default "default"
+     */
+    variant?: "default" | "bordered" | "elevated" | "ghost";
+    /**
+     * Padding size
+     * @default "default"
+     */
+    padding?: "none" | "sm" | "default" | "lg";
+    /**
+     * Whether the container spans the full width
+     * @default false
+     */
+    fullWidth?: boolean;
+    /**
+     * Center the content horizontally
+     * @default false
+     */
+    centered?: boolean;
+}
+declare const Container: React.ForwardRefExoticComponent<ContainerProps & React.RefAttributes<HTMLDivElement>>;
+
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+    /**
+     * Visual variant of the card
+     * @default "default"
+     */
+    variant?: "default" | "outlined" | "elevated";
+}
+declare const Card: React.ForwardRefExoticComponent<CardProps & React.RefAttributes<HTMLDivElement>>;
+declare const CardHeader: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>>;
+declare const CardTitle: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLHeadingElement> & React.RefAttributes<HTMLHeadingElement>>;
+declare const CardDescription: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLParagraphElement> & React.RefAttributes<HTMLParagraphElement>>;
+declare const CardContent: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>>;
+declare const CardFooter: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>>;
+
 type Theme = "light" | "dark";
 interface ThemeContextValue {
     theme: Theme;
@@ -324,4 +362,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };

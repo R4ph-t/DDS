@@ -287,7 +287,19 @@ DDS components support dark mode out of the box with Tailwind's class-based dark
 
 #### Setup
 
-Wrap your app with the `ThemeProvider`:
+**1. Add the dark mode variant to your CSS (Tailwind v4):**
+
+```css
+/* app/globals.css */
+@import "tailwindcss";
+@import "render-dds/styles";
+
+@variant dark (&:where(.dark, .dark *));
+
+/* rest of your styles */
+```
+
+**2. Wrap your app with the `ThemeProvider`:**
 
 ```tsx
 // app/layout.tsx or pages/_app.tsx
@@ -295,7 +307,7 @@ import { ThemeProvider } from "render-dds"
 
 export default function RootLayout({ children }) {
   return (
-    <html suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider defaultTheme="light" enableSystem>
           {children}

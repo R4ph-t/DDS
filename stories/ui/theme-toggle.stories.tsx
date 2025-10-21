@@ -3,6 +3,7 @@ import { ThemeToggle } from "../../src/components/ui/theme-toggle"
 import { ThemeProvider } from "../../src/components/providers/theme-provider"
 import { useTheme } from "../../src/components/hooks/use-theme"
 import { createStoryWithCode } from "../../.ladle/story-helpers"
+import { Alert } from "../../src/components/ui/alert"
 
 const StoryWithCode = createStoryWithCode(import.meta.url)
 
@@ -53,6 +54,16 @@ export const Default: Story = () => (
       props={themeToggleProps}
     >
       <div className="space-y-4">
+        <Alert variant="info">
+          <p className="text-sm font-medium mb-2">Tailwind v4 Setup Required:</p>
+          <p className="text-xs">
+            Add this to your globals.css for dark mode to work:
+            <br />
+            <code className="text-xs bg-muted px-1 py-0.5 mt-1 inline-block">
+              @variant dark (&:where(.dark, .dark *));
+            </code>
+          </p>
+        </Alert>
         <ThemeToggle />
         <ThemeDemo />
       </div>

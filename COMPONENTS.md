@@ -164,6 +164,9 @@ import { FormField } from "@/components/ui/form-field"
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 
+// Add to globals.css (Tailwind v4):
+// @variant dark (&:where(.dark, .dark *));
+
 // Wrap your app with ThemeProvider
 <ThemeProvider>
   <ThemeToggle variant="outline" size="default" />
@@ -172,6 +175,41 @@ import { ThemeToggle } from "@/components/ui/theme-toggle"
 // Use the hook to access theme state
 import { useTheme } from "@/components/hooks/use-theme"
 const { theme, setTheme, toggleTheme } = useTheme()
+```
+
+### container
+
+**Purpose**: Layout container with consistent styling  
+**Features**: Multiple variants, padding options, width control
+
+```tsx
+import { Container } from "@/components/ui/container"
+
+<Container variant="bordered" padding="default" centered>
+  <h1>Content goes here</h1>
+</Container>
+```
+
+### card
+
+**Purpose**: Content card with header, content, and footer sections  
+**Features**: Outlined and elevated variants, composable sections
+
+```tsx
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
+
+<Card variant="outlined">
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Content here</p>
+  </CardContent>
+  <CardFooter>
+    <button>Action</button>
+  </CardFooter>
+</Card>
 ```
 
 ## Block Components
@@ -265,7 +303,7 @@ All components follow these design principles:
 
 ### Layout
 - **Corners**: Square (border-radius: 0)
-- **Borders**: 2px solid borders
+- **Borders**: 1px solid borders
 - **Spacing**: Consistent padding/margins
 
 ### Typography
@@ -320,8 +358,8 @@ import { CodeEditor } from "@/components/ui/code-editor" // DDS
 
 1. **Square Corners**: Keep `--radius: 0` for consistency
 2. **Solid Colors**: Avoid gradients
-3. **2px Borders**: Use `border-2` class
-4. **Dark Mode**: All components support dark mode
+3. **1px Borders**: Use `border` class (not border-2)
+4. **Dark Mode**: All components support dark mode (add `@variant dark` to CSS)
 5. **Collapsible Details**: Use for complex data displays
 6. **Toast Feedback**: Provide user feedback for actions
 

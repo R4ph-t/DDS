@@ -59,6 +59,12 @@ export type { GridDecorationProps } from "./components/ui/grid-decoration"
 export { ThemeToggle } from "./components/ui/theme-toggle"
 export type { ThemeToggleProps } from "./components/ui/theme-toggle"
 
+export { Container } from "./components/ui/container"
+export type { ContainerProps } from "./components/ui/container"
+
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./components/ui/card"
+export type { CardProps } from "./components/ui/card"
+
 // Providers
 export { ThemeProvider } from "./components/providers/theme-provider"
 export type { ThemeProviderProps, Theme } from "./components/providers/theme-provider"

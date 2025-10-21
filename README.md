@@ -206,6 +206,8 @@ export default function BlogPost() {
 - **RenderLogo** - Render branding (mark or full logo)
 - **GridDecoration** - Decorative 90x90px grid background pattern
 - **ThemeToggle** - Dark/light mode toggle button
+- **Container** - Layout container with variants (bordered, elevated, ghost)
+- **Card** - Content card with header, content, footer sections
 - **Icon** - Ionicons 5 icons
 
 ### Block Components
@@ -225,10 +227,11 @@ Pre-configured buttons for common actions:
 ## Design Principles
 
 - **Square corners** - No border-radius
+- **1px borders** - Clean, minimal borders
 - **Solid colors** - No gradients
 - **Clean & minimal** - Focus on content
 - **Render's palette** - Purple/violet primary colors
-- **Dark mode support** - Built-in dark mode
+- **Dark mode support** - Built-in dark mode (requires Tailwind v4 `@variant dark`)
 
 ## Development
 
