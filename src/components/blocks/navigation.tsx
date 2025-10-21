@@ -16,6 +16,11 @@ export interface NavigationLink {
    * Optional icon to display before the label
    */
   icon?: React.ReactNode
+  /**
+   * Whether this link is active (current page)
+   * @default false
+   */
+  active?: boolean
 }
 
 export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
@@ -44,7 +49,10 @@ export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
-  ({ className, logo, links = [], actions, linksPosition = "left", sticky = false, ...props }, ref) => {
+  (
+    { className, logo, links = [], actions, linksPosition = "left", sticky = false, ...props },
+    ref
+  ) => {
     return (
       <nav
         ref={ref}
@@ -69,7 +77,13 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
               <li key={i}>
                 <a
                   href={link.href}
-                  className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                  className={cn(
+                    "flex items-center gap-2 text-sm font-medium transition-colors",
+                    link.active
+                      ? "text-primary"
+                      : "text-foreground hover:text-primary"
+                  )}
+                  aria-current={link.active ? "page" : undefined}
                 >
                   {link.icon && <span className="inline-flex">{link.icon}</span>}
                   {link.label}

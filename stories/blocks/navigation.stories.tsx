@@ -210,11 +210,60 @@ import { FiHome, FiInfo, FiBook, FiSettings } from "react-icons/fi"
   </StoryWithCode>
 )
 
+export const WithActiveState: Story = () => (
+  <StoryWithCode
+    title="Navigation - With Active State"
+    description="Show which page is currently active by setting the active prop on the matching link."
+    props={[...navigationProps, { name: "active", type: "boolean", defaultValue: "false", description: "Mark a link as active (current page)" }]}
+    code={`import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+import { usePathname } from "next/navigation"
+
+export function MyNav() {
+  const pathname = usePathname()
+
+  return (
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/", active: pathname === "/" },
+        { label: "About", href: "/about", active: pathname === "/about" },
+        { label: "Docs", href: "/docs", active: pathname === "/docs" },
+      ]}
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  )
+}`}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/", icon: <FiHome /> },
+        { label: "About", href: "/about", active: true },
+        { label: "Docs", href: "/docs", icon: <FiBook /> },
+        { label: "Settings", href: "/settings", icon: <FiSettings /> },
+      ]}
+      actions={<ThemeToggle variant="ghost" />}
+    />
+    <p className="mt-4 text-sm text-muted-foreground">
+      "About" is marked as active (highlighted in primary color)
+    </p>
+  </StoryWithCode>
+)
+
 export const Sticky: Story = () => (
   <StoryWithCode
     title="Navigation - Sticky"
     description="Sticky navigation that stays at the top when scrolling. Scroll down to see it in action!"
-    props={[...navigationProps, { name: "sticky", type: "boolean", defaultValue: "false", description: "Make the navigation sticky at the top" }]}
+    props={[
+      ...navigationProps,
+      {
+        name: "sticky",
+        type: "boolean",
+        defaultValue: "false",
+        description: "Make the navigation sticky at the top",
+      },
+    ]}
     code={`import { Navigation } from "@/components/blocks/navigation"
 import { ThemeToggle } from "@/components/ui/theme-toggle"
 

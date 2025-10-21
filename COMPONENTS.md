@@ -259,9 +259,26 @@ import { FiHome, FiBook } from "react-icons/fi"
 
 **Props**:
 - `logo` - Logo or brand element (left side)
-- `links` - Array of `{ label, href, icon? }` objects
+- `links` - Array of `{ label, href, icon?, active? }` objects
 - `linksPosition` - `"left"` (default) | `"center"` | `"right"`
 - `actions` - Action buttons or elements (right side)
+- `sticky` - Make navigation sticky at top (default: `false`)
+
+**Active State**:
+Mark the current page by setting `active: true` on the matching link:
+
+```tsx
+import { usePathname } from "next/navigation"
+
+const pathname = usePathname()
+
+<Navigation
+  links={[
+    { label: "Home", href: "/", active: pathname === "/" },
+    { label: "About", href: "/about", active: pathname === "/about" },
+  ]}
+/>
+```
 
 ### hero-minimal
 
