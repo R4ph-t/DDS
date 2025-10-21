@@ -8,9 +8,9 @@ export const Default: Story = () => (
   <Navigation
     logo="My App"
     links={[
-      { label: "Home", href: "/" },
+      { label: "Home", href: "/", icon: <FiHome /> },
       { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
+      { label: "Docs", href: "/docs", icon: <FiBook /> },
     ]}
     actions={<ThemeToggle variant="ghost" />}
   />
@@ -120,4 +120,3 @@ export const WithIcons: Story = () => (
 )
 
 WithIcons.storyName = "With Icons"
-
