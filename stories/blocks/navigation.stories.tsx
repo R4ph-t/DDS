@@ -209,3 +209,46 @@ import { FiHome, FiInfo, FiBook, FiSettings } from "react-icons/fi"
     />
   </StoryWithCode>
 )
+
+export const Sticky: Story = () => (
+  <StoryWithCode
+    title="Navigation - Sticky"
+    description="Sticky navigation that stays at the top when scrolling. Scroll down to see it in action!"
+    props={[...navigationProps, { name: "sticky", type: "boolean", defaultValue: "false", description: "Make the navigation sticky at the top" }]}
+    code={`import { Navigation } from "@/components/blocks/navigation"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
+
+<Navigation
+  logo="My App"
+  links={[
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Docs", href: "/docs" },
+  ]}
+  actions={<ThemeToggle variant="ghost" />}
+  sticky
+/>`}
+  >
+    <div>
+      <Navigation
+        logo="My App"
+        links={[
+          { label: "Home", href: "/" },
+          { label: "About", href: "/about" },
+          { label: "Docs", href: "/docs" },
+        ]}
+        actions={<ThemeToggle variant="ghost" />}
+        sticky
+      />
+      <div className="p-6 space-y-4">
+        <p className="text-muted-foreground">Scroll down to see the sticky navigation in action!</p>
+        {Array.from({ length: 30 }, (_, i) => (
+          <p key={i} className="text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+        ))}
+      </div>
+    </div>
+  </StoryWithCode>
+)

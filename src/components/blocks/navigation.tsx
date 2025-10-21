@@ -36,16 +36,22 @@ export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
    * @default "left"
    */
   linksPosition?: "left" | "center" | "right"
+  /**
+   * Make the navigation sticky at the top of the viewport
+   * @default false
+   */
+  sticky?: boolean
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
-  ({ className, logo, links = [], actions, linksPosition = "left", ...props }, ref) => {
+  ({ className, logo, links = [], actions, linksPosition = "left", sticky = false, ...props }, ref) => {
     return (
       <nav
         ref={ref}
         className={cn(
           "flex items-center border-b border-border bg-background px-6 py-4",
           linksPosition === "center" && "relative min-h-[60px]",
+          sticky && "sticky top-0 z-50",
           className
         )}
         {...props}

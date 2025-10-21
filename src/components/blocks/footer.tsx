@@ -4,22 +4,37 @@ import * as React from "react"
 import { cn } from "../../lib/utils"
 
 export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
+  /**
+   * Custom copyright text
+   */
   copyright?: string
+  /**
+   * Array of footer links
+   */
   links?: Array<{
     label: string
     href: string
   }>
+  /**
+   * Make the footer sticky at the bottom of the viewport
+   * @default false
+   */
+  sticky?: boolean
 }
 
 const Footer = React.forwardRef<HTMLElement, FooterProps>(
-  ({ className, copyright, links, ...props }, ref) => {
+  ({ className, copyright, links, sticky = false, ...props }, ref) => {
     const currentYear = new Date().getFullYear()
     const defaultCopyright = `© ${currentYear} Render. All rights reserved.`
 
     return (
       <footer
         ref={ref}
-        className={cn("border-t border-border bg-background px-6 py-8", className)}
+        className={cn(
+          "border-t border-border bg-background px-6 py-8",
+          sticky && "sticky bottom-0 z-50",
+          className
+        )}
         {...props}
       >
         <div className="mx-auto max-w-7xl">
