@@ -121,12 +121,15 @@ For dark mode support, wrap your app with `ThemeProvider`:
 
 ```tsx
 // app/layout.tsx (Next.js App Router)
-import { ThemeProvider } from 'render-dds'
+import { ThemeProvider, ThemeScript } from 'render-dds'
 import 'render-dds/styles'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
+      <head>
+        <ThemeScript />
+      </head>
       <body>
         <ThemeProvider defaultTheme="light" enableSystem>
           {children}
@@ -139,7 +142,7 @@ export default function RootLayout({ children }) {
 
 **Note:** 
 - Add `bg-background text-foreground` classes to the `<html>` element to use the DDS color theme. These will automatically switch in dark mode.
-- `ThemeProvider` automatically prevents flash of unstyled content (FOUC) when switching themes or navigating.
+- Add `<ThemeScript />` in the `<head>` to prevent flash of unstyled content (FOUC). This script MUST be in the `<head>` to run before React hydrates.
 
 ### 5. Import Components
 
