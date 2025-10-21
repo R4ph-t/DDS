@@ -3,120 +3,181 @@ import { Navigation } from "../../src/components/blocks/navigation"
 import { ThemeToggle } from "../../src/components/ui/theme-toggle"
 import { Button } from "../../src/components/ui/button"
 import { FiHome, FiInfo, FiBook, FiSettings } from "react-icons/fi"
+import { createStoryWithCode } from "../../.ladle/story-helpers"
+
+const StoryWithCode = createStoryWithCode(import.meta.url)
+
+const navigationProps = [
+  {
+    name: "logo",
+    type: "React.ReactNode",
+    description: "Logo or brand element displayed on the left",
+  },
+  {
+    name: "links",
+    type: "NavigationLink[]",
+    description: "Array of navigation links with label, href, and optional icon",
+  },
+  {
+    name: "linksPosition",
+    type: '"left" | "center" | "right"',
+    defaultValue: "left",
+    description: "Position of the links in the navigation bar",
+  },
+  {
+    name: "actions",
+    type: "React.ReactNode",
+    description: "Action buttons or elements displayed on the right (e.g., theme toggle, login)",
+  },
+]
 
 export const Default: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/", icon: <FiHome /> },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs", icon: <FiBook /> },
-    ]}
-    actions={<ThemeToggle variant="ghost" />}
-  />
+  <StoryWithCode
+    title="Navigation - Default"
+    description="Basic navigation with logo, links (with optional icons), and theme toggle action."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/", icon: <FiHome /> },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs", icon: <FiBook /> },
+      ]}
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  </StoryWithCode>
 )
 
 export const LinksLeft: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
-    ]}
-    linksPosition="left"
-    actions={<ThemeToggle variant="ghost" />}
-  />
+  <StoryWithCode
+    title="Navigation - Links Left"
+    description="Links positioned on the left next to the logo (default behavior)."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
+      ]}
+      linksPosition="left"
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  </StoryWithCode>
 )
-
-LinksLeft.storyName = "Links Left (Default)"
 
 export const LinksCenter: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
-    ]}
-    linksPosition="center"
-    actions={<ThemeToggle variant="ghost" />}
-  />
+  <StoryWithCode
+    title="Navigation - Links Center"
+    description="Links perfectly centered in the navigation bar using absolute positioning."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
+      ]}
+      linksPosition="center"
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  </StoryWithCode>
 )
-
-LinksCenter.storyName = "Links Center"
 
 export const LinksRight: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
-    ]}
-    linksPosition="right"
-    actions={<ThemeToggle variant="ghost" />}
-  />
+  <StoryWithCode
+    title="Navigation - Links Right"
+    description="Links positioned on the right side, next to the actions."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
+      ]}
+      linksPosition="right"
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  </StoryWithCode>
 )
-
-LinksRight.storyName = "Links Right"
 
 export const WithMultipleActions: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
-    ]}
-    linksPosition="right"
-    actions={
-      <>
-        <Button variant="ghost" size="sm">
-          Sign In
-        </Button>
-        <Button variant="default" size="sm">
-          Sign Up
-        </Button>
-        <ThemeToggle variant="ghost" size="sm" />
-      </>
-    }
-  />
+  <StoryWithCode
+    title="Navigation - Multiple Actions"
+    description="Navigation with multiple action buttons (Sign In, Sign Up, Theme Toggle)."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
+      ]}
+      linksPosition="right"
+      actions={
+        <>
+          <Button variant="ghost" size="sm">
+            Sign In
+          </Button>
+          <Button variant="default" size="sm">
+            Sign Up
+          </Button>
+          <ThemeToggle variant="ghost" size="sm" />
+        </>
+      }
+    />
+  </StoryWithCode>
 )
-
-WithMultipleActions.storyName = "With Multiple Actions"
 
 export const LogoOnly: Story = () => (
-  <Navigation logo="My App" actions={<ThemeToggle variant="ghost" />} />
+  <StoryWithCode
+    title="Navigation - Logo Only"
+    description="Simple navigation with just a logo and theme toggle."
+    props={navigationProps}
+  >
+    <Navigation logo="My App" actions={<ThemeToggle variant="ghost" />} />
+  </StoryWithCode>
 )
-
-LogoOnly.storyName = "Logo Only"
 
 export const LinksOnly: Story = () => (
-  <Navigation
-    links={[
-      { label: "Home", href: "/" },
-      { label: "About", href: "/about" },
-      { label: "Docs", href: "/docs" },
-    ]}
-    linksPosition="center"
-  />
+  <StoryWithCode
+    title="Navigation - Links Only"
+    description="Minimal navigation with only centered links, no logo or actions."
+    props={navigationProps}
+  >
+    <Navigation
+      links={[
+        { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
+        { label: "Docs", href: "/docs" },
+      ]}
+      linksPosition="center"
+    />
+  </StoryWithCode>
 )
-
-LinksOnly.storyName = "Links Only"
 
 export const WithIcons: Story = () => (
-  <Navigation
-    logo="My App"
-    links={[
-      { label: "Home", href: "/", icon: <FiHome /> },
-      { label: "About", href: "/about", icon: <FiInfo /> },
-      { label: "Docs", href: "/docs", icon: <FiBook /> },
-      { label: "Settings", href: "/settings", icon: <FiSettings /> },
-    ]}
-    linksPosition="left"
-    actions={<ThemeToggle variant="ghost" />}
-  />
+  <StoryWithCode
+    title="Navigation - With Icons"
+    description="All navigation links with icons for better visual clarity."
+    props={navigationProps}
+  >
+    <Navigation
+      logo="My App"
+      links={[
+        { label: "Home", href: "/", icon: <FiHome /> },
+        { label: "About", href: "/about", icon: <FiInfo /> },
+        { label: "Docs", href: "/docs", icon: <FiBook /> },
+        { label: "Settings", href: "/settings", icon: <FiSettings /> },
+      ]}
+      linksPosition="left"
+      actions={<ThemeToggle variant="ghost" />}
+    />
+  </StoryWithCode>
 )
-
-WithIcons.storyName = "With Icons"
