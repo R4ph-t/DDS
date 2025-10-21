@@ -126,8 +126,8 @@ import 'render-dds/styles'
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-background text-foreground">
+    <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
+      <body>
         <ThemeProvider defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
@@ -137,7 +137,9 @@ export default function RootLayout({ children }) {
 }
 ```
 
-**Note:** Add `bg-background text-foreground` classes to your body (or any root element) to use the DDS color theme. These will automatically switch in dark mode.
+**Note:** 
+- Add `bg-background text-foreground` classes to the `<html>` element to use the DDS color theme. These will automatically switch in dark mode.
+- `ThemeProvider` automatically prevents flash of unstyled content (FOUC) when switching themes or navigating.
 
 ### 5. Import Components
 

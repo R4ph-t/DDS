@@ -102,7 +102,15 @@ export function ThemeProvider({
     [theme, setTheme, toggleTheme]
   )
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  // Inline script to prevent FOUC (flash of unstyled content)
+  const themeScript = `!function(){try{const e=localStorage.getItem("${storageKey}"),t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",a=e||t;"dark"===a?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}catch(e){}}();`
+
+  return (
+    <ThemeContext.Provider value={value}>
+      <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
 export function useThemeContext() {

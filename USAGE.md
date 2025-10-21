@@ -303,14 +303,11 @@ DDS components support dark mode out of the box with Tailwind's class-based dark
 
 ```tsx
 // app/layout.tsx or pages/_app.tsx
-import { ThemeProvider, ThemeScript } from "render-dds"
+import { ThemeProvider } from "render-dds"
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
-      <head>
-        <ThemeScript />
-      </head>
       <body>
         <ThemeProvider defaultTheme="light" enableSystem>
           {children}
@@ -323,8 +320,7 @@ export default function RootLayout({ children }) {
 
 **Important:** 
 - Add `bg-background text-foreground` to your `<html>` element to use the DDS theme colors
-- Add `<ThemeScript />` in the `<head>` to prevent flash of unstyled content (FOUC) when navigating
-- If you use a custom `storageKey` prop on `ThemeProvider`, pass the same key to `ThemeScript`: `<ThemeScript storageKey="my-theme" />`
+- `ThemeProvider` automatically includes a script to prevent flash of unstyled content (FOUC)
 
 #### Using the Theme Toggle
 

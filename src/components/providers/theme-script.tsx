@@ -1,24 +1,20 @@
 /**
  * ThemeScript - Prevents flash of unstyled content (FOUC) when using dark mode
  * 
- * This component should be placed in the <head> or at the top of <body> in your root layout.
- * It runs a blocking script before React hydrates to apply the correct theme class immediately.
+ * @deprecated This component is no longer necessary. ThemeProvider now automatically includes
+ * the FOUC prevention script. Just use ThemeProvider directly.
+ * 
+ * This component is kept for backward compatibility but will be removed in a future version.
  * 
  * @example
  * ```tsx
- * // app/layout.tsx
- * import { ThemeScript } from "render-dds"
+ * // OLD WAY (deprecated):
+ * import { ThemeScript, ThemeProvider } from "render-dds"
+ * <html><head><ThemeScript /></head><body><ThemeProvider>...</ThemeProvider></body></html>
  * 
- * export default function RootLayout({ children }) {
- *   return (
- *     <html lang="en">
- *       <head>
- *         <ThemeScript />
- *       </head>
- *       <body>{children}</body>
- *     </html>
- *   )
- * }
+ * // NEW WAY (recommended):
+ * import { ThemeProvider } from "render-dds"
+ * <html><body><ThemeProvider>...</ThemeProvider></body></html>
  * ```
  */
 export function ThemeScript({ storageKey = "theme" }: { storageKey?: string }) {
@@ -32,4 +28,3 @@ export function ThemeScript({ storageKey = "theme" }: { storageKey?: string }) {
     />
   )
 }
-
