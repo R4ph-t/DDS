@@ -48,10 +48,10 @@ const ResultsPanel = React.forwardRef<HTMLDivElement, ResultsPanelProps>(
     return (
       <div
         ref={ref}
-        className={cn("flex h-full flex-col border-2 border-border bg-background", className)}
+        className={cn("flex h-full flex-col border border-border bg-background", className)}
         {...props}
       >
-        <div className="border-b-2 border-border bg-muted px-4 py-3">
+        <div className="border-b border-border bg-muted px-4 py-3">
           <h3 className="font-semibold">{title}</h3>
         </div>
         <div className="flex-1 overflow-y-auto p-4">

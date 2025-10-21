@@ -15,7 +15,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "flex items-center justify-between border-b-2 border-border bg-background px-6 py-4",
+          "flex items-center justify-between border-b border-border bg-background px-6 py-4",
           className
         )}
         {...props}

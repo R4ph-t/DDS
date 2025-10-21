@@ -14,7 +14,7 @@ const HeroMinimal = React.forwardRef<HTMLElement, HeroMinimalProps>(
     return (
       <section
         ref={ref}
-        className={cn("border-b-2 border-border bg-background py-20 px-6 text-center", className)}
+        className={cn("border-b border-border bg-background py-20 px-6 text-center", className)}
         {...props}
       >
         <div className="mx-auto max-w-4xl">

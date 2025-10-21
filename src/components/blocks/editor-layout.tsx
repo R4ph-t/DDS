@@ -18,7 +18,7 @@ const EditorLayout = React.forwardRef<HTMLDivElement, EditorLayoutProps>(
       <div ref={ref} className={cn("flex min-h-screen flex-col", className)} {...props}>
         {/* Header */}
         {(title || description || links) && (
-          <header className="border-b-2 border-border bg-background px-6 py-8">
+          <header className="border-b border-border bg-background px-6 py-8">
             <div className="mx-auto max-w-7xl">
               {title && <h1 className="text-4xl font-bold mb-3">{title}</h1>}
               {description && <p className="text-lg text-muted-foreground mb-4">{description}</p>}

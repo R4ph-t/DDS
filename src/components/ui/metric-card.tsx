@@ -29,7 +29,7 @@ const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
     const [isOpen, setIsOpen] = React.useState(defaultOpen)
 
     return (
-      <div ref={ref} className={cn("border-2 border-border bg-background", className)} {...props}>
+      <div ref={ref} className={cn("border border-border bg-background", className)} {...props}>
         <div className="p-6">
           <h3 className="text-lg font-semibold mb-4">{title}</h3>
 
@@ -50,12 +50,12 @@ const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
                 />
               </button>
 
-              {isOpen && <div className="mt-4 pt-4 border-t-2 border-border">{children}</div>}
+              {isOpen && <div className="mt-4 pt-4 border-t border-border">{children}</div>}
             </>
           )}
 
           {!collapsible && children && (
-            <div className="mt-4 pt-4 border-t-2 border-border">{children}</div>
+            <div className="mt-4 pt-4 border-t border-border">{children}</div>
           )}
         </div>
       </div>

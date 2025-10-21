@@ -40,7 +40,7 @@ const CodeEditor = React.forwardRef<HTMLDivElement, CodeEditorProps>(
     ref
   ) => {
     return (
-      <div ref={ref} className={cn("border-2 border-border", className)}>
+      <div ref={ref} className={cn("border border-border", className)}>
         <CodeMirror
           value={value}
           onChange={onChange}

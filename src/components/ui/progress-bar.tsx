@@ -51,7 +51,7 @@ const ProgressBar = React.forwardRef<HTMLDivElement, ProgressBarProps>(
             )}
           </div>
         )}
-        <div className={cn("w-full bg-muted border-2 border-border", sizeStyles[size])}>
+        <div className={cn("w-full bg-muted border border-border", sizeStyles[size])}>
           <div
             className={cn("h-full transition-all duration-300 ease-out", colorStyles[color])}
             style={{ width: `${percentage}%` }}

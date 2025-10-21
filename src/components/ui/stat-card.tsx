@@ -22,7 +22,7 @@ const StatCard = React.forwardRef<HTMLDivElement, StatCardProps>(
     return (
       <div
         ref={ref}
-        className={cn("border-2 border-border bg-card p-6 text-card-foreground", className)}
+        className={cn("border border-border bg-card p-6 text-card-foreground", className)}
         {...props}
       >
         <div className="flex items-start justify-between">
