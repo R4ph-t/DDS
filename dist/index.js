@@ -26753,7 +26753,7 @@ var CodeEditor = React25.forwardRef(
     readOnly: readOnly2 = false,
     height = "400px"
   }, ref) => {
-    return /* @__PURE__ */ jsx("div", { ref, className: cn("border-2 border-border", className), children: /* @__PURE__ */ jsx(
+    return /* @__PURE__ */ jsx("div", { ref, className: cn("border border-border", className), children: /* @__PURE__ */ jsx(
       esm_default,
       {
         value,
@@ -26827,7 +26827,7 @@ var TabsTrigger = React25.forwardRef(
           "inline-flex items-center justify-center whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors cursor-pointer",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
           "disabled:pointer-events-none disabled:opacity-50",
-          "border-b-2 -mb-px",
+          "border-b -mb-px",
           isSelected ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/50",
           className
         ),
@@ -26992,7 +26992,7 @@ var StatCard = React25.forwardRef(
       "div",
       {
         ref,
-        className: cn("border-2 border-border bg-card p-6 text-card-foreground", className),
+        className: cn("border border-border bg-card p-6 text-card-foreground", className),
         ...props,
         children: /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between", children: [
           /* @__PURE__ */ jsxs("div", { className: "flex-1", children: [
@@ -27038,7 +27038,7 @@ var ProgressBar = React25.forwardRef(
           "%"
         ] })
       ] }),
-      /* @__PURE__ */ jsx("div", { className: cn("w-full bg-muted border-2 border-border", sizeStyles[size]), children: /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsx("div", { className: cn("w-full bg-muted border border-border", sizeStyles[size]), children: /* @__PURE__ */ jsx(
         "div",
         {
           className: cn("h-full transition-all duration-300 ease-out", colorStyles[color]),
@@ -27061,7 +27061,7 @@ var MetricCard = React25.forwardRef(
     ...props
   }, ref) => {
     const [isOpen, setIsOpen] = React25.useState(defaultOpen);
-    return /* @__PURE__ */ jsx("div", { ref, className: cn("border-2 border-border bg-background", className), ...props, children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
+    return /* @__PURE__ */ jsx("div", { ref, className: cn("border border-border bg-background", className), ...props, children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-4", children: title }),
       /* @__PURE__ */ jsxs("div", { className: "text-center py-4", children: [
         /* @__PURE__ */ jsx("div", { className: "text-3xl font-bold mb-2", children: value }),
@@ -27087,9 +27087,9 @@ var MetricCard = React25.forwardRef(
             ]
           }
         ),
-        isOpen && /* @__PURE__ */ jsx("div", { className: "mt-4 pt-4 border-t-2 border-border", children })
+        isOpen && /* @__PURE__ */ jsx("div", { className: "mt-4 pt-4 border-t border-border", children })
       ] }),
-      !collapsible && children && /* @__PURE__ */ jsx("div", { className: "mt-4 pt-4 border-t-2 border-border", children })
+      !collapsible && children && /* @__PURE__ */ jsx("div", { className: "mt-4 pt-4 border-t border-border", children })
     ] }) });
   }
 );
@@ -27121,10 +27121,10 @@ var ResultsPanel = React25.forwardRef(
       "div",
       {
         ref,
-        className: cn("flex h-full flex-col border-2 border-border bg-background", className),
+        className: cn("flex h-full flex-col border border-border bg-background", className),
         ...props,
         children: [
-          /* @__PURE__ */ jsx("div", { className: "border-b-2 border-border bg-muted px-4 py-3", children: /* @__PURE__ */ jsx("h3", { className: "font-semibold", children: title }) }),
+          /* @__PURE__ */ jsx("div", { className: "border-b border-border bg-muted px-4 py-3", children: /* @__PURE__ */ jsx("h3", { className: "font-semibold", children: title }) }),
           /* @__PURE__ */ jsx("div", { className: "flex-1 overflow-y-auto p-4", children: results.length === 0 ? /* @__PURE__ */ jsx("div", { className: "flex h-full items-center justify-center text-muted-foreground", children: emptyMessage }) : /* @__PURE__ */ jsx("div", { className: "space-y-3", children: results.map((result, i) => /* @__PURE__ */ jsx("div", { className: cn("border p-3", statusStyles[result.type]), children: /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-2", children: [
             /* @__PURE__ */ jsx("span", { className: "font-bold", children: statusIcons[result.type] }),
             /* @__PURE__ */ jsxs("div", { className: "flex-1", children: [
@@ -27720,7 +27720,7 @@ var Navigation = React25.forwardRef(
       {
         ref,
         className: cn(
-          "flex items-center justify-between border-b-2 border-border bg-background px-6 py-4",
+          "flex items-center justify-between border-b border-border bg-background px-6 py-4",
           className
         ),
         ...props,
@@ -27749,7 +27749,7 @@ var HeroMinimal = React25.forwardRef(
       "section",
       {
         ref,
-        className: cn("border-b-2 border-border bg-background py-20 px-6 text-center", className),
+        className: cn("border-b border-border bg-background py-20 px-6 text-center", className),
         ...props,
         children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-4xl", children: [
           title && /* @__PURE__ */ jsx("h1", { className: "mb-6 text-5xl font-bold tracking-tight sm:text-6xl", children: title }),
@@ -27764,7 +27764,7 @@ HeroMinimal.displayName = "HeroMinimal";
 var EditorLayout = React25.forwardRef(
   ({ className, title, description, editor, results, actions, links, ...props }, ref) => {
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("flex min-h-screen flex-col", className), ...props, children: [
-      (title || description || links) && /* @__PURE__ */ jsx("header", { className: "border-b-2 border-border bg-background px-6 py-8", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-7xl", children: [
+      (title || description || links) && /* @__PURE__ */ jsx("header", { className: "border-b border-border bg-background px-6 py-8", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-7xl", children: [
         title && /* @__PURE__ */ jsx("h1", { className: "text-4xl font-bold mb-3", children: title }),
         description && /* @__PURE__ */ jsx("p", { className: "text-lg text-muted-foreground mb-4", children: description }),
         links && links.length > 0 && /* @__PURE__ */ jsx("div", { className: "flex gap-4", children: links.map((link, i) => /* @__PURE__ */ jsx("a", { href: link.href, className: "text-sm text-primary hover:underline", children: link.label }, i)) })
