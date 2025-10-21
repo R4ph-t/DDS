@@ -50,13 +50,13 @@ var Button = React25.forwardRef(
       "button",
       {
         className: cn(
-          "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
+          "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 cursor-pointer",
           size !== "icon" && "gap-2",
           {
             "bg-primary text-primary-foreground hover:bg-primary/80": variant === "default",
             "bg-destructive text-destructive-foreground hover:bg-destructive/80": variant === "destructive",
             "bg-teal-500 text-white hover:bg-teal-400": variant === "validate",
-            "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
+            "border border-zinc-300 dark:border-zinc-600 bg-background text-foreground hover:bg-accent hover:text-accent-foreground": variant === "outline",
             "border border-primary text-primary bg-transparent hover:bg-primary hover:text-primary-foreground": variant === "outline-primary",
             "border border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-secondary-foreground": variant === "outline-secondary",
             "border border-teal-500 text-teal-500 bg-transparent hover:bg-teal-500 hover:text-white": variant === "outline-validate",
@@ -172,7 +172,7 @@ var Input = React25.forwardRef(
           "flex h-10 w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
           "file:border-0 file:bg-transparent file:text-sm file:font-medium",
           "placeholder:text-muted-foreground",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
           "disabled:cursor-not-allowed disabled:opacity-50",
           className
         ),
@@ -26825,7 +26825,7 @@ var TabsTrigger = React25.forwardRef(
         type: "button",
         className: cn(
           "inline-flex items-center justify-center whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors cursor-pointer",
-          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
           "disabled:pointer-events-none disabled:opacity-50",
           "border-b -mb-px",
           isSelected ? "border-primary text-primary" : "border-transparent text-muted-foreground hover:text-foreground hover:border-muted-foreground/50",
@@ -26877,7 +26877,7 @@ var Collapsible = React25.forwardRef(
           className: cn(
             "flex w-full items-center justify-between p-4 text-left font-medium transition-colors cursor-pointer",
             "hover:bg-muted/50",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           ),
           "aria-expanded": isOpen,
           children: [
@@ -27423,7 +27423,7 @@ var ThemeToggle = React25.forwardRef(
           ref,
           disabled: true,
           className: cn(
-            "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+            "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
             {
               "border border-zinc-300 dark:border-zinc-600 bg-background": variant === "outline",
               "": variant === "ghost",
@@ -27458,7 +27458,7 @@ var ThemeToggle = React25.forwardRef(
         ref,
         onClick: toggleTheme,
         className: cn(
-          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
           {
             // Variant styles
             "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground": variant === "outline",
