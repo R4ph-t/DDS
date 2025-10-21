@@ -2,7 +2,7 @@
 
 @variant dark (&:where(.dark, .dark *));
 
-@theme {
+:root {
   --color-background: var(--color-white);
   --color-foreground: var(--color-zinc-900);
   --color-card: var(--color-white);
@@ -22,10 +22,6 @@
   --color-border: var(--color-zinc-200);
   --color-input: var(--color-zinc-200);
   --color-ring: var(--color-purple-600);
-
-  --radius-lg: 0px;
-  --radius-md: 0px;
-  --radius-sm: 0px;
 }
 
 .dark {
@@ -48,6 +44,12 @@
   --color-border: var(--color-zinc-800);
   --color-input: var(--color-zinc-800);
   --color-ring: var(--color-purple-500);
+}
+
+@theme {
+  --radius-lg: 0px;
+  --radius-md: 0px;
+  --radius-sm: 0px;
 }
 
 /* Base styles - only set defaults where utility classes are unlikely to be used */
