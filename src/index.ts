@@ -62,7 +62,14 @@ export type { ThemeToggleProps } from "./components/ui/theme-toggle"
 export { Container } from "./components/ui/container"
 export type { ContainerProps } from "./components/ui/container"
 
-export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "./components/ui/card"
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "./components/ui/card"
 export type { CardProps } from "./components/ui/card"
 
 // Providers
