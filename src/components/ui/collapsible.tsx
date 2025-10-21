@@ -45,7 +45,7 @@ const Collapsible = React.forwardRef<HTMLDivElement, CollapsibleProps>(
           className={cn(
             "flex w-full items-center justify-between p-4 text-left font-medium transition-colors cursor-pointer",
             "hover:bg-muted/50",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
           )}
           aria-expanded={isOpen}
         >

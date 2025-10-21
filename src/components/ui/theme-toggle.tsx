@@ -43,7 +43,7 @@ const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
           ref={ref}
           disabled
           className={cn(
-            "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+            "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
             {
               "border border-zinc-300 dark:border-zinc-600 bg-background": variant === "outline",
               "": variant === "ghost",
@@ -77,7 +77,7 @@ const ThemeToggle = React.forwardRef<HTMLButtonElement, ThemeToggleProps>(
         ref={ref}
         onClick={toggleTheme}
         className={cn(
-          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+          "inline-flex items-center justify-center gap-2 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
           {
             // Variant styles
             "border border-zinc-300 dark:border-zinc-600 bg-background hover:bg-accent hover:text-accent-foreground":
