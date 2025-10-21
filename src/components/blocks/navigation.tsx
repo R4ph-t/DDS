@@ -76,6 +76,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
           <div
             className={cn("flex items-center gap-4", {
               "ml-auto": linksPosition !== "right",
+              "ml-8": linksPosition === "right",
             })}
           >
             {actions}
