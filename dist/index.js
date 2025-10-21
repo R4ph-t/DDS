@@ -27848,6 +27848,17 @@ var CardFooter = React27.forwardRef(
   }
 );
 CardFooter.displayName = "CardFooter";
+function ThemeScript({ storageKey = "theme" }) {
+  const themeScript = `!function(){try{const e=localStorage.getItem("${storageKey}"),t=window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light",a=e||t;"dark"===a?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}catch(e){}}();`;
+  return /* @__PURE__ */ jsx(
+    "script",
+    {
+      dangerouslySetInnerHTML: {
+        __html: themeScript
+      }
+    }
+  );
+}
 var SaveButton = React27.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Save" })
 );
@@ -28102,6 +28113,6 @@ var MDXContent = React27.forwardRef(
 );
 MDXContent.displayName = "MDXContent";
 
-export { AddButton, Alert, BackButton, Button, ButtonGroup, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CodeBlock, CodeEditor, Collapsible, Container, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, InputWithSuggestions, Label2 as Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, ThemeProvider, ThemeToggle, Toast, ToastContainer, UploadButton, cn, useTheme };
+export { AddButton, Alert, BackButton, Button, ButtonGroup, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CodeBlock, CodeEditor, Collapsible, Container, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, InputWithSuggestions, Label2 as Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, ThemeProvider, ThemeScript, ThemeToggle, Toast, ToastContainer, UploadButton, cn, useTheme };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

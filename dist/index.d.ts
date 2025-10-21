@@ -349,6 +349,37 @@ interface ThemeProviderProps {
 }
 declare function ThemeProvider({ children, defaultTheme, storageKey, enableSystem, }: ThemeProviderProps): react_jsx_runtime.JSX.Element;
 
+/**
+ * ThemeScript - Prevents flash of unstyled content (FOUC) when using dark mode
+ *
+ * This component MUST be placed in the <head> to run before React hydrates.
+ * It applies the correct theme class immediately on page load.
+ *
+ * @example
+ * ```tsx
+ * // app/layout.tsx
+ * import { ThemeScript, ThemeProvider } from "render-dds"
+ *
+ * export default function RootLayout({ children }) {
+ *   return (
+ *     <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
+ *       <head>
+ *         <ThemeScript />
+ *       </head>
+ *       <body>
+ *         <ThemeProvider defaultTheme="light" enableSystem>
+ *           {children}
+ *         </ThemeProvider>
+ *       </body>
+ *     </html>
+ *   )
+ * }
+ * ```
+ */
+declare function ThemeScript({ storageKey }: {
+    storageKey?: string;
+}): react_jsx_runtime.JSX.Element;
+
 declare function useTheme(): ThemeContextValue;
 
 declare const SaveButton: React.ForwardRefExoticComponent<ButtonProps & React.RefAttributes<HTMLButtonElement>>;
@@ -470,4 +501,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, InputWithSuggestions, type InputWithSuggestionsProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationLink, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, type Suggestion, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
+export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, InputWithSuggestions, type InputWithSuggestionsProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationLink, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, type StatCardProps, StopButton, type Suggestion, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeScript, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
