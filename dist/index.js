@@ -169,7 +169,7 @@ var Input = React25.forwardRef(
       {
         type,
         className: cn(
-          "flex h-10 w-full border-2 border-input bg-background px-3 py-2 text-sm",
+          "flex h-10 w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
           "file:border-0 file:bg-transparent file:text-sm file:font-medium",
           "placeholder:text-muted-foreground",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -189,7 +189,7 @@ var Label = React25.forwardRef(({ className, ...props }, ref) => {
     {
       ref,
       className: cn(
-        "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+        "text-sm font-medium leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
         className
       ),
       ...props
