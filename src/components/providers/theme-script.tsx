@@ -1,14 +1,14 @@
 /**
  * ThemeScript - Prevents flash of unstyled content (FOUC) when using dark mode
- * 
+ *
  * This component MUST be placed in the <head> to run before React hydrates.
  * It applies the correct theme class immediately on page load.
- * 
+ *
  * @example
  * ```tsx
  * // app/layout.tsx
  * import { ThemeScript, ThemeProvider } from "render-dds"
- * 
+ *
  * export default function RootLayout({ children }) {
  *   return (
  *     <html lang="en" suppressHydrationWarning className="bg-background text-foreground">
@@ -37,4 +37,3 @@ export function ThemeScript({ storageKey = "theme" }: { storageKey?: string }) {
     />
   )
 }
-
