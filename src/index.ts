@@ -13,6 +13,27 @@ export type { AlertProps } from "./components/ui/alert"
 export { Input } from "./components/ui/input"
 export type { InputProps } from "./components/ui/input"
 
+export { InputWithSuggestions } from "./components/ui/input-with-suggestions"
+export type { InputWithSuggestionsProps, Suggestion } from "./components/ui/input-with-suggestions"
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuRadioGroup,
+} from "./components/ui/dropdown-menu"
+
 export { Label } from "./components/ui/label"
 export type { LabelProps } from "./components/ui/label"
 
