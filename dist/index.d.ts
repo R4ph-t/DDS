@@ -322,13 +322,31 @@ interface FooterProps extends React.HTMLAttributes<HTMLElement> {
 declare const Footer: React.ForwardRefExoticComponent<FooterProps & React.RefAttributes<HTMLElement>>;
 
 interface NavigationLink {
+    /**
+     * Text label for the link
+     */
     label: string;
+    /**
+     * URL or path for the link
+     */
     href: string;
+    /**
+     * Optional icon to display before the label
+     */
     icon?: React.ReactNode;
 }
 interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
+    /**
+     * Logo or brand element displayed on the left
+     */
     logo?: React.ReactNode;
+    /**
+     * Array of navigation links
+     */
     links?: NavigationLink[];
+    /**
+     * Action buttons or elements displayed on the right (e.g., theme toggle, login button)
+     */
     actions?: React.ReactNode;
     /**
      * Position of the links in the navigation
