@@ -27,6 +27,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
         ref={ref}
         className={cn(
           "flex items-center border-b border-border bg-background px-6 py-4",
+          linksPosition === "center" && "relative",
           className
         )}
         {...props}
@@ -36,7 +37,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
           <ul
             className={cn("flex items-center gap-6", {
               "ml-8": linksPosition === "left" && logo,
-              "mx-auto": linksPosition === "center",
+              "absolute left-1/2 -translate-x-1/2": linksPosition === "center",
               "ml-auto": linksPosition === "right",
             })}
           >
