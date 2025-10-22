@@ -1,6 +1,6 @@
 {
   "name": "render-dds",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "Render Demo Design System - A React component library for building beautiful demos",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
