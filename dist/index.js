@@ -1,6 +1,6 @@
 "use client";
 import { __commonJS, __toESM, __export, __reExport } from './chunk-CFDED2GB.js';
-import * as React27 from 'react';
+import * as React28 from 'react';
 import { forwardRef, useRef, useImperativeHandle, useCallback, useState, useLayoutEffect, useEffect } from 'react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -45,7 +45,7 @@ var require_objectWithoutPropertiesLoose = __commonJS({
 function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
-var Button = React27.forwardRef(
+var Button = React28.forwardRef(
   ({ className, variant = "default", size = "default", iconLeft, iconRight, children, ...props }, ref) => {
     return /* @__PURE__ */ jsxs(
       "button",
@@ -85,7 +85,7 @@ var Button = React27.forwardRef(
   }
 );
 Button.displayName = "Button";
-var ButtonGroup = React27.forwardRef(
+var ButtonGroup = React28.forwardRef(
   ({ className, orientation = "horizontal", children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -136,7 +136,7 @@ var alertConfig = {
     titleClass: "text-purple-900 dark:text-purple-100"
   }
 };
-var Alert = React27.forwardRef(
+var Alert = React28.forwardRef(
   ({ className, variant = "info", title, icon, showIcon = true, children, ...props }, ref) => {
     const config2 = alertConfig[variant];
     const IconComponent = config2.icon;
@@ -163,7 +163,7 @@ var Alert = React27.forwardRef(
   }
 );
 Alert.displayName = "Alert";
-var Input = React27.forwardRef(
+var Input = React28.forwardRef(
   ({ className, type, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "input",
@@ -184,7 +184,7 @@ var Input = React27.forwardRef(
   }
 );
 Input.displayName = "Input";
-var InputWithSuggestions = React27.forwardRef(
+var InputWithSuggestions = React28.forwardRef(
   ({
     className,
     suggestions = [],
@@ -194,13 +194,13 @@ var InputWithSuggestions = React27.forwardRef(
     value: controlledValue,
     ...props
   }, ref) => {
-    const [isOpen, setIsOpen] = React27.useState(false);
-    const [internalValue, setInternalValue] = React27.useState("");
-    const containerRef = React27.useRef(null);
-    const inputRef = React27.useRef(null);
+    const [isOpen, setIsOpen] = React28.useState(false);
+    const [internalValue, setInternalValue] = React28.useState("");
+    const containerRef = React28.useRef(null);
+    const inputRef = React28.useRef(null);
     const value = controlledValue !== void 0 ? controlledValue : internalValue;
-    React27.useImperativeHandle(ref, () => inputRef.current);
-    React27.useEffect(() => {
+    React28.useImperativeHandle(ref, () => inputRef.current);
+    React28.useEffect(() => {
       const handleClickOutside = (event) => {
         if (containerRef.current && !containerRef.current.contains(event.target)) {
           setIsOpen(false);
@@ -312,7 +312,7 @@ var DropdownMenuGroup = DropdownMenuPrimitive.Group;
 var DropdownMenuPortal = DropdownMenuPrimitive.Portal;
 var DropdownMenuSub = DropdownMenuPrimitive.Sub;
 var DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
-var DropdownMenuSubTrigger = React27.forwardRef(({ className, inset, children, ...props }, ref) => /* @__PURE__ */ jsxs(
+var DropdownMenuSubTrigger = React28.forwardRef(({ className, inset, children, ...props }, ref) => /* @__PURE__ */ jsxs(
   DropdownMenuPrimitive.SubTrigger,
   {
     ref,
@@ -329,7 +329,7 @@ var DropdownMenuSubTrigger = React27.forwardRef(({ className, inset, children, .
   }
 ));
 DropdownMenuSubTrigger.displayName = DropdownMenuPrimitive.SubTrigger.displayName;
-var DropdownMenuSubContent = React27.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+var DropdownMenuSubContent = React28.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   DropdownMenuPrimitive.SubContent,
   {
     ref,
@@ -341,7 +341,7 @@ var DropdownMenuSubContent = React27.forwardRef(({ className, ...props }, ref) =
   }
 ));
 DropdownMenuSubContent.displayName = DropdownMenuPrimitive.SubContent.displayName;
-var DropdownMenuContent = React27.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ jsx(DropdownMenuPrimitive.Portal, { children: /* @__PURE__ */ jsx(
+var DropdownMenuContent = React28.forwardRef(({ className, sideOffset = 4, ...props }, ref) => /* @__PURE__ */ jsx(DropdownMenuPrimitive.Portal, { children: /* @__PURE__ */ jsx(
   DropdownMenuPrimitive.Content,
   {
     ref,
@@ -355,7 +355,7 @@ var DropdownMenuContent = React27.forwardRef(({ className, sideOffset = 4, ...pr
   }
 ) }));
 DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
-var DropdownMenuItem = React27.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ jsx(
+var DropdownMenuItem = React28.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ jsx(
   DropdownMenuPrimitive.Item,
   {
     ref,
@@ -368,7 +368,7 @@ var DropdownMenuItem = React27.forwardRef(({ className, inset, ...props }, ref) 
   }
 ));
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
-var DropdownMenuCheckboxItem = React27.forwardRef(({ className, children, checked, ...props }, ref) => /* @__PURE__ */ jsxs(
+var DropdownMenuCheckboxItem = React28.forwardRef(({ className, children, checked, ...props }, ref) => /* @__PURE__ */ jsxs(
   DropdownMenuPrimitive.CheckboxItem,
   {
     ref,
@@ -385,7 +385,7 @@ var DropdownMenuCheckboxItem = React27.forwardRef(({ className, children, checke
   }
 ));
 DropdownMenuCheckboxItem.displayName = DropdownMenuPrimitive.CheckboxItem.displayName;
-var DropdownMenuRadioItem = React27.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ jsxs(
+var DropdownMenuRadioItem = React28.forwardRef(({ className, children, ...props }, ref) => /* @__PURE__ */ jsxs(
   DropdownMenuPrimitive.RadioItem,
   {
     ref,
@@ -401,7 +401,7 @@ var DropdownMenuRadioItem = React27.forwardRef(({ className, children, ...props 
   }
 ));
 DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName;
-var DropdownMenuLabel = React27.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ jsx(
+var DropdownMenuLabel = React28.forwardRef(({ className, inset, ...props }, ref) => /* @__PURE__ */ jsx(
   DropdownMenuPrimitive.Label,
   {
     ref,
@@ -410,7 +410,7 @@ var DropdownMenuLabel = React27.forwardRef(({ className, inset, ...props }, ref)
   }
 ));
 DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
-var DropdownMenuSeparator = React27.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+var DropdownMenuSeparator = React28.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   DropdownMenuPrimitive.Separator,
   {
     ref,
@@ -423,7 +423,7 @@ var DropdownMenuShortcut = ({ className, ...props }) => {
   return /* @__PURE__ */ jsx("span", { className: cn("ml-auto text-xs tracking-widest opacity-60", className), ...props });
 };
 DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
-var Label2 = React27.forwardRef(({ className, ...props }, ref) => {
+var Label2 = React28.forwardRef(({ className, ...props }, ref) => {
   return /* @__PURE__ */ jsx(
     "label",
     {
@@ -437,7 +437,7 @@ var Label2 = React27.forwardRef(({ className, ...props }, ref) => {
   );
 });
 Label2.displayName = "Label";
-var Link = React27.forwardRef(
+var Link = React28.forwardRef(
   ({
     className,
     variant = "default",
@@ -480,7 +480,7 @@ var Link = React27.forwardRef(
   }
 );
 Link.displayName = "Link";
-var FormField = React27.forwardRef(
+var FormField = React28.forwardRef(
   ({ className, label, error, helperText, id: id2, ...props }, ref) => {
     const inputId = id2 || label?.toLowerCase().replace(/\s+/g, "-");
     return /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
@@ -500,7 +500,7 @@ var FormField = React27.forwardRef(
   }
 );
 FormField.displayName = "FormField";
-var CodeBlock = React27.forwardRef(
+var CodeBlock = React28.forwardRef(
   ({
     className,
     code,
@@ -509,10 +509,10 @@ var CodeBlock = React27.forwardRef(
     highlightLines = [],
     ...props
   }, ref) => {
-    const [html, setHtml] = React27.useState("");
-    const [isDark, setIsDark] = React27.useState(false);
-    const containerRef = React27.useRef(null);
-    React27.useEffect(() => {
+    const [html, setHtml] = React28.useState("");
+    const [isDark, setIsDark] = React28.useState(false);
+    const containerRef = React28.useRef(null);
+    React28.useEffect(() => {
       const detectDarkMode = () => {
         if (containerRef.current) {
           const element = containerRef.current;
@@ -530,7 +530,7 @@ var CodeBlock = React27.forwardRef(
       });
       return () => observer.disconnect();
     }, []);
-    React27.useEffect(() => {
+    React28.useEffect(() => {
       const generateHtml = async () => {
         const result = await codeToHtml(code, {
           lang: language2,
@@ -540,7 +540,7 @@ var CodeBlock = React27.forwardRef(
       };
       generateHtml();
     }, [code, language2, isDark]);
-    const mergedRef = React27.useCallback(
+    const mergedRef = React28.useCallback(
       (node) => {
         containerRef.current = node;
         if (typeof ref === "function") {
@@ -26983,7 +26983,7 @@ var languageExtensions = {
   json: [json()],
   python: [python()]
 };
-var CodeEditor = React27.forwardRef(
+var CodeEditor = React28.forwardRef(
   ({
     className,
     value,
@@ -27014,19 +27014,19 @@ var CodeEditor = React27.forwardRef(
   }
 );
 CodeEditor.displayName = "CodeEditor";
-var TabsContext = React27.createContext(void 0);
+var TabsContext = React28.createContext(void 0);
 var useTabsContext = () => {
-  const context = React27.useContext(TabsContext);
+  const context = React28.useContext(TabsContext);
   if (!context) {
     throw new Error("Tabs components must be used within a Tabs component");
   }
   return context;
 };
-var Tabs = React27.forwardRef(
+var Tabs = React28.forwardRef(
   ({ className, defaultValue = "", value: controlledValue, onValueChange, children, ...props }, ref) => {
-    const [uncontrolledValue, setUncontrolledValue] = React27.useState(defaultValue);
+    const [uncontrolledValue, setUncontrolledValue] = React28.useState(defaultValue);
     const value = controlledValue !== void 0 ? controlledValue : uncontrolledValue;
-    const handleValueChange = React27.useCallback(
+    const handleValueChange = React28.useCallback(
       (newValue) => {
         if (controlledValue === void 0) {
           setUncontrolledValue(newValue);
@@ -27039,7 +27039,7 @@ var Tabs = React27.forwardRef(
   }
 );
 Tabs.displayName = "Tabs";
-var TabsList = React27.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+var TabsList = React28.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   "div",
   {
     ref,
@@ -27052,7 +27052,7 @@ var TabsList = React27.forwardRef(({ className, ...props }, ref) => /* @__PURE__
   }
 ));
 TabsList.displayName = "TabsList";
-var TabsTrigger = React27.forwardRef(
+var TabsTrigger = React28.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue, onValueChange } = useTabsContext();
     const isSelected = value === selectedValue;
@@ -27078,7 +27078,7 @@ var TabsTrigger = React27.forwardRef(
   }
 );
 TabsTrigger.displayName = "TabsTrigger";
-var TabsContent = React27.forwardRef(
+var TabsContent = React28.forwardRef(
   ({ className, value, ...props }, ref) => {
     const { value: selectedValue } = useTabsContext();
     if (value !== selectedValue) {
@@ -27088,7 +27088,7 @@ var TabsContent = React27.forwardRef(
   }
 );
 TabsContent.displayName = "TabsContent";
-var Collapsible = React27.forwardRef(
+var Collapsible = React28.forwardRef(
   ({
     className,
     title,
@@ -27099,7 +27099,7 @@ var Collapsible = React27.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [uncontrolledOpen, setUncontrolledOpen] = React27.useState(defaultOpen);
+    const [uncontrolledOpen, setUncontrolledOpen] = React28.useState(defaultOpen);
     const isOpen = controlledOpen !== void 0 ? controlledOpen : uncontrolledOpen;
     const handleToggle = () => {
       const newOpen = !isOpen;
@@ -27146,7 +27146,7 @@ __export(icon_exports, {
   Icon: () => Icon
 });
 __reExport(icon_exports, io5_star);
-var Icon = React27.forwardRef(
+var Icon = React28.forwardRef(
   ({ as: Component, className, size = 20, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       Component,
@@ -27171,10 +27171,10 @@ var icons = {
   info: IoInformationCircle
 };
 function Toast({ message, type, duration = 3e3, onClose, index = 0 }) {
-  const [isVisible, setIsVisible] = React27.useState(true);
+  const [isVisible, setIsVisible] = React28.useState(true);
   const Icon2 = icons[type];
   const topPosition = 1 + index * 4;
-  React27.useEffect(() => {
+  React28.useEffect(() => {
     if (duration === Infinity) return;
     const timer = setTimeout(() => {
       setIsVisible(false);
@@ -27221,7 +27221,59 @@ function ToastContainer({ toasts, removeToast }) {
     toast.id
   )) });
 }
-var StatCard = React27.forwardRef(
+var Spinner = React28.forwardRef(
+  ({ className, size = "default", variant = "primary", label, ...props }, ref) => {
+    return /* @__PURE__ */ jsxs(
+      "div",
+      {
+        ref,
+        className: cn("inline-flex flex-col items-center justify-center gap-2", className),
+        role: "status",
+        "aria-label": label || "Loading",
+        ...props,
+        children: [
+          /* @__PURE__ */ jsx(
+            "div",
+            {
+              className: cn(
+                "animate-spin border-2 border-solid",
+                {
+                  // Sizes
+                  "h-4 w-4": size === "xs",
+                  "h-6 w-6": size === "sm",
+                  "h-8 w-8": size === "default",
+                  "h-12 w-12": size === "lg",
+                  "h-16 w-16": size === "xl"
+                },
+                {
+                  // Variants
+                  "border-primary border-t-transparent": variant === "primary",
+                  "border-secondary border-t-transparent": variant === "secondary",
+                  "border-white border-t-transparent": variant === "white",
+                  "border-foreground border-t-transparent": variant === "foreground"
+                }
+              )
+            }
+          ),
+          label && /* @__PURE__ */ jsx(
+            "span",
+            {
+              className: cn("text-sm font-medium text-muted-foreground", {
+                "text-xs": size === "xs",
+                "text-sm": size === "sm" || size === "default",
+                "text-base": size === "lg",
+                "text-lg": size === "xl"
+              }),
+              children: label
+            }
+          )
+        ]
+      }
+    );
+  }
+);
+Spinner.displayName = "Spinner";
+var StatCard = React28.forwardRef(
   ({ className, label, value, change, changeType = "neutral", icon, ...props }, ref) => {
     const changeColors = {
       positive: "text-green-600 dark:text-green-400",
@@ -27258,7 +27310,7 @@ var colorStyles = {
   warning: "bg-yellow-600",
   error: "bg-red-600"
 };
-var ProgressBar = React27.forwardRef(
+var ProgressBar = React28.forwardRef(
   ({
     className,
     value,
@@ -27289,7 +27341,7 @@ var ProgressBar = React27.forwardRef(
   }
 );
 ProgressBar.displayName = "ProgressBar";
-var MetricCard = React27.forwardRef(
+var MetricCard = React28.forwardRef(
   ({
     className,
     title,
@@ -27300,7 +27352,7 @@ var MetricCard = React27.forwardRef(
     children,
     ...props
   }, ref) => {
-    const [isOpen, setIsOpen] = React27.useState(defaultOpen);
+    const [isOpen, setIsOpen] = React28.useState(defaultOpen);
     return /* @__PURE__ */ jsx("div", { ref, className: cn("border border-border bg-background", className), ...props, children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
       /* @__PURE__ */ jsx("h3", { className: "text-lg font-semibold mb-4", children: title }),
       /* @__PURE__ */ jsxs("div", { className: "text-center py-4", children: [
@@ -27348,7 +27400,7 @@ var statusIcons = {
   info: "\u2139",
   idle: ""
 };
-var ResultsPanel = React27.forwardRef(
+var ResultsPanel = React28.forwardRef(
   ({
     className,
     title = "Results",
@@ -27462,7 +27514,7 @@ var RenderFullLogo = ({
     ]
   }
 );
-var RenderLogo = React27.forwardRef(
+var RenderLogo = React28.forwardRef(
   ({ className, variant = "full", height = 32, ...props }, ref) => {
     const LogoComponent = variant === "mark" ? RenderMark : RenderFullLogo;
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("inline-flex items-center", className), ...props, children: [
@@ -27531,7 +27583,7 @@ var getBackgroundPosition = (orientation) => {
       return "bottom right";
   }
 };
-var GridDecoration = React27.forwardRef(
+var GridDecoration = React28.forwardRef(
   ({
     className,
     position = "top-left",
@@ -27545,8 +27597,8 @@ var GridDecoration = React27.forwardRef(
   }, ref) => {
     const widthValue = typeof width === "number" ? `${width}px` : width;
     const heightValue = typeof height === "number" ? `${height}px` : height;
-    const [isDark, setIsDark] = React27.useState(false);
-    React27.useEffect(() => {
+    const [isDark, setIsDark] = React28.useState(false);
+    React28.useEffect(() => {
       const checkDarkMode = () => {
         setIsDark(document.documentElement.classList.contains("dark"));
       };
@@ -27558,7 +27610,7 @@ var GridDecoration = React27.forwardRef(
       });
       return () => observer.disconnect();
     }, []);
-    const backgroundImage = React27.useMemo(
+    const backgroundImage = React28.useMemo(
       () => generateGridPattern(density, isDark, orientation),
       [density, isDark, orientation]
     );
@@ -27589,14 +27641,14 @@ var GridDecoration = React27.forwardRef(
   }
 );
 GridDecoration.displayName = "GridDecoration";
-var ThemeContext = React27.createContext(void 0);
+var ThemeContext = React28.createContext(void 0);
 function ThemeProvider({
   children,
   defaultTheme: defaultTheme2 = "light",
   storageKey = "theme",
   enableSystem = true
 }) {
-  const [theme2, setThemeState] = React27.useState(() => {
+  const [theme2, setThemeState] = React28.useState(() => {
     if (typeof window === "undefined") return defaultTheme2;
     const stored = localStorage.getItem(storageKey);
     if (stored === "light" || stored === "dark") return stored;
@@ -27605,13 +27657,13 @@ function ThemeProvider({
     }
     return defaultTheme2;
   });
-  React27.useEffect(() => {
+  React28.useEffect(() => {
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme2);
     localStorage.setItem(storageKey, theme2);
   }, [theme2, storageKey]);
-  React27.useEffect(() => {
+  React28.useEffect(() => {
     if (!enableSystem) return;
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e) => {
@@ -27621,13 +27673,13 @@ function ThemeProvider({
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
   }, [enableSystem, storageKey]);
-  const setTheme = React27.useCallback((newTheme) => {
+  const setTheme = React28.useCallback((newTheme) => {
     setThemeState(newTheme);
   }, []);
-  const toggleTheme = React27.useCallback(() => {
+  const toggleTheme = React28.useCallback(() => {
     setThemeState((prev) => prev === "light" ? "dark" : "light");
   }, []);
-  const value = React27.useMemo(
+  const value = React28.useMemo(
     () => ({
       theme: theme2,
       setTheme,
@@ -27638,7 +27690,7 @@ function ThemeProvider({
   return /* @__PURE__ */ jsx(ThemeContext.Provider, { value, children });
 }
 function useThemeContext() {
-  const context = React27.useContext(ThemeContext);
+  const context = React28.useContext(ThemeContext);
   if (!context) {
     throw new Error("useThemeContext must be used within a ThemeProvider");
   }
@@ -27649,11 +27701,11 @@ function useThemeContext() {
 function useTheme() {
   return useThemeContext();
 }
-var ThemeToggle = React27.forwardRef(
+var ThemeToggle = React28.forwardRef(
   ({ className, size = "default", variant = "outline", showLabel = false }, ref) => {
     const { theme: theme2, setTheme } = useTheme();
-    const [mounted, setMounted] = React27.useState(false);
-    React27.useEffect(() => {
+    const [mounted, setMounted] = React28.useState(false);
+    React28.useEffect(() => {
       setMounted(true);
     }, []);
     if (!mounted) {
@@ -27745,7 +27797,7 @@ var ThemeToggle = React27.forwardRef(
   }
 );
 ThemeToggle.displayName = "ThemeToggle";
-var Container = React27.forwardRef(
+var Container = React28.forwardRef(
   ({
     className,
     variant = "default",
@@ -27790,7 +27842,7 @@ var Container = React27.forwardRef(
   }
 );
 Container.displayName = "Container";
-var Card = React27.forwardRef(
+var Card = React28.forwardRef(
   ({ className, variant = "default", children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -27812,13 +27864,13 @@ var Card = React27.forwardRef(
   }
 );
 Card.displayName = "Card";
-var CardHeader = React27.forwardRef(
+var CardHeader = React28.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx("div", { ref, className: cn("flex flex-col space-y-1.5 p-6", className), ...props, children });
   }
 );
 CardHeader.displayName = "CardHeader";
-var CardTitle = React27.forwardRef(
+var CardTitle = React28.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "h3",
@@ -27832,17 +27884,17 @@ var CardTitle = React27.forwardRef(
   }
 );
 CardTitle.displayName = "CardTitle";
-var CardDescription = React27.forwardRef(({ className, children, ...props }, ref) => {
+var CardDescription = React28.forwardRef(({ className, children, ...props }, ref) => {
   return /* @__PURE__ */ jsx("p", { ref, className: cn("text-sm text-muted-foreground", className), ...props, children });
 });
 CardDescription.displayName = "CardDescription";
-var CardContent = React27.forwardRef(
+var CardContent = React28.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx("div", { ref, className: cn("p-6 pt-0", className), ...props, children });
   }
 );
 CardContent.displayName = "CardContent";
-var CardFooter = React27.forwardRef(
+var CardFooter = React28.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx("div", { ref, className: cn("flex items-center p-6 pt-0", className), ...props, children });
   }
@@ -27859,15 +27911,15 @@ function ThemeScript({ storageKey = "theme" }) {
     }
   );
 }
-var SaveButton = React27.forwardRef(
+var SaveButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Save" })
 );
 SaveButton.displayName = "SaveButton";
-var SaveDraftButton = React27.forwardRef(
+var SaveDraftButton = React28.forwardRef(
   ({ variant = "outline-primary", iconLeft = /* @__PURE__ */ jsx(IoSave, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save Draft" })
 );
 SaveDraftButton.displayName = "SaveDraftButton";
-var SaveAndDeployButton = React27.forwardRef(
+var SaveAndDeployButton = React28.forwardRef(
   ({
     variant = "validate",
     iconLeft = /* @__PURE__ */ jsx(IoCheckmarkCircle, { className: "h-4 w-4" }),
@@ -27876,31 +27928,31 @@ var SaveAndDeployButton = React27.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Save & Deploy" })
 );
 SaveAndDeployButton.displayName = "SaveAndDeployButton";
-var EditButton = React27.forwardRef(
+var EditButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoPencil, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Edit" })
 );
 EditButton.displayName = "EditButton";
-var DuplicateButton = React27.forwardRef(
+var DuplicateButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoCopy, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Duplicate" })
 );
 DuplicateButton.displayName = "DuplicateButton";
-var DeleteButton = React27.forwardRef(
+var DeleteButton = React28.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoTrash, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Delete" })
 );
 DeleteButton.displayName = "DeleteButton";
-var CreateButton = React27.forwardRef(
+var CreateButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Create" })
 );
 CreateButton.displayName = "CreateButton";
-var AddButton = React27.forwardRef(
+var AddButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoAdd, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Add" })
 );
 AddButton.displayName = "AddButton";
-var UploadButton = React27.forwardRef(
+var UploadButton = React28.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoCloudUpload, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Upload" })
 );
 UploadButton.displayName = "UploadButton";
-var DownloadButton = React27.forwardRef(
+var DownloadButton = React28.forwardRef(
   ({
     variant = "outline-primary",
     iconLeft = /* @__PURE__ */ jsx(IoDownload, { className: "h-4 w-4" }),
@@ -27909,35 +27961,35 @@ var DownloadButton = React27.forwardRef(
   }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Download" })
 );
 DownloadButton.displayName = "DownloadButton";
-var DeployButton = React27.forwardRef(
+var DeployButton = React28.forwardRef(
   ({ variant = "validate", iconLeft = /* @__PURE__ */ jsx(IoRocket, { className: "h-5 w-5" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Deploy" })
 );
 DeployButton.displayName = "DeployButton";
-var RestartButton = React27.forwardRef(
+var RestartButton = React28.forwardRef(
   ({ iconLeft = /* @__PURE__ */ jsx(IoRefresh, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconLeft, ...props, children: children || "Restart" })
 );
 RestartButton.displayName = "RestartButton";
-var PauseButton = React27.forwardRef(
+var PauseButton = React28.forwardRef(
   ({ variant = "secondary", iconLeft = /* @__PURE__ */ jsx(IoPause, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Pause" })
 );
 PauseButton.displayName = "PauseButton";
-var StopButton = React27.forwardRef(
+var StopButton = React28.forwardRef(
   ({ variant = "destructive", iconLeft = /* @__PURE__ */ jsx(IoClose, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Stop" })
 );
 StopButton.displayName = "StopButton";
-var ContinueButton = React27.forwardRef(
+var ContinueButton = React28.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Continue" })
 );
 ContinueButton.displayName = "ContinueButton";
-var BackButton = React27.forwardRef(
+var BackButton = React28.forwardRef(
   ({ variant = "outline", iconLeft = /* @__PURE__ */ jsx(IoArrowBack, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, variant, iconLeft, ...props, children: children || "Back" })
 );
 BackButton.displayName = "BackButton";
-var NextButton = React27.forwardRef(
+var NextButton = React28.forwardRef(
   ({ iconRight = /* @__PURE__ */ jsx(IoArrowForward, { className: "h-4 w-4" }), children, ...props }, ref) => /* @__PURE__ */ jsx(Button, { ref, iconRight, ...props, children: children || "Next" })
 );
 NextButton.displayName = "NextButton";
-var Footer = React27.forwardRef(
+var Footer = React28.forwardRef(
   ({ className, copyright, links, sticky = false, ...props }, ref) => {
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const defaultCopyright = `\xA9 ${currentYear} Render. All rights reserved.`;
@@ -27968,7 +28020,7 @@ var Footer = React27.forwardRef(
   }
 );
 Footer.displayName = "Footer";
-var Navigation = React27.forwardRef(
+var Navigation = React28.forwardRef(
   ({
     className,
     logo,
@@ -28036,7 +28088,7 @@ var Navigation = React27.forwardRef(
   }
 );
 Navigation.displayName = "Navigation";
-var HeroMinimal = React27.forwardRef(
+var HeroMinimal = React28.forwardRef(
   ({ className, title, subtitle, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "section",
@@ -28054,7 +28106,7 @@ var HeroMinimal = React27.forwardRef(
   }
 );
 HeroMinimal.displayName = "HeroMinimal";
-var EditorLayout = React27.forwardRef(
+var EditorLayout = React28.forwardRef(
   ({ className, title, description, editor, results, actions, links, ...props }, ref) => {
     return /* @__PURE__ */ jsxs("div", { ref, className: cn("flex min-h-screen flex-col", className), ...props, children: [
       (title || description || links) && /* @__PURE__ */ jsx("header", { className: "border-b border-border bg-background px-6 py-8", children: /* @__PURE__ */ jsxs("div", { className: "mx-auto max-w-7xl", children: [
@@ -28073,7 +28125,7 @@ var EditorLayout = React27.forwardRef(
   }
 );
 EditorLayout.displayName = "EditorLayout";
-var MDXContent = React27.forwardRef(
+var MDXContent = React28.forwardRef(
   ({ className, children, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "div",
@@ -28113,6 +28165,6 @@ var MDXContent = React27.forwardRef(
 );
 MDXContent.displayName = "MDXContent";
 
-export { AddButton, Alert, BackButton, Button, ButtonGroup, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CodeBlock, CodeEditor, Collapsible, Container, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, InputWithSuggestions, Label2 as Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, ThemeProvider, ThemeScript, ThemeToggle, Toast, ToastContainer, UploadButton, cn, useTheme };
+export { AddButton, Alert, BackButton, Button, ButtonGroup, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, CodeBlock, CodeEditor, Collapsible, Container, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, Footer, FormField, GridDecoration, HeroMinimal, Icon, Input, InputWithSuggestions, Label2 as Label, Link, MDXContent, MetricCard, Navigation, NextButton, PauseButton, ProgressBar, RenderLogo, RestartButton, ResultsPanel, SaveAndDeployButton, SaveButton, SaveDraftButton, Spinner, StatCard, StopButton, Tabs, TabsContent, TabsList, TabsTrigger, ThemeProvider, ThemeScript, ThemeToggle, Toast, ToastContainer, UploadButton, cn, useTheme };
 //# sourceMappingURL=index.js.map
 //# sourceMappingURL=index.js.map

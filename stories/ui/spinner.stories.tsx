@@ -22,6 +22,12 @@ const spinnerProps = [
     type: "string",
     description: "Optional text label displayed below the spinner",
   },
+  {
+    name: "showMark",
+    type: "boolean",
+    defaultValue: "true",
+    description: "Show Render mark inside the spinner",
+  },
 ]
 
 export const Default: Story = () => (
@@ -172,6 +178,25 @@ export const AllSizesWithLabels: Story = () => (
       <Spinner size="default" label="Default" />
       <Spinner size="lg" label="Large" />
       <Spinner size="xl" label="Extra Large" />
+    </div>
+  </StoryWithCode>
+)
+
+export const WithoutMark: Story = () => (
+  <StoryWithCode
+    title="Spinner - Without Mark"
+    description="Spinners without the Render mark inside."
+    props={spinnerProps}
+    code={`import { Spinner } from "render-dds"
+
+<Spinner showMark={false} />
+<Spinner size="lg" showMark={false} variant="secondary" />`}
+  >
+    <div className="flex items-center gap-8">
+      <Spinner showMark={false} />
+      <Spinner size="sm" showMark={false} />
+      <Spinner size="lg" showMark={false} variant="secondary" />
+      <Spinner size="xl" showMark={false} variant="foreground" />
     </div>
   </StoryWithCode>
 )

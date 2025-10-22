@@ -142,13 +142,17 @@ success("Operation completed!")
 
 **Purpose**: Loading spinner for async operations  
 **Sizes**: xs, sm, default, lg, xl  
-**Variants**: primary, secondary, white, foreground
+**Variants**: primary, secondary, white, foreground  
+**Features**: Render mark inside by default (can be disabled)
 
 ```tsx
 import { Spinner } from "@/components/ui/spinner"
 
-// Basic spinner
+// Basic spinner (with Render mark)
 <Spinner />
+
+// Without mark
+<Spinner showMark={false} />
 
 // With label
 <Spinner label="Loading..." />
