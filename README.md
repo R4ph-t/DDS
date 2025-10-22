@@ -204,6 +204,7 @@ export default function BlogPost() {
 - **CodeBlock** - Syntax-highlighted code with Shiki
 - **CodeEditor** - Interactive code editor with CodeMirror
 - **Toast** - Notifications (success, error, info)
+- **Spinner** - Loading spinners for async operations
 - **Tabs** - Tab navigation
 - **Collapsible** - Expandable sections
 - **StatCard** - Display statistics

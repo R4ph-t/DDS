@@ -59,6 +59,9 @@ export { Icon } from "./components/ui/icon"
 export { Toast, ToastContainer } from "./components/ui/toast"
 export type { ToastProps, ToastType } from "./components/ui/toast"
 
+export { Spinner } from "./components/ui/spinner"
+export type { SpinnerProps } from "./components/ui/spinner"
+
 export { StatCard } from "./components/ui/stat-card"
 export type { StatCardProps } from "./components/ui/stat-card"
 

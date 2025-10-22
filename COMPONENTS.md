@@ -138,6 +138,36 @@ success("Operation completed!")
 <ToastContainer toasts={toasts} removeToast={removeToast} />
 ```
 
+### spinner
+
+**Purpose**: Loading spinner for async operations  
+**Sizes**: xs, sm, default, lg, xl  
+**Variants**: primary, secondary, white, foreground
+
+```tsx
+import { Spinner } from "@/components/ui/spinner"
+
+// Basic spinner
+<Spinner />
+
+// With label
+<Spinner label="Loading..." />
+
+// Different sizes and variants
+<Spinner size="lg" variant="secondary" />
+
+// In button
+<Button disabled>
+  <Spinner size="xs" variant="white" />
+  Loading...
+</Button>
+
+// Full screen
+<div className="min-h-screen flex items-center justify-center">
+  <Spinner size="xl" label="Loading your content..." />
+</div>
+```
+
 ### form-field
 
 **Purpose**: Enhanced form inputs with validation  
