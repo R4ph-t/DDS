@@ -199,6 +199,11 @@ interface SpinnerProps extends React.HTMLAttributes<HTMLDivElement> {
      * Show with a label
      */
     label?: string;
+    /**
+     * Show Render mark inside the spinner
+     * @default true
+     */
+    showMark?: boolean;
 }
 declare const Spinner: React.ForwardRefExoticComponent<SpinnerProps & React.RefAttributes<HTMLDivElement>>;
 
