@@ -32,7 +32,7 @@ const Spinner = React.forwardRef<HTMLDivElement, SpinnerProps>(
       >
         <div
           className={cn(
-            "animate-spin border-2 border-solid",
+            "animate-spin rounded-full border-2 border-solid",
             {
               // Sizes
               "h-4 w-4": size === "xs",
