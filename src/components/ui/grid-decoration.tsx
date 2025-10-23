@@ -155,8 +155,8 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
   ) => {
     // Default offsetTop to 64px for below-nav positions if not explicitly provided
     const isBelowNav = position === "below-nav-left" || position === "below-nav-right"
-    const effectiveOffsetTop = offsetTop !== undefined ? offsetTop : (isBelowNav ? 64 : 0)
-    
+    const effectiveOffsetTop = offsetTop !== undefined ? offsetTop : isBelowNav ? 64 : 0
+
     const widthValue = typeof width === "number" ? `${width}px` : width
     const heightValue = typeof height === "number" ? `${height}px` : height
 

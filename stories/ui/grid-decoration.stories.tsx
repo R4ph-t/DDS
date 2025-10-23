@@ -345,22 +345,28 @@ export const BelowNavbar: Story = () => {
         <div className="h-16 bg-background border-b border-border px-6 flex items-center">
           <div className="text-xl font-semibold">My App</div>
           <nav className="ml-8 flex gap-6">
-            <a href="#" className="text-sm">Home</a>
-            <a href="#" className="text-sm">About</a>
-            <a href="#" className="text-sm">Docs</a>
+            <a href="#" className="text-sm">
+              Home
+            </a>
+            <a href="#" className="text-sm">
+              About
+            </a>
+            <a href="#" className="text-sm">
+              Docs
+            </a>
           </nav>
         </div>
 
         {/* Grid decorations positioned below nav - no offsetTop needed! */}
-        <GridDecoration 
-          position="below-nav-left" 
+        <GridDecoration
+          position="below-nav-left"
           orientation="top-right"
           width={450}
           height={450}
           opacity={0.4}
         />
-        <GridDecoration 
-          position="below-nav-right" 
+        <GridDecoration
+          position="below-nav-right"
           orientation="top-left"
           width={450}
           height={450}
@@ -371,9 +377,9 @@ export const BelowNavbar: Story = () => {
         <div className="relative z-10 px-8 py-16">
           <h1 className="text-4xl mb-4">Content Below Navigation</h1>
           <p className="text-muted-foreground mb-6 max-w-2xl">
-            The grid decorations are positioned precisely below the navigation bar using 
-            position="below-nav-left" and position="below-nav-right". They automatically offset
-            64px from the top (standard navbar height).
+            The grid decorations are positioned precisely below the navigation bar using
+            position="below-nav-left" and position="below-nav-right". They automatically offset 64px
+            from the top (standard navbar height).
           </p>
           <p className="text-muted-foreground mb-6 max-w-2xl">
             No need to manually specify offsetTop! If your navbar has a different height, you can
