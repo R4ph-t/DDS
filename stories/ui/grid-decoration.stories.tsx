@@ -317,26 +317,27 @@ export const BelowNavbar: Story = () => {
   return (
     <StoryWithCode
       title="Below Navigation Bar"
-      description="Position grid decorations below a navigation bar using the below-nav positions and offsetTop prop."
+      description="Position grid decorations below a navigation bar using the below-nav positions. Automatically defaults to 64px offset (standard navbar height)."
       props={gridProps}
       code={`import { GridDecoration } from "render-dds"
 
-// Below nav, aligned to left
+// Below nav, aligned to left (automatically offset 64px from top)
 <GridDecoration 
   position="below-nav-left" 
-  offsetTop={60} 
   orientation="top-right"
-  width={450}
-  height={450}
 />
 
-// Below nav, aligned to right
+// Below nav, aligned to right (automatically offset 64px from top)
 <GridDecoration 
   position="below-nav-right" 
-  offsetTop={60} 
   orientation="top-left"
-  width={450}
-  height={450}
+/>
+
+// Or override the offset for custom navbar heights
+<GridDecoration 
+  position="below-nav-left" 
+  offsetTop={80}  // Custom navbar height
+  orientation="top-right"
 />`}
     >
       <div className="relative min-h-[500px] bg-background">
@@ -350,10 +351,9 @@ export const BelowNavbar: Story = () => {
           </nav>
         </div>
 
-        {/* Grid decorations positioned below nav */}
+        {/* Grid decorations positioned below nav - no offsetTop needed! */}
         <GridDecoration 
           position="below-nav-left" 
-          offsetTop={64}
           orientation="top-right"
           width={450}
           height={450}
@@ -361,7 +361,6 @@ export const BelowNavbar: Story = () => {
         />
         <GridDecoration 
           position="below-nav-right" 
-          offsetTop={64}
           orientation="top-left"
           width={450}
           height={450}
@@ -373,11 +372,12 @@ export const BelowNavbar: Story = () => {
           <h1 className="text-4xl mb-4">Content Below Navigation</h1>
           <p className="text-muted-foreground mb-6 max-w-2xl">
             The grid decorations are positioned precisely below the navigation bar using 
-            position="below-nav-left" and position="below-nav-right" with offsetTop={"{"}64{"}"}.
+            position="below-nav-left" and position="below-nav-right". They automatically offset
+            64px from the top (standard navbar height).
           </p>
           <p className="text-muted-foreground mb-6 max-w-2xl">
-            Notice how the grids align perfectly with the top edge of the content area, creating
-            a seamless visual flow from the navbar.
+            No need to manually specify offsetTop! If your navbar has a different height, you can
+            override it with a custom offsetTop prop.
           </p>
           <Button>Get Started</Button>
         </div>
