@@ -83,14 +83,14 @@ export const AllVariants: Story = () => (
         </Card>
       </div>
 
-      <div 
+      <div
         className="p-6 relative"
         style={{
           backgroundImage: `
             repeating-linear-gradient(0deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
             repeating-linear-gradient(90deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
             linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-          `
+          `,
         }}
       >
         <Card variant="frosted" className="max-w-md">
@@ -99,7 +99,9 @@ export const AllVariants: Story = () => (
             <CardDescription>Glass morphism effect</CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-sm text-muted-foreground">Backdrop blur with semi-transparent background</p>
+            <p className="text-sm text-muted-foreground">
+              Backdrop blur with semi-transparent background
+            </p>
           </CardContent>
         </Card>
       </div>

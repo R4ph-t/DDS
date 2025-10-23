@@ -345,14 +345,14 @@ import { ThemeToggle } from "@/components/ui/theme-toggle"
   sticky
 />`}
   >
-    <div 
+    <div
       className="relative"
       style={{
         backgroundImage: `
           repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
           repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 20px),
           linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
-        `
+        `,
       }}
     >
       <Navigation
@@ -367,10 +367,13 @@ import { ThemeToggle } from "@/components/ui/theme-toggle"
         sticky
       />
       <div className="p-6 space-y-4">
-        <p className="text-foreground/80 font-medium">Frosted glass navigation over gradient background</p>
+        <p className="text-foreground/80 font-medium">
+          Frosted glass navigation over gradient background
+        </p>
         <p className="text-foreground/60 text-sm">
-          The navigation bar has a semi-transparent background with backdrop blur, creating a frosted glass
-          effect. Perfect for hero sections or when you want the nav to blend with content below.
+          The navigation bar has a semi-transparent background with backdrop blur, creating a
+          frosted glass effect. Perfect for hero sections or when you want the nav to blend with
+          content below.
         </p>
         {Array.from({ length: 20 }, (_, i) => (
           <p key={i} className="text-sm text-foreground/50">

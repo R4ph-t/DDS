@@ -82,21 +82,19 @@ export const AllVariants: Story = () => (
         </p>
       </Container>
 
-      <div 
+      <div
         className="p-4 relative"
         style={{
           backgroundImage: `
             repeating-linear-gradient(0deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
             repeating-linear-gradient(90deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
             linear-gradient(135deg, #667eea 0%, #764ba2 100%)
-          `
+          `,
         }}
       >
         <Container variant="frosted">
           <h3 className="text-lg font-semibold mb-2">Frosted</h3>
-          <p className="text-sm text-muted-foreground">
-            Glass morphism effect with backdrop blur
-          </p>
+          <p className="text-sm text-muted-foreground">Glass morphism effect with backdrop blur</p>
         </Container>
       </div>
     </div>
@@ -215,8 +213,8 @@ export const Transparent: Story = () => (
       <Container transparent padding="lg">
         <h3 className="text-xl font-semibold mb-2">Transparent Container</h3>
         <p className="text-muted-foreground">
-          This container has no background. It inherits the parent's gradient background, perfect for
-          overlaying content without visual barriers.
+          This container has no background. It inherits the parent's gradient background, perfect
+          for overlaying content without visual barriers.
         </p>
       </Container>
     </div>
@@ -235,21 +233,21 @@ export const Frosted: Story = () => (
   <p>Backdrop blur with semi-transparent background</p>
 </Container>`}
   >
-    <div 
+    <div
       className="relative min-h-[400px] p-8 flex items-center justify-center"
       style={{
         backgroundImage: `
           repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px),
           repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(255,255,255,.03) 10px, rgba(255,255,255,.03) 20px),
           linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)
-        `
+        `,
       }}
     >
       <Container variant="frosted" padding="lg" className="max-w-md">
         <h3 className="text-xl font-semibold mb-2">Frosted Glass Effect</h3>
         <p className="text-muted-foreground mb-4">
-          This container uses backdrop-blur to create a frosted glass effect over the colorful gradient
-          background with a diagonal pattern. Perfect for hero sections or overlays.
+          This container uses backdrop-blur to create a frosted glass effect over the colorful
+          gradient background with a diagonal pattern. Perfect for hero sections or overlays.
         </p>
         <div className="flex gap-2">
           <div className="h-8 w-8 rounded-full bg-purple-500/50" />

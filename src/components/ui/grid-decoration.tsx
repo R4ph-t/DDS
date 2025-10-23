@@ -8,7 +8,7 @@ export interface GridDecorationProps
   /**
    * Position of the grid decoration
    */
-  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center"
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav"
   /**
    * Orientation of the staircase pattern
    */
@@ -29,6 +29,21 @@ export interface GridDecorationProps
    * Density of squares (0-1, where higher values show more squares)
    */
   density?: number
+  /**
+   * Offset from top in pixels (useful for positioning below navbar)
+   * @default 0
+   */
+  offsetTop?: number
+  /**
+   * Offset from left in pixels
+   * @default 0
+   */
+  offsetLeft?: number
+  /**
+   * Offset from right in pixels
+   * @default 0
+   */
+  offsetRight?: number
 }
 
 const positionStyles = {
@@ -37,6 +52,7 @@ const positionStyles = {
   "bottom-left": "bottom-0 left-0",
   "bottom-right": "bottom-0 right-0",
   center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  "below-nav": "left-0", // Top offset will be handled via style prop
 }
 
 // Generate a staircase pattern - squares step diagonally from corner
@@ -121,6 +137,9 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
       height = 450,
       opacity = 0.5,
       density = 0.6,
+      offsetTop = 0,
+      offsetLeft = 0,
+      offsetRight = 0,
       style,
       ...props
     },
@@ -155,6 +174,29 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
 
     const backgroundPosition = getBackgroundPosition(orientation)
 
+    // Build custom style with offsets
+    const customStyle: React.CSSProperties = {
+      width: widthValue,
+      height: heightValue,
+      opacity,
+      backgroundImage,
+      backgroundSize: "540px 540px",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition,
+      ...style,
+    }
+
+    // Apply offsets
+    if (position === "below-nav" || offsetTop > 0) {
+      customStyle.top = `${offsetTop}px`
+    }
+    if (offsetLeft > 0) {
+      customStyle.left = `${offsetLeft}px`
+    }
+    if (offsetRight > 0) {
+      customStyle.right = `${offsetRight}px`
+    }
+
     return (
       <div
         ref={ref}
@@ -163,16 +205,7 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
           positionStyles[position],
           className
         )}
-        style={{
-          width: widthValue,
-          height: heightValue,
-          opacity,
-          backgroundImage,
-          backgroundSize: "540px 540px",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition,
-          ...style,
-        }}
+        style={customStyle}
         aria-hidden="true"
         {...props}
       />
