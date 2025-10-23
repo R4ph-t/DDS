@@ -27826,9 +27826,11 @@ var Container = React28.forwardRef(
     padding = "default",
     fullWidth = false,
     centered = false,
+    transparent = false,
     children,
     ...props
   }, ref) => {
+    const effectiveVariant = transparent ? "ghost" : variant;
     return /* @__PURE__ */ jsx(
       "div",
       {
@@ -27837,10 +27839,11 @@ var Container = React28.forwardRef(
           "relative",
           {
             // Variant styles
-            "bg-card text-card-foreground": variant === "default",
-            "border border-border bg-card text-card-foreground": variant === "bordered",
-            "border border-border bg-card text-card-foreground shadow-sm": variant === "elevated",
-            "bg-transparent": variant === "ghost"
+            "bg-card text-card-foreground": effectiveVariant === "default",
+            "border border-border bg-card text-card-foreground": effectiveVariant === "bordered",
+            "border border-border bg-card text-card-foreground shadow-sm": effectiveVariant === "elevated",
+            "bg-transparent": effectiveVariant === "ghost",
+            "backdrop-blur-md bg-background/70 border border-border/50": effectiveVariant === "frosted"
           },
           {
             // Padding styles
@@ -27875,7 +27878,8 @@ var Card = React28.forwardRef(
           {
             "": variant === "default",
             "border border-border": variant === "outlined",
-            "border border-border shadow-sm": variant === "elevated"
+            "border border-border shadow-sm": variant === "elevated",
+            "backdrop-blur-md bg-background/70 border border-border/50": variant === "frosted"
           },
           className
         ),
@@ -28012,7 +28016,7 @@ var NextButton = React28.forwardRef(
 );
 NextButton.displayName = "NextButton";
 var Footer = React28.forwardRef(
-  ({ className, copyright, links, sticky = false, ...props }, ref) => {
+  ({ className, copyright, links, sticky = false, centered = false, ...props }, ref) => {
     const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
     const defaultCopyright = `\xA9 ${currentYear} Render. All rights reserved.`;
     return /* @__PURE__ */ jsx(
@@ -28025,18 +28029,27 @@ var Footer = React28.forwardRef(
           className
         ),
         ...props,
-        children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-7xl", children: /* @__PURE__ */ jsxs("div", { className: "flex flex-col items-center justify-between gap-4 md:flex-row", children: [
-          /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: copyright || defaultCopyright }),
-          links && links.length > 0 && /* @__PURE__ */ jsx("nav", { className: "flex gap-6", children: links.map((link) => /* @__PURE__ */ jsx(
-            "a",
-            {
-              href: link.href,
-              className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
-              children: link.label
-            },
-            link.href
-          )) })
-        ] }) })
+        children: /* @__PURE__ */ jsx("div", { className: "mx-auto max-w-7xl", children: /* @__PURE__ */ jsxs(
+          "div",
+          {
+            className: cn("flex gap-4", {
+              "flex-col items-center justify-between md:flex-row": !centered,
+              "flex-col items-center justify-center": centered
+            }),
+            children: [
+              /* @__PURE__ */ jsx("p", { className: "text-sm text-muted-foreground", children: copyright || defaultCopyright }),
+              links && links.length > 0 && /* @__PURE__ */ jsx("nav", { className: "flex gap-6", children: links.map((link) => /* @__PURE__ */ jsx(
+                "a",
+                {
+                  href: link.href,
+                  className: "text-sm text-muted-foreground hover:text-foreground transition-colors",
+                  children: link.label
+                },
+                link.href
+              )) })
+            ]
+          }
+        ) })
       }
     );
   }
@@ -28051,6 +28064,7 @@ var Navigation = React28.forwardRef(
     linksPosition = "left",
     sticky = false,
     currentPath,
+    frosted = false,
     ...props
   }, ref) => {
     return /* @__PURE__ */ jsxs(
@@ -28058,7 +28072,8 @@ var Navigation = React28.forwardRef(
       {
         ref,
         className: cn(
-          "flex items-center border-b border-border bg-background px-6 py-4",
+          "flex items-center border-b px-6 py-4",
+          frosted ? "backdrop-blur-md bg-background/70 border-border/50" : "bg-background border-border",
           linksPosition === "center" && "relative min-h-[60px]",
           sticky && "sticky top-0 z-50",
           className

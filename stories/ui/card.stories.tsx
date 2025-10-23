@@ -15,7 +15,7 @@ const StoryWithCode = createStoryWithCode(import.meta.url)
 const cardProps = [
   {
     name: "variant",
-    type: '"default" | "outlined" | "elevated"',
+    type: '"default" | "outlined" | "elevated" | "frosted"',
     defaultValue: "default",
     description: "Visual style variant",
   },
@@ -50,36 +50,59 @@ export const AllVariants: Story = () => (
     description="Overview of all card variants showing different border and shadow styles."
     props={cardProps}
   >
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <Card variant="default">
-        <CardHeader>
-          <CardTitle>Default</CardTitle>
-          <CardDescription>No border or shadow</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">Basic card with background only</p>
-        </CardContent>
-      </Card>
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <Card variant="default">
+          <CardHeader>
+            <CardTitle>Default</CardTitle>
+            <CardDescription>No border or shadow</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">Basic card with background only</p>
+          </CardContent>
+        </Card>
 
-      <Card variant="outlined">
-        <CardHeader>
-          <CardTitle>Outlined</CardTitle>
-          <CardDescription>1px solid border</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">Card with 1px border, no shadow</p>
-        </CardContent>
-      </Card>
+        <Card variant="outlined">
+          <CardHeader>
+            <CardTitle>Outlined</CardTitle>
+            <CardDescription>1px solid border</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">Card with 1px border, no shadow</p>
+          </CardContent>
+        </Card>
 
-      <Card variant="elevated">
-        <CardHeader>
-          <CardTitle>Elevated</CardTitle>
-          <CardDescription>Border + shadow</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-muted-foreground">Card with border and subtle shadow</p>
-        </CardContent>
-      </Card>
+        <Card variant="elevated">
+          <CardHeader>
+            <CardTitle>Elevated</CardTitle>
+            <CardDescription>Border + shadow</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">Card with border and subtle shadow</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      <div 
+        className="p-6 relative"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(0deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
+            repeating-linear-gradient(90deg, rgba(147, 51, 234, 0.1) 0px, rgba(147, 51, 234, 0.1) 1px, transparent 1px, transparent 20px),
+            linear-gradient(135deg, #667eea 0%, #764ba2 100%)
+          `
+        }}
+      >
+        <Card variant="frosted" className="max-w-md">
+          <CardHeader>
+            <CardTitle>Frosted</CardTitle>
+            <CardDescription>Glass morphism effect</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-muted-foreground">Backdrop blur with semi-transparent background</p>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   </StoryWithCode>
 )

@@ -310,7 +310,7 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
      * Visual variant of the container
      * @default "default"
      */
-    variant?: "default" | "bordered" | "elevated" | "ghost";
+    variant?: "default" | "bordered" | "elevated" | "ghost" | "frosted";
     /**
      * Padding size
      * @default "default"
@@ -326,6 +326,11 @@ interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
      * @default false
      */
     centered?: boolean;
+    /**
+     * Use transparent background (shortcut for variant="ghost")
+     * @default false
+     */
+    transparent?: boolean;
 }
 declare const Container: React.ForwardRefExoticComponent<ContainerProps & React.RefAttributes<HTMLDivElement>>;
 
@@ -334,7 +339,7 @@ interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
      * Visual variant of the card
      * @default "default"
      */
-    variant?: "default" | "outlined" | "elevated";
+    variant?: "default" | "outlined" | "elevated" | "frosted";
 }
 declare const Card: React.ForwardRefExoticComponent<CardProps & React.RefAttributes<HTMLDivElement>>;
 declare const CardHeader: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLDivElement> & React.RefAttributes<HTMLDivElement>>;
@@ -440,6 +445,11 @@ interface FooterProps extends React.HTMLAttributes<HTMLElement> {
      * @default false
      */
     sticky?: boolean;
+    /**
+     * Center the copyright text (and stack links below if present)
+     * @default false
+     */
+    centered?: boolean;
 }
 declare const Footer: React.ForwardRefExoticComponent<FooterProps & React.RefAttributes<HTMLElement>>;
 
@@ -490,6 +500,11 @@ interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
      * When provided, links are automatically marked as active if their href matches this path
      */
     currentPath?: string;
+    /**
+     * Apply frosted glass effect (backdrop blur with semi-transparent background)
+     * @default false
+     */
+    frosted?: boolean;
 }
 declare const Navigation: React.ForwardRefExoticComponent<NavigationProps & React.RefAttributes<HTMLElement>>;
 
