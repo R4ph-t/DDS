@@ -281,7 +281,7 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
     density?: number;
     /**
      * Offset from top in pixels (useful for positioning below navbar)
-     * @default 0
+     * @default 0 (64 for below-nav positions)
      */
     offsetTop?: number;
     /**
