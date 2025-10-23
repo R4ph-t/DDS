@@ -258,7 +258,7 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
     /**
      * Position of the grid decoration
      */
-    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav";
+    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav-left" | "below-nav-right";
     /**
      * Orientation of the staircase pattern
      */
