@@ -27551,7 +27551,9 @@ var positionStyles = {
   "top-right": "top-0 right-0",
   "bottom-left": "bottom-0 left-0",
   "bottom-right": "bottom-0 right-0",
-  center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+  "below-nav": "left-0"
+  // Top offset will be handled via style prop
 };
 var generateGridPattern = (density, isDark, orientation) => {
   const color = isDark ? "rgb(63, 63, 70)" : "rgb(228, 228, 231)";
@@ -27614,6 +27616,9 @@ var GridDecoration = React28.forwardRef(
     height = 450,
     opacity = 0.5,
     density = 0.6,
+    offsetTop = 0,
+    offsetLeft = 0,
+    offsetRight = 0,
     style,
     ...props
   }, ref) => {
@@ -27637,6 +27642,25 @@ var GridDecoration = React28.forwardRef(
       [density, isDark, orientation]
     );
     const backgroundPosition = getBackgroundPosition(orientation);
+    const customStyle = {
+      width: widthValue,
+      height: heightValue,
+      opacity,
+      backgroundImage,
+      backgroundSize: "540px 540px",
+      backgroundRepeat: "no-repeat",
+      backgroundPosition,
+      ...style
+    };
+    if (position === "below-nav" || offsetTop > 0) {
+      customStyle.top = `${offsetTop}px`;
+    }
+    if (offsetLeft > 0) {
+      customStyle.left = `${offsetLeft}px`;
+    }
+    if (offsetRight > 0) {
+      customStyle.right = `${offsetRight}px`;
+    }
     return /* @__PURE__ */ jsx(
       "div",
       {
@@ -27646,16 +27670,7 @@ var GridDecoration = React28.forwardRef(
           positionStyles[position],
           className
         ),
-        style: {
-          width: widthValue,
-          height: heightValue,
-          opacity,
-          backgroundImage,
-          backgroundSize: "540px 540px",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition,
-          ...style
-        },
+        style: customStyle,
         "aria-hidden": "true",
         ...props
       }

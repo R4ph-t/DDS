@@ -258,7 +258,7 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
     /**
      * Position of the grid decoration
      */
-    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
+    position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav";
     /**
      * Orientation of the staircase pattern
      */
@@ -279,6 +279,21 @@ interface GridDecorationProps extends Omit<React.HTMLAttributes<HTMLDivElement>,
      * Density of squares (0-1, where higher values show more squares)
      */
     density?: number;
+    /**
+     * Offset from top in pixels (useful for positioning below navbar)
+     * @default 0
+     */
+    offsetTop?: number;
+    /**
+     * Offset from left in pixels
+     * @default 0
+     */
+    offsetLeft?: number;
+    /**
+     * Offset from right in pixels
+     * @default 0
+     */
+    offsetRight?: number;
 }
 declare const GridDecoration: React.ForwardRefExoticComponent<GridDecorationProps & React.RefAttributes<HTMLDivElement>>;
 

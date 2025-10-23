@@ -8,7 +8,7 @@ export interface GridDecorationProps
   /**
    * Position of the grid decoration
    */
-  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav"
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav-left" | "below-nav-right"
   /**
    * Orientation of the staircase pattern
    */
@@ -52,7 +52,8 @@ const positionStyles = {
   "bottom-left": "bottom-0 left-0",
   "bottom-right": "bottom-0 right-0",
   center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-  "below-nav": "left-0", // Top offset will be handled via style prop
+  "below-nav-left": "left-0", // Top offset will be handled via style prop
+  "below-nav-right": "right-0", // Top offset will be handled via style prop
 }
 
 // Generate a staircase pattern - squares step diagonally from corner
@@ -187,7 +188,7 @@ export const GridDecoration = React.forwardRef<HTMLDivElement, GridDecorationPro
     }
 
     // Apply offsets
-    if (position === "below-nav" || offsetTop > 0) {
+    if (position === "below-nav-left" || position === "below-nav-right" || offsetTop > 0) {
       customStyle.top = `${offsetTop}px`
     }
     if (offsetLeft > 0) {
