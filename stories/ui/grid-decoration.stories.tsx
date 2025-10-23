@@ -8,7 +8,7 @@ const StoryWithCode = createStoryWithCode(import.meta.url)
 const gridProps = [
   {
     name: "position",
-    type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "center"',
+    type: '"top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav-left" | "below-nav-right"',
     defaultValue: "top-left",
     description: "Position of the grid decoration",
   },
@@ -42,6 +42,24 @@ const gridProps = [
     defaultValue: "0.6",
     description:
       "Density of squares - controls staircase depth (0-1, where higher values show more squares)",
+  },
+  {
+    name: "offsetTop",
+    type: "number",
+    defaultValue: "0",
+    description: "Offset from top in pixels (useful for positioning below navbar)",
+  },
+  {
+    name: "offsetLeft",
+    type: "number",
+    defaultValue: "0",
+    description: "Offset from left in pixels",
+  },
+  {
+    name: "offsetRight",
+    type: "number",
+    defaultValue: "0",
+    description: "Offset from right in pixels",
   },
 ]
 
@@ -289,6 +307,79 @@ export const Opacity: Story = () => {
             <h3 className="font-semibold mb-2">Strong (opacity: 0.8)</h3>
             <p className="text-sm text-muted-foreground">More prominent grid pattern</p>
           </div>
+        </div>
+      </div>
+    </StoryWithCode>
+  )
+}
+
+export const BelowNavbar: Story = () => {
+  return (
+    <StoryWithCode
+      title="Below Navigation Bar"
+      description="Position grid decorations below a navigation bar using the below-nav positions and offsetTop prop."
+      props={gridProps}
+      code={`import { GridDecoration } from "render-dds"
+
+// Below nav, aligned to left
+<GridDecoration 
+  position="below-nav-left" 
+  offsetTop={60} 
+  orientation="top-right"
+  width={450}
+  height={450}
+/>
+
+// Below nav, aligned to right
+<GridDecoration 
+  position="below-nav-right" 
+  offsetTop={60} 
+  orientation="top-left"
+  width={450}
+  height={450}
+/>`}
+    >
+      <div className="relative min-h-[500px] bg-background">
+        {/* Simulated navbar */}
+        <div className="h-16 bg-background border-b border-border px-6 flex items-center">
+          <div className="text-xl font-semibold">My App</div>
+          <nav className="ml-8 flex gap-6">
+            <a href="#" className="text-sm">Home</a>
+            <a href="#" className="text-sm">About</a>
+            <a href="#" className="text-sm">Docs</a>
+          </nav>
+        </div>
+
+        {/* Grid decorations positioned below nav */}
+        <GridDecoration 
+          position="below-nav-left" 
+          offsetTop={64}
+          orientation="top-right"
+          width={450}
+          height={450}
+          opacity={0.4}
+        />
+        <GridDecoration 
+          position="below-nav-right" 
+          offsetTop={64}
+          orientation="top-left"
+          width={450}
+          height={450}
+          opacity={0.4}
+        />
+
+        {/* Content */}
+        <div className="relative z-10 px-8 py-16">
+          <h1 className="text-4xl mb-4">Content Below Navigation</h1>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            The grid decorations are positioned precisely below the navigation bar using 
+            position="below-nav-left" and position="below-nav-right" with offsetTop={"{"}64{"}"}.
+          </p>
+          <p className="text-muted-foreground mb-6 max-w-2xl">
+            Notice how the grids align perfectly with the top edge of the content area, creating
+            a seamless visual flow from the navbar.
+          </p>
+          <Button>Get Started</Button>
         </div>
       </div>
     </StoryWithCode>

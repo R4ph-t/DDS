@@ -8,7 +8,14 @@ export interface GridDecorationProps
   /**
    * Position of the grid decoration
    */
-  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center" | "below-nav-left" | "below-nav-right"
+  position?:
+    | "top-left"
+    | "top-right"
+    | "bottom-left"
+    | "bottom-right"
+    | "center"
+    | "below-nav-left"
+    | "below-nav-right"
   /**
    * Orientation of the staircase pattern
    */
