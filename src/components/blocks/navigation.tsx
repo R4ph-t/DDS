@@ -51,6 +51,11 @@ export interface NavigationProps extends React.HTMLAttributes<HTMLElement> {
    * When provided, links are automatically marked as active if their href matches this path
    */
   currentPath?: string
+  /**
+   * Apply frosted glass effect (backdrop blur with semi-transparent background)
+   * @default false
+   */
+  frosted?: boolean
 }
 
 const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
@@ -63,6 +68,7 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       linksPosition = "left",
       sticky = false,
       currentPath,
+      frosted = false,
       ...props
     },
     ref
@@ -71,7 +77,10 @@ const Navigation = React.forwardRef<HTMLElement, NavigationProps>(
       <nav
         ref={ref}
         className={cn(
-          "flex items-center border-b border-border bg-background px-6 py-4",
+          "flex items-center border-b px-6 py-4",
+          frosted
+            ? "backdrop-blur-md bg-background/70 border-border/50"
+            : "bg-background border-border",
           linksPosition === "center" && "relative min-h-[60px]",
           sticky && "sticky top-0 z-50",
           className

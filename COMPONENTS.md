@@ -214,13 +214,24 @@ const { theme, setTheme, toggleTheme } = useTheme()
 ### container
 
 **Purpose**: Layout container with consistent styling  
-**Features**: Multiple variants, padding options, width control
+**Features**: Multiple variants, padding options, width control, transparent background
 
 ```tsx
 import { Container } from "@/components/ui/container"
 
+// Default container
 <Container variant="bordered" padding="default" centered>
   <h1>Content goes here</h1>
+</Container>
+
+// Transparent background (no background color)
+<Container transparent>
+  <h1>Content with transparent background</h1>
+</Container>
+
+// Or use variant="ghost" (same as transparent)
+<Container variant="ghost" padding="lg">
+  <h1>Ghost variant</h1>
 </Container>
 ```
 

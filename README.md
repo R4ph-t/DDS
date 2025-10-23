@@ -219,8 +219,8 @@ export default function BlogPost() {
 - **Icon** - Ionicons 5 icons
 
 ### Block Components
-- **Footer** - Page footer with links and copyright
-- **Navigation** - Navigation bar
+- **Footer** - Page footer with links and copyright (supports centered layout and sticky positioning)
+- **Navigation** - Navigation bar with customizable links position and active states
 - **HeroMinimal** - Minimal hero section
 - **EditorLayout** - Full-page editor layout
 - **MDXContent** - Rich text container with typography styles

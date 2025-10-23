@@ -20,10 +20,15 @@ export interface FooterProps extends React.HTMLAttributes<HTMLElement> {
    * @default false
    */
   sticky?: boolean
+  /**
+   * Center the copyright text (and stack links below if present)
+   * @default false
+   */
+  centered?: boolean
 }
 
 const Footer = React.forwardRef<HTMLElement, FooterProps>(
-  ({ className, copyright, links, sticky = false, ...props }, ref) => {
+  ({ className, copyright, links, sticky = false, centered = false, ...props }, ref) => {
     const currentYear = new Date().getFullYear()
     const defaultCopyright = `© ${currentYear} Render. All rights reserved.`
 
@@ -38,7 +43,12 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
         {...props}
       >
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+          <div
+            className={cn("flex gap-4", {
+              "flex-col items-center justify-between md:flex-row": !centered,
+              "flex-col items-center justify-center": centered,
+            })}
+          >
             <p className="text-sm text-muted-foreground">{copyright || defaultCopyright}</p>
             {links && links.length > 0 && (
               <nav className="flex gap-6">

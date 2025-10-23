@@ -8,7 +8,7 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
    * Visual variant of the container
    * @default "default"
    */
-  variant?: "default" | "bordered" | "elevated" | "ghost"
+  variant?: "default" | "bordered" | "elevated" | "ghost" | "frosted"
   /**
    * Padding size
    * @default "default"
@@ -24,6 +24,11 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
    * @default false
    */
   centered?: boolean
+  /**
+   * Use transparent background (shortcut for variant="ghost")
+   * @default false
+   */
+  transparent?: boolean
 }
 
 const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
@@ -34,11 +39,15 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
       padding = "default",
       fullWidth = false,
       centered = false,
+      transparent = false,
       children,
       ...props
     },
     ref
   ) => {
+    // If transparent prop is true, override variant to ghost
+    const effectiveVariant = transparent ? "ghost" : variant
+
     return (
       <div
         ref={ref}
@@ -46,10 +55,11 @@ const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
           "relative",
           {
             // Variant styles
-            "bg-card text-card-foreground": variant === "default",
-            "border border-border bg-card text-card-foreground": variant === "bordered",
-            "border border-border bg-card text-card-foreground shadow-sm": variant === "elevated",
-            "bg-transparent": variant === "ghost",
+            "bg-card text-card-foreground": effectiveVariant === "default",
+            "border border-border bg-card text-card-foreground": effectiveVariant === "bordered",
+            "border border-border bg-card text-card-foreground shadow-sm": effectiveVariant === "elevated",
+            "bg-transparent": effectiveVariant === "ghost",
+            "backdrop-blur-md bg-background/70 border border-border/50": effectiveVariant === "frosted",
           },
           {
             // Padding styles

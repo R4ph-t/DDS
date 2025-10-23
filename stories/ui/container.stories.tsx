@@ -29,6 +29,12 @@ const containerProps = [
     defaultValue: "false",
     description: "Center horizontally with max-width",
   },
+  {
+    name: "transparent",
+    type: "boolean",
+    defaultValue: "false",
+    description: "Use transparent background (shortcut for variant='ghost')",
+  },
 ]
 
 export const Default: Story = () => (
@@ -166,6 +172,36 @@ export const FullWidth: Story = () => (
         This container spans the full width of its parent element.
       </p>
     </Container>
+  </StoryWithCode>
+)
+
+export const Transparent: Story = () => (
+  <StoryWithCode
+    title="Container - Transparent"
+    description="Container with transparent background, useful for overlays or content sections without visual separation."
+    props={containerProps}
+    code={`import { Container } from "render-dds"
+
+// Using transparent prop
+<Container transparent padding="lg">
+  <h3>Transparent Container</h3>
+  <p>No background color, content floats freely</p>
+</Container>
+
+// Or use variant="ghost" (same result)
+<Container variant="ghost" padding="lg">
+  <h3>Ghost Variant</h3>
+</Container>`}
+  >
+    <div className="bg-gradient-to-r from-purple-100 to-yellow-100 dark:from-purple-900/20 dark:to-yellow-900/20 p-8">
+      <Container transparent padding="lg">
+        <h3 className="text-xl font-semibold mb-2">Transparent Container</h3>
+        <p className="text-muted-foreground">
+          This container has no background. It inherits the parent's gradient background, perfect for
+          overlaying content without visual barriers.
+        </p>
+      </Container>
+    </div>
   </StoryWithCode>
 )
 

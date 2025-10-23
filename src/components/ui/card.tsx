@@ -8,7 +8,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
    * Visual variant of the card
    * @default "default"
    */
-  variant?: "default" | "outlined" | "elevated"
+  variant?: "default" | "outlined" | "elevated" | "frosted"
 }
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
@@ -22,6 +22,7 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
             "": variant === "default",
             "border border-border": variant === "outlined",
             "border border-border shadow-sm": variant === "elevated",
+            "backdrop-blur-md bg-background/70 border border-border/50": variant === "frosted",
           },
           className
         )}
