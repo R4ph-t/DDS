@@ -1,4 +1,3 @@
-"use client";
 import { __commonJS, __toESM, __export, __reExport } from './chunk-CFDED2GB.js';
 import * as React28 from 'react';
 import { forwardRef, useRef, useImperativeHandle, useCallback, useState, useLayoutEffect, useEffect } from 'react';
