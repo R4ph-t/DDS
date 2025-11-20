@@ -1,5 +1,6 @@
 node_modules
 # dist - committed for GitHub installs
+build
 *.log
 .DS_Store
 .env

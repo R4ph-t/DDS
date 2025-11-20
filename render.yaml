@@ -3,7 +3,7 @@ services:
     runtime: static
     name: dds-stories
     buildCommand: npm ci && npm run ladle:build
-    staticPublishPath: .ladle/build
+    staticPublishPath: build
     routes:
       - type: rewrite
         source: /*

@@ -1,7 +1,7 @@
 import type { Story } from "@ladle/react"
 import { EditorLayout } from "../src/components/blocks/editor-layout"
-import { CodeEditor } from "../ui/code-editor"
-import { ResultsPanel } from "../ui/results-panel"
+import { CodeEditor } from "../src/components/ui/code-editor"
+import { ResultsPanel } from "../src/components/ui/results-panel"
 import { useState } from "react"
 import { createStoryWithCode } from "../.ladle/story-helpers"
 
