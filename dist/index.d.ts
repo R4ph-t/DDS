@@ -88,6 +88,50 @@ interface LabelProps extends React.LabelHTMLAttributes<HTMLLabelElement> {
 }
 declare const Label: React.ForwardRefExoticComponent<LabelProps & React.RefAttributes<HTMLLabelElement>>;
 
+type BadgeVariant = "green" | "green-light" | "yellow" | "yellow-light" | "blue" | "blue-light" | "purple" | "purple-light" | "red" | "red-light" | "default" | "default-light";
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+    variant?: BadgeVariant;
+    size?: "sm" | "default" | "lg";
+}
+declare const Badge: React.ForwardRefExoticComponent<BadgeProps & React.RefAttributes<HTMLSpanElement>>;
+
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+    error?: boolean;
+}
+declare const Textarea: React.ForwardRefExoticComponent<TextareaProps & React.RefAttributes<HTMLTextAreaElement>>;
+
+interface FormTextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+    label?: string;
+    error?: string;
+    helperText?: string;
+}
+declare const FormTextarea: React.ForwardRefExoticComponent<FormTextareaProps & React.RefAttributes<HTMLTextAreaElement>>;
+
+interface TableProps extends React.HTMLAttributes<HTMLTableElement> {
+}
+declare const Table: React.ForwardRefExoticComponent<TableProps & React.RefAttributes<HTMLTableElement>>;
+interface TableHeaderProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+}
+declare const TableHeader: React.ForwardRefExoticComponent<TableHeaderProps & React.RefAttributes<HTMLTableSectionElement>>;
+interface TableBodyProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+}
+declare const TableBody: React.ForwardRefExoticComponent<TableBodyProps & React.RefAttributes<HTMLTableSectionElement>>;
+interface TableFooterProps extends React.HTMLAttributes<HTMLTableSectionElement> {
+}
+declare const TableFooter: React.ForwardRefExoticComponent<TableFooterProps & React.RefAttributes<HTMLTableSectionElement>>;
+interface TableRowProps extends React.HTMLAttributes<HTMLTableRowElement> {
+}
+declare const TableRow: React.ForwardRefExoticComponent<TableRowProps & React.RefAttributes<HTMLTableRowElement>>;
+interface TableHeadProps extends React.ThHTMLAttributes<HTMLTableCellElement> {
+}
+declare const TableHead: React.ForwardRefExoticComponent<TableHeadProps & React.RefAttributes<HTMLTableCellElement>>;
+interface TableCellProps extends React.TdHTMLAttributes<HTMLTableCellElement> {
+}
+declare const TableCell: React.ForwardRefExoticComponent<TableCellProps & React.RefAttributes<HTMLTableCellElement>>;
+interface TableCaptionProps extends React.HTMLAttributes<HTMLTableCaptionElement> {
+}
+declare const TableCaption: React.ForwardRefExoticComponent<TableCaptionProps & React.RefAttributes<HTMLTableCaptionElement>>;
+
 interface LinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
     variant?: "default" | "muted" | "subtle";
     external?: boolean;
@@ -554,4 +598,4 @@ declare const MDXContent: React.ForwardRefExoticComponent<MDXContentProps & Reac
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { AddButton, Alert, type AlertProps, BackButton, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, InputWithSuggestions, type InputWithSuggestionsProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationLink, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, Spinner, type SpinnerProps, StatCard, type StatCardProps, StopButton, type Suggestion, Tabs, TabsContent, TabsList, TabsTrigger, type Theme, ThemeProvider, type ThemeProviderProps, ThemeScript, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
+export { AddButton, Alert, type AlertProps, BackButton, Badge, type BadgeProps, type BadgeVariant, Button, ButtonGroup, type ButtonGroupProps, type ButtonProps, Card, CardContent, CardDescription, CardFooter, CardHeader, type CardProps, CardTitle, CodeBlock, type CodeBlockProps, CodeEditor, type CodeEditorProps, Collapsible, type CollapsibleProps, Container, type ContainerProps, ContinueButton, CreateButton, DeleteButton, DeployButton, DownloadButton, DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger, DuplicateButton, EditButton, EditorLayout, type EditorLayoutProps, Footer, type FooterProps, FormField, type FormFieldProps, FormTextarea, type FormTextareaProps, GridDecoration, type GridDecorationProps, HeroMinimal, type HeroMinimalProps, Icon, Input, type InputProps, InputWithSuggestions, type InputWithSuggestionsProps, Label, type LabelProps, Link, type LinkProps, MDXContent, type MDXContentProps, MetricCard, type MetricCardProps, Navigation, type NavigationLink, type NavigationProps, NextButton, PauseButton, ProgressBar, type ProgressBarProps, RenderLogo, type RenderLogoProps, RestartButton, type ResultStatus, ResultsPanel, type ResultsPanelProps, SaveAndDeployButton, SaveButton, SaveDraftButton, Spinner, type SpinnerProps, StatCard, type StatCardProps, StopButton, type Suggestion, Table, TableBody, type TableBodyProps, TableCaption, type TableCaptionProps, TableCell, type TableCellProps, TableFooter, type TableFooterProps, TableHead, type TableHeadProps, TableHeader, type TableHeaderProps, type TableProps, TableRow, type TableRowProps, Tabs, TabsContent, TabsList, TabsTrigger, Textarea, type TextareaProps, type Theme, ThemeProvider, type ThemeProviderProps, ThemeScript, ThemeToggle, type ThemeToggleProps, Toast, ToastContainer, type ToastProps, type ToastType, UploadButton, cn, useTheme };
