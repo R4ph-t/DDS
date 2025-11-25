@@ -37,6 +37,36 @@ export {
 export { Label } from "./components/ui/label"
 export type { LabelProps } from "./components/ui/label"
 
+export { Badge } from "./components/ui/badge"
+export type { BadgeProps, BadgeVariant } from "./components/ui/badge"
+
+export { Textarea } from "./components/ui/textarea"
+export type { TextareaProps } from "./components/ui/textarea"
+
+export { FormTextarea } from "./components/ui/form-textarea"
+export type { FormTextareaProps } from "./components/ui/form-textarea"
+
+export {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from "./components/ui/table"
+export type {
+  TableProps,
+  TableHeaderProps,
+  TableBodyProps,
+  TableFooterProps,
+  TableRowProps,
+  TableHeadProps,
+  TableCellProps,
+  TableCaptionProps,
+} from "./components/ui/table"
+
 export { Link } from "./components/ui/link"
 export type { LinkProps } from "./components/ui/link"
 

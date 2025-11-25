@@ -189,6 +189,95 @@ import { FormField } from "@/components/ui/form-field"
 />
 ```
 
+### textarea
+
+**Purpose**: Multi-line text input  
+**Features**: Resizable, error state support
+
+```tsx
+import { Textarea } from "@/components/ui/textarea"
+
+<Textarea
+  placeholder="Enter your message..."
+  rows={4}
+  error={hasError}
+/>
+```
+
+### form-textarea
+
+**Purpose**: Enhanced textarea with validation  
+**Features**: Labels, errors, helper text (like form-field but for textareas)
+
+```tsx
+import { FormTextarea } from "@/components/ui/form-textarea"
+
+<FormTextarea
+  label="Description"
+  placeholder="Enter a detailed description..."
+  error="Description is required"
+  helperText="Provide as much detail as possible"
+/>
+```
+
+### badge
+
+**Purpose**: Display status labels, categories, or tags  
+**Variants**: green, yellow, blue, purple, red, default (+ light variants)  
+**Sizes**: sm, default, lg
+
+```tsx
+import { Badge } from "@/components/ui/badge"
+
+// Status indicators
+<Badge variant="green">ACTIVE</Badge>
+<Badge variant="yellow">PENDING</Badge>
+<Badge variant="red">FAILED</Badge>
+
+// Light variants (adapt to theme)
+<Badge variant="blue-light">API</Badge>
+<Badge variant="purple-light">VOTING</Badge>
+
+// Different sizes
+<Badge variant="green" size="sm">SMALL</Badge>
+<Badge variant="green" size="lg">LARGE</Badge>
+```
+
+### table
+
+**Purpose**: Display tabular data with consistent styling  
+**Features**: Header, body, footer, caption, hover states
+
+```tsx
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from "@/components/ui/table"
+
+<Table>
+  <TableCaption>A list of your services.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Name</TableHead>
+      <TableHead>Status</TableHead>
+      <TableHead className="text-right">Region</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell className="font-medium">my-service</TableCell>
+      <TableCell>Active</TableCell>
+      <TableCell className="text-right">Oregon</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
 ### theme-toggle
 
 **Purpose**: Toggle between light and dark modes  
