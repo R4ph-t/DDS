@@ -170,7 +170,7 @@ var Input = React32.forwardRef(
       {
         type,
         className: cn(
-          "flex h-10 w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
+          "flex h-10 w-full border border-input bg-input-background text-foreground px-3 py-2 text-sm",
           "file:border-0 file:bg-transparent file:text-sm file:font-medium",
           "placeholder:text-muted-foreground",
           "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
@@ -241,7 +241,7 @@ var InputWithSuggestions = React32.forwardRef(
             ref: inputRef,
             type: "text",
             className: cn(
-              "flex h-10 w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
+              "flex h-10 w-full border border-input bg-input-background text-foreground px-3 py-2 text-sm",
               "file:border-0 file:bg-transparent file:text-sm file:font-medium",
               "placeholder:text-muted-foreground",
               "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
@@ -483,7 +483,7 @@ var Textarea = React32.forwardRef(
       "textarea",
       {
         className: cn(
-          "flex min-h-[120px] w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
+          "flex min-h-[120px] w-full border border-input bg-input-background text-foreground px-3 py-2 text-sm",
           "placeholder:text-muted-foreground",
           "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
           "disabled:cursor-not-allowed disabled:opacity-50",
