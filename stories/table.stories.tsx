@@ -262,3 +262,4 @@ export const Compact: Story = () => (
   </StoryWithCode>
 )
 
+

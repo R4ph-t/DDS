@@ -108,7 +108,7 @@ const InputWithSuggestions = React.forwardRef<HTMLInputElement, InputWithSuggest
             ref={inputRef}
             type="text"
             className={cn(
-              "flex h-10 w-full border border-input bg-background text-foreground px-3 py-2 text-sm",
+              "flex h-10 w-full border border-input bg-input-background text-foreground px-3 py-2 text-sm",
               "file:border-0 file:bg-transparent file:text-sm file:font-medium",
               "placeholder:text-muted-foreground",
               "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring",
