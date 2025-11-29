@@ -115,26 +115,26 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-background: var(--color-white);
-    --color-foreground: var(--color-zinc-900);
-    --color-card: var(--color-white);
-    --color-card-foreground: var(--color-zinc-900);
-    --color-popover: var(--color-white);
-    --color-popover-foreground: var(--color-zinc-900);
-    --color-primary: var(--color-purple-600);
-    --color-primary-foreground: var(--color-white);
-    --color-secondary: var(--color-yellow-400);
-    --color-secondary-foreground: var(--color-zinc-900);
-    --color-muted: var(--color-zinc-100);
-    --color-muted-foreground: var(--color-zinc-500);
-    --color-accent: var(--color-zinc-100);
-    --color-accent-foreground: var(--color-zinc-900);
-    --color-destructive: var(--color-red-500);
-    --color-destructive-foreground: var(--color-white);
-    --color-border: var(--color-zinc-200);
-    --color-input: var(--color-zinc-200);
-    --color-input-background: var(--color-zinc-50);
-    --color-ring: var(--color-purple-600);
+    --color-background: var(--color-background);
+    --color-foreground: var(--color-foreground);
+    --color-card: var(--color-card);
+    --color-card-foreground: var(--color-card-foreground);
+    --color-popover: var(--color-popover);
+    --color-popover-foreground: var(--color-popover-foreground);
+    --color-primary: var(--color-primary);
+    --color-primary-foreground: var(--color-primary-foreground);
+    --color-secondary: var(--color-secondary);
+    --color-secondary-foreground: var(--color-secondary-foreground);
+    --color-muted: var(--color-muted);
+    --color-muted-foreground: var(--color-muted-foreground);
+    --color-accent: var(--color-accent);
+    --color-accent-foreground: var(--color-accent-foreground);
+    --color-destructive: var(--color-destructive);
+    --color-destructive-foreground: var(--color-destructive-foreground);
+    --color-border: var(--color-border);
+    --color-input: var(--color-input);
+    --color-input-background: var(--color-input-background);
+    --color-ring: var(--color-ring);
   }
 }
 @layer base {
@@ -809,7 +809,7 @@
     border-color: var(--color-border);
   }
   .border-border\/50 {
-    border-color: color-mix(in srgb, oklch(92% 0.004 286.32) 50%, transparent);
+    border-color: var(--color-border);
     @supports (color: color-mix(in lab, red, red)) {
       border-color: color-mix(in oklab, var(--color-border) 50%, transparent);
     }
@@ -890,7 +890,7 @@
     background-color: var(--color-background);
   }
   .bg-background\/70 {
-    background-color: color-mix(in srgb, #fff 70%, transparent);
+    background-color: var(--color-background);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-background) 70%, transparent);
     }
@@ -938,13 +938,13 @@
     background-color: var(--color-muted);
   }
   .bg-muted\/20 {
-    background-color: color-mix(in srgb, oklch(96.7% 0.001 286.375) 20%, transparent);
+    background-color: var(--color-muted);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-muted) 20%, transparent);
     }
   }
   .bg-muted\/50 {
-    background-color: color-mix(in srgb, oklch(96.7% 0.001 286.375) 50%, transparent);
+    background-color: var(--color-muted);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-muted) 50%, transparent);
     }
@@ -1294,19 +1294,19 @@
     color: var(--color-foreground);
   }
   .text-foreground\/50 {
-    color: color-mix(in srgb, oklch(21% 0.006 285.885) 50%, transparent);
+    color: var(--color-foreground);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-foreground) 50%, transparent);
     }
   }
   .text-foreground\/60 {
-    color: color-mix(in srgb, oklch(21% 0.006 285.885) 60%, transparent);
+    color: var(--color-foreground);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-foreground) 60%, transparent);
     }
   }
   .text-foreground\/80 {
-    color: color-mix(in srgb, oklch(21% 0.006 285.885) 80%, transparent);
+    color: var(--color-foreground);
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-foreground) 80%, transparent);
     }
@@ -1583,7 +1583,7 @@
   }
   .visited\:text-muted-foreground\/60 {
     &:visited {
-      color: color-mix(in srgb, oklch(55.2% 0.016 285.938) 60%, transparent);
+      color: var(--color-muted-foreground);
       @supports (color: color-mix(in lab, red, red)) {
         color: color-mix(in oklab, var(--color-muted-foreground) 60%, transparent);
       }
@@ -1597,7 +1597,7 @@
   .hover\:border-muted-foreground\/50 {
     &:hover {
       @media (hover: hover) {
-        border-color: color-mix(in srgb, oklch(55.2% 0.016 285.938) 50%, transparent);
+        border-color: var(--color-muted-foreground);
         @supports (color: color-mix(in lab, red, red)) {
           border-color: color-mix(in oklab, var(--color-muted-foreground) 50%, transparent);
         }
@@ -1621,7 +1621,7 @@
   .hover\:bg-destructive\/80 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(63.7% 0.237 25.331) 80%, transparent);
+        background-color: var(--color-destructive);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-destructive) 80%, transparent);
         }
@@ -1631,7 +1631,7 @@
   .hover\:bg-muted\/50 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(96.7% 0.001 286.375) 50%, transparent);
+        background-color: var(--color-muted);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-muted) 50%, transparent);
         }
@@ -1648,7 +1648,7 @@
   .hover\:bg-primary\/80 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(55.8% 0.288 302.321) 80%, transparent);
+        background-color: var(--color-primary);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-primary) 80%, transparent);
         }
@@ -1658,7 +1658,7 @@
   .hover\:bg-primary\/90 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(55.8% 0.288 302.321) 90%, transparent);
+        background-color: var(--color-primary);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-primary) 90%, transparent);
         }
@@ -1675,7 +1675,7 @@
   .hover\:bg-secondary\/70 {
     &:hover {
       @media (hover: hover) {
-        background-color: color-mix(in srgb, oklch(85.2% 0.199 91.936) 70%, transparent);
+        background-color: var(--color-secondary);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-secondary) 70%, transparent);
         }
@@ -1734,7 +1734,7 @@
   .hover\:text-primary\/80 {
     &:hover {
       @media (hover: hover) {
-        color: color-mix(in srgb, oklch(55.8% 0.288 302.321) 80%, transparent);
+        color: var(--color-primary);
         @supports (color: color-mix(in lab, red, red)) {
           color: color-mix(in oklab, var(--color-primary) 80%, transparent);
         }
@@ -2261,48 +2261,48 @@
   }
 }
 :root {
-  --color-background: var(--color-white);
-  --color-foreground: var(--color-zinc-900);
-  --color-card: var(--color-white);
-  --color-card-foreground: var(--color-zinc-900);
-  --color-popover: var(--color-white);
-  --color-popover-foreground: var(--color-zinc-900);
-  --color-primary: var(--color-purple-600);
-  --color-primary-foreground: var(--color-white);
-  --color-secondary: var(--color-yellow-400);
-  --color-secondary-foreground: var(--color-zinc-900);
-  --color-muted: var(--color-zinc-100);
-  --color-muted-foreground: var(--color-zinc-500);
-  --color-accent: var(--color-zinc-100);
-  --color-accent-foreground: var(--color-zinc-900);
-  --color-destructive: var(--color-red-500);
-  --color-destructive-foreground: var(--color-white);
-  --color-border: var(--color-zinc-200);
-  --color-input: var(--color-zinc-200);
-  --color-input-background: var(--color-zinc-50);
-  --color-ring: var(--color-purple-600);
+  --color-background: #ffffff;
+  --color-foreground: #18181b;
+  --color-card: #ffffff;
+  --color-card-foreground: #18181b;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #18181b;
+  --color-primary: #9333ea;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #facc15;
+  --color-secondary-foreground: #18181b;
+  --color-muted: #f4f4f5;
+  --color-muted-foreground: #71717a;
+  --color-accent: #f4f4f5;
+  --color-accent-foreground: #18181b;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: #e4e4e7;
+  --color-input: #e4e4e7;
+  --color-input-background: #fafafa;
+  --color-ring: #9333ea;
 }
 .dark {
   --color-background: rgb(13, 13, 13);
-  --color-foreground: var(--color-zinc-50);
+  --color-foreground: #fafafa;
   --color-card: rgb(13, 13, 13);
-  --color-card-foreground: var(--color-zinc-50);
+  --color-card-foreground: #fafafa;
   --color-popover: rgb(13, 13, 13);
-  --color-popover-foreground: var(--color-zinc-50);
-  --color-primary: var(--color-purple-500);
+  --color-popover-foreground: #fafafa;
+  --color-primary: #a855f7;
   --color-primary-foreground: rgb(13, 13, 13);
-  --color-secondary: var(--color-yellow-400);
+  --color-secondary: #facc15;
   --color-secondary-foreground: rgb(13, 13, 13);
   --color-muted: rgb(24, 24, 24);
-  --color-muted-foreground: var(--color-zinc-400);
+  --color-muted-foreground: #a1a1aa;
   --color-accent: rgb(24, 24, 24);
-  --color-accent-foreground: var(--color-zinc-50);
-  --color-destructive: var(--color-red-500);
-  --color-destructive-foreground: var(--color-zinc-50);
+  --color-accent-foreground: #fafafa;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
   --color-border: rgb(38, 38, 38);
   --color-input: rgb(38, 38, 38);
   --color-input-background: rgb(24, 24, 24);
-  --color-ring: var(--color-purple-500);
+  --color-ring: #a855f7;
 }
 @layer base {
   html {
