@@ -11,6 +11,7 @@
       "import": "./dist/index.js"
     },
     "./styles": "./dist/styles/globals.css",
+    "./theme": "./dist/styles/theme.css",
     "./tailwind": {
       "types": "./dist/tailwind-preset.d.ts",
       "import": "./dist/tailwind-preset.js"
